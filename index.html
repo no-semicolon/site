@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Missing Semicolon</title>
+    <meta description="The Missing Semicolon is a software development company that helps businesses and organizations create and maintain high-quality software solutions. Our team of experienced developers has a strong focus on attention to detail and a commitment to producing clean, well-structured code. Our motto, 'Your software, our semicolons,' reflects our dedication to ensuring that every aspect of our clients' software is as perfect as possible, down to the smallest punctuation marks. Whether you need a custom software application built from scratch, or you need help maintaining and improving an existing system, The Missing Semicolon is here to help."/>
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+      font-size: 100%;
+      --light: #fff;
+      --dark: #000;
+      --accent: hsl(173, 93%, 55%);
+      --faccent: hsla(173, 93%, 55%, 0.8);
+      --gray: hsl(0, 0%, 56%);
+    }
+    body {
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      justify-content: center;
+      min-height: 100vh;
+      color: var(--light);
+    }
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: var(--dark);
+      }
+    }
+
+    /* .block {
+    offset-path: path("M20,20 C20,100 200,0 200,100");
+      offset-path: path(
+        "M-25 87.336C0.834442 107.197 26.5705 125.835 52.155 143.315M52.155 143.315C437.753 406.765 788.898 407.284 923 371.336L359 610.336M52.155 143.315L-102 256.336L-43 407.336L359 610.336M52.155 143.315L299 -37.664C388 -45.3306 600.6 -38.464 739 50.336C912 161.336 871 192.336 945 169.336C1019 146.336 1076 295.336 1056 351.336C1036 407.336 1066 625.336 812 668.336C608.8 702.736 425.333 644.003 359 610.336"
+      );
+      -webkit-animation: move 25000ms infinite alternate ease-in-out;
+      animation: move 35000ms infinite alternate ease-in-out;
+      position: absolute;
+      top: calc(50% - 150px);
+      left: calc(50% - 150px);
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      filter: blur(100px);
+      z-index: -1;
+      box-shadow: inset 0 0 0 300px var(--accent),
+        inset 20px 0 300px var(--accent), inset -20px 0 300px var(--accent),
+        inset 20px 0 300px var(--accent), inset -20px 0 300px var(--accent),
+        0 0 50px var(--accent), -10px 0 80px var(--accent),
+        10px 0 80px var(--accent);
+    } */
+    @-webkit-keyframes move {
+      0% {
+        offset-distance: 0%;
+        width: 40%;
+      }
+      100% {
+        offset-distance: 100%;
+        width: 100%;
+      }
+    }
+    @keyframes move {
+      0% {
+        offset-distance: 0%;
+        width: 40%;
+        transform: scale(1.2);
+      }
+      50% {
+        transform: scale(0.8);
+      }
+      100% {
+        offset-distance: 100%;
+        width: 100%;
+        transform: scale(1);
+      }
+    }
+    @keyframes gradientBG {
+      0% {
+        background: linear-gradient(
+          180deg,
+          var(--dark) -100%,
+          rgba(255, 255, 255, 0.5) 0,
+          var(--dark) 100%
+        );
+      }
+      6.25% {
+        background: linear-gradient(
+          180deg,
+          var(--dark) -87.5%,
+          rgba(255, 255, 255, 0.5) 12.5%,
+          var(--dark) 112.5%
+        );
+      }
+      12.5% {
+        background: linear-gradient(
+          180deg,
+          var(--dark) -75%,
+          rgba(255, 255, 255, 0.5) 25%,
+          var(--dark) 125%
+        );
+      }
+      18.75% {
+        background: linear-gradient(
+          180deg,
+          var(--dark) -62.5%,
+          rgba(255, 255, 255, 0.5) 37.5%,
+          var(--dark) 137.5%
+        );
+      }
+      25% {
+        background: linear-gradient(
+          180deg,
+          var(--dark) -50%,
+          rgba(255, 255, 255, 0.5) 50%,
+          var(--dark) 150%
+        );
+      }
+      31.25% {
+        background: linear-gradient(
+          180deg,
+          var(--dark) -37.5%,
+          rgba(255, 255, 255, 0.5) 62.5%,
+          var(--dark) 162.5%
+        );
+      }
+      37.5% {
+        background: linear-gradient(
+          180deg,
+          var(--dark) -25%,
+          rgba(255, 255, 255, 0.5) 75%,
+          var(--dark) 175%
+        );
+      }
+      43.75% {
+        background: linear-gradient(
+          180deg,
+          var(--dark) -12.5%,
+          rgba(255, 255, 255, 0.5) 87.5%,
+          var(--dark) 187.5%
+        );
+      }
+      50% {
+        background: linear-gradient(
+          180deg,
+          var(--dark) 0,
+          rgba(255, 255, 255, 0.5) 100%,
+          var(--dark) 200%
+        );
+      }
+      56.25% {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.5) -87.5%,
+          var(--dark) 12.5%,
+          rgba(255, 255, 255, 0.5) 112.5%
+        );
+      }
+      62.5% {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.5) -75%,
+          var(--dark) 25%,
+          rgba(255, 255, 255, 0.5) 125%
+        );
+      }
+      68.75% {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.5) -62.5%,
+          var(--dark) 37.5%,
+          rgba(255, 255, 255, 0.5) 137.5%
+        );
+      }
+      75% {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.5) -50%,
+          var(--dark) 50%,
+          rgba(255, 255, 255, 0.5) 150%
+        );
+      }
+      81.25% {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.5) -37.5%,
+          var(--dark) 62.5%,
+          rgba(255, 255, 255, 0.5) 162.5%
+        );
+      }
+      87.5% {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.5) -25%,
+          var(--dark) 75%,
+          rgba(255, 255, 255, 0.5) 175%
+        );
+      }
+      93.75% {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.5) -12.5%,
+          var(--dark) 87.5%,
+          rgba(255, 255, 255, 0.5) 187.5%
+        );
+      }
+      100% {
+        background: linear-gradient(
+          180deg,
+          var(--dark) -100%,
+          rgba(255, 255, 255, 0.5) 0,
+          var(--dark) 100%
+        );
+      }
+    }
+
+    @keyframes selfRotate1 {
+      0% {
+        transform: rotate(0deg);
+        left: 100vw;
+      }
+      25% {
+        transform: rotate(-360deg);
+      }
+      50% {
+        transform: rotate(0deg);
+        left: 0;
+      }
+      75% {
+        transform: rotate(360deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+    @keyframes selfRotate2 {
+      0% {
+        top: -100vh;
+        left: -100vw;
+        transform: rotate(0deg);
+      }
+      25% {
+        top: -25vh;
+        left: 50vw;
+        transform: rotate(-360deg);
+      }
+      50% {
+        top: 25vh;
+        left: -70vw;
+        transform: rotate(0deg);
+      }
+      75% {
+        top: -35vh;
+        left: -25vw;
+        transform: rotate(360deg);
+      }
+      100% {
+        top: -100vh;
+        left: -100vw;
+        transform: rotate(0deg);
+      }
+    }
+
+    @keyframes selfRotate2Mob {
+      0% {
+        top: -75vh;
+        left: -75vw;
+        transform: rotate(0deg);
+      }
+      25% {
+        top: -15vh;
+        left: 25vw;
+        transform: rotate(-360deg);
+      }
+      50% {
+        top: 15vh;
+        left: -35vw;
+        transform: rotate(0deg);
+      }
+      75% {
+        top: -65vh;
+        left: -15vw;
+        transform: rotate(360deg);
+      }
+      100% {
+        top: -100vh;
+        left: -100vw;
+        transform: rotate(0deg);
+      }
+    }
+    @keyframes pulse {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    body {
+      background-color: var(--dark);
+      color: var(--light);
+      font-weight: 500;
+      max-width: 100%;
+    }
+    svg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 90%;
+      /* filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 1)); */
+    }
+
+    .bg-bubble-1 {
+      width: 672.01px;
+      height: 876.53px;
+      position: fixed;
+      top: 55vh;
+      left: 80vw;
+      z-index: -1;
+      background: radial-gradient(var(--accent), transparent);
+      filter: blur(100px);
+      animation: selfRotate1 100s linear infinite;
+      transform: rotate(132.72deg);
+      transform-origin: center center;
+      transition: all 4s linear;
+      pointer-events: none;
+    }
+
+    .bg-bubble-2 {
+      width: 985.93px;
+      height: 1900.15px;
+      position: fixed;
+      top: -100vh;
+      left: -100vw;
+      z-index: -1;
+      background: radial-gradient(var(--accent), transparent);
+      filter: blur(150px);
+      transform: rotate(36.21deg);
+      transform-origin: center center;
+      animation: selfRotate2 80s linear infinite;
+      pointer-events: none;
+    }
+    @media only screen and (max-width: 600px) {
+      .bg-bubble-2 {
+        width: 435.93px;
+        height: 770.15px;
+        animation: selfRotate2Mob 80s linear infinite;
+      }
+    }
+
+    .text-container h1 {
+      font-size: max(7rem, 7.78vw);
+      line-height: max(8.375rem, 9.31vw);
+    }
+    .pulse {
+      animation: pulse 2s linear infinite;
+    }
+  </style>
+  <body>
+    <div
+      class="bg-bubble-1"
+      style="left: calc(1066px - 25vw); top: calc(30vh)"
+    ></div>
+    <div class="bg-bubble-2"></div>
+    <svg
+      width="910"
+      height="174"
+      viewBox="0 0 910 174"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <linearGradient id="logo-gradient" x1="50%" y1="0%" x2="50%" y2="100%">
+          <stop offset="0%" stop-color="#000">
+            <animate
+              attributeName="stop-color"
+              values="#000; hsl(173, 93%, 55%); #000"
+              dur="4s"
+              repeatCount="indefinite"
+            ></animate>
+          </stop>
+
+          <stop offset="100%" stop-color="hsl(173, 93%, 55%)">
+            <animate
+              attributeName="stop-color"
+              values="hsl(173, 93%, 55%); #000; hsl(173, 93%, 55%)"
+              dur="4s"
+              repeatCount="indefinite"
+            ></animate>
+          </stop>
+        </linearGradient>
+      </defs>
+      <g id="Indivitual">
+        <text
+          id="^"
+          fill="#BE1100"
+          xml:space="preserve"
+          style="white-space: pre"
+          font-family="Menlo"
+          font-size="80"
+          font-weight="bold"
+          letter-spacing="0em"
+          class="pulse"
+        >
+          <tspan x="810.34" y="204.195">^</tspan>
+        </text>
+        <text
+          id="["
+          fill="white"
+          xml:space="preserve"
+          style="white-space: pre"
+          font-family="Menlo"
+          font-size="128"
+          letter-spacing="0em"
+        >
+          <tspan x="0" y="129.812">[</tspan>
+        </text>
+        <text
+          id="T"
+          fill="white"
+          xml:space="preserve"
+          style="white-space: pre"
+          font-family="Menlo"
+          font-size="128"
+          letter-spacing="0em"
+        >
+          <tspan x="77" y="129.812">T</tspan>
+        </text>
+        <text
+          id="h"
+          fill="white"
+          xml:space="preserve"
+          style="white-space: pre"
+          font-family="Menlo"
+          font-size="128"
+          letter-spacing="0em"
+        >
+          <tspan x="150" y="129.812">h</tspan>
+        </text>
+        <text
+          id="e"
+          fill="white"
+          xml:space="preserve"
+          style="white-space: pre"
+          font-family="Menlo"
+          font-size="128"
+          letter-spacing="0em"
+        >
+          <tspan x="217" y="129.812">e</tspan>
+        </text>
+        <text
+          id="M"
+          fill="white"
+          xml:space="preserve"
+          style="white-space: pre"
+          font-family="Menlo"
+          font-size="128"
+          letter-spacing="0em"
+        >
+          <tspan x="300" y="129.812">M</tspan>
+        </text>
+        <text
+          id="i"
+          fill="white"
+          xml:space="preserve"
+          style="white-space: pre"
+          font-family="Menlo"
+          font-size="128"
+          letter-spacing="0em"
+        >
+          <tspan x="369" y="129.812">i</tspan>
+        </text>
+        <text
+          id="s"
+          fill="white"
+          xml:space="preserve"
+          style="white-space: pre"
+          font-family="Menlo"
+          font-size="128"
+          letter-spacing="0em"
+        >
+          <tspan x="443" y="129.812">s</tspan>
+        </text>
+        <text
+          id="s_2"
+          fill="white"
+          xml:space="preserve"
+          style="white-space: pre"
+          font-family="Menlo"
+          font-size="128"
+          letter-spacing="0em"
+        >
+          <tspan x="482" y="129.812">s</tspan>
+        </text>
+        <text
+          id="i_2"
+          fill="white"
+          xml:space="preserve"
+          style="white-space: pre"
+          font-family="Menlo"
+          font-size="128"
+          letter-spacing="0em"
+        >
+          <tspan x="547" y="129.812">i</tspan>
+        </text>
+        <text
+          id="n"
+          fill="white"
+          xml:space="preserve"
+          style="white-space: pre"
+          font-family="Menlo"
+          font-size="128"
+          letter-spacing="0em"
+        >
+          <tspan x="623" y="129.812">n</tspan>
+        </text>
+        <text
+          id="g"
+          fill="white"
+          xml:space="preserve"
+          style="white-space: pre"
+          font-family="Menlo"
+          font-size="128"
+          letter-spacing="0em"
+        >
+          <tspan x="699" y="129.812">g</tspan>
+        </text>
+        <text
+          id=";"
+          fill="url('#logo-gradient')"
+          xml:space="preserve"
+          style="white-space: pre"
+          font-family="Menlo"
+          font-size="140"
+          font-weight="bold"
+          letter-spacing="0em"
+        >
+          <tspan x="762" y="129.967">;</tspan>
+        </text>
+        <text
+          id="]"
+          fill="white"
+          xml:space="preserve"
+          style="white-space: pre"
+          font-family="Menlo"
+          font-size="128"
+          letter-spacing="0em"
+        >
+          <tspan x="842" y="129.812">]</tspan>
+        </text>
+      </g>
+    </svg>
+  </body>
+  <script></script>
+</html>
