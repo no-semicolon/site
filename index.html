@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Missing Semicolon</title>
-    <meta
-      description="The Missing Semicolon is a software development company that helps businesses and organizations create and maintain high-quality software solutions. Our team of experienced developers has a strong focus on attention to detail and a commitment to producing clean, well-structured code. Our motto, 'Your software, our semicolons,' reflects our dedication to ensuring that every aspect of our clients' software is as perfect as possible, down to the smallest punctuation marks. Whether you need a custom software application built from scratch, or you need help maintaining and improving an existing system, The Missing Semicolon is here to help."
-    />
-    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png" />
-    <link rel="manifest" href="favicons/site.webmanifest" />
-    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5" />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#ffffff" />
-  </head>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-    html {
-      scroll-behavior: smooth;
-      font-size: 100%;
-      --light: #fff;
-      --dark: #000;
-      --accent: hsl(173, 93%, 55%);
-      --faccent: hsla(173, 93%, 55%, 0.8);
-      --gray: hsl(0, 0%, 56%);
-    }
-    body {
-      display: -webkit-box;
-      display: flex;
-      -webkit-box-align: center;
-      align-items: center;
-      -webkit-box-pack: center;
-      justify-content: center;
-      min-height: 100vh;
-      color: var(--light);
-    }
-    @media (prefers-color-scheme: dark) {
-      body {
-        background: var(--dark);
-      }
-    }
 
-    /* .block {
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Missing Semicolon</title>
+  <meta name=description
+    content="The Missing Semicolon is a software development company that helps businesses and organizations create and maintain high-quality software solutions. Our team of experienced developers has a strong focus on attention to detail and a commitment to producing clean, well-structured code. Our motto, 'Your software, our semicolons,' reflects our dedication to ensuring that every aspect of our clients' software is as perfect as possible, down to the smallest punctuation marks. Whether you need a custom software application built from scratch, or you need help maintaining and improving an existing system, The Missing Semicolon is here to help." />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png" />
+  <link rel="manifest" href="favicons/site.webmanifest" />
+  <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5" />
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="theme-color" content="#ffffff" />
+</head>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 100%;
+    --light: #fff;
+    --dark: #000;
+    --accent: hsl(173, 93%, 55%);
+    --faccent: hsla(173, 93%, 55%, 0.8);
+    --gray: hsl(0, 0%, 56%);
+  }
+
+  body {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: var(--light);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background: var(--dark);
+    }
+  }
+
+  /* .block {
     offset-path: path("M20,20 C20,100 200,0 200,100");
       offset-path: path(
         "M-25 87.336C0.834442 107.197 26.5705 125.835 52.155 143.315M52.155 143.315C437.753 406.765 788.898 407.284 923 371.336L359 610.336M52.155 143.315L-102 256.336L-43 407.336L359 610.336M52.155 143.315L299 -37.664C388 -45.3306 600.6 -38.464 739 50.336C912 161.336 871 192.336 945 169.336C1019 146.336 1076 295.336 1056 351.336C1036 407.336 1066 625.336 812 668.336C608.8 702.736 425.333 644.003 359 610.336"
@@ -66,424 +69,380 @@
         0 0 50px var(--accent), -10px 0 80px var(--accent),
         10px 0 80px var(--accent);
     } */
-    @-webkit-keyframes move {
-      0% {
-        offset-distance: 0%;
-        width: 40%;
-      }
-      100% {
-        offset-distance: 100%;
-        width: 100%;
-      }
+  @-webkit-keyframes move {
+    0% {
+      offset-distance: 0%;
+      width: 40%;
     }
-    @keyframes move {
-      0% {
-        offset-distance: 0%;
-        width: 40%;
-        transform: scale(1.2);
-      }
-      50% {
-        transform: scale(0.8);
-      }
-      100% {
-        offset-distance: 100%;
-        width: 100%;
-        transform: scale(1);
-      }
+
+    100% {
+      offset-distance: 100%;
+      width: 100%;
     }
-    @keyframes gradientBG {
-      0% {
-        background: linear-gradient(
-          180deg,
+  }
+
+  @keyframes move {
+    0% {
+      offset-distance: 0%;
+      width: 40%;
+      transform: scale(1.2);
+    }
+
+    50% {
+      transform: scale(0.8);
+    }
+
+    100% {
+      offset-distance: 100%;
+      width: 100%;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes gradientBG {
+    0% {
+      background: linear-gradient(180deg,
           var(--dark) -100%,
           rgba(255, 255, 255, 0.5) 0,
-          var(--dark) 100%
-        );
-      }
-      6.25% {
-        background: linear-gradient(
-          180deg,
+          var(--dark) 100%);
+    }
+
+    6.25% {
+      background: linear-gradient(180deg,
           var(--dark) -87.5%,
           rgba(255, 255, 255, 0.5) 12.5%,
-          var(--dark) 112.5%
-        );
-      }
-      12.5% {
-        background: linear-gradient(
-          180deg,
+          var(--dark) 112.5%);
+    }
+
+    12.5% {
+      background: linear-gradient(180deg,
           var(--dark) -75%,
           rgba(255, 255, 255, 0.5) 25%,
-          var(--dark) 125%
-        );
-      }
-      18.75% {
-        background: linear-gradient(
-          180deg,
+          var(--dark) 125%);
+    }
+
+    18.75% {
+      background: linear-gradient(180deg,
           var(--dark) -62.5%,
           rgba(255, 255, 255, 0.5) 37.5%,
-          var(--dark) 137.5%
-        );
-      }
-      25% {
-        background: linear-gradient(
-          180deg,
+          var(--dark) 137.5%);
+    }
+
+    25% {
+      background: linear-gradient(180deg,
           var(--dark) -50%,
           rgba(255, 255, 255, 0.5) 50%,
-          var(--dark) 150%
-        );
-      }
-      31.25% {
-        background: linear-gradient(
-          180deg,
+          var(--dark) 150%);
+    }
+
+    31.25% {
+      background: linear-gradient(180deg,
           var(--dark) -37.5%,
           rgba(255, 255, 255, 0.5) 62.5%,
-          var(--dark) 162.5%
-        );
-      }
-      37.5% {
-        background: linear-gradient(
-          180deg,
+          var(--dark) 162.5%);
+    }
+
+    37.5% {
+      background: linear-gradient(180deg,
           var(--dark) -25%,
           rgba(255, 255, 255, 0.5) 75%,
-          var(--dark) 175%
-        );
-      }
-      43.75% {
-        background: linear-gradient(
-          180deg,
+          var(--dark) 175%);
+    }
+
+    43.75% {
+      background: linear-gradient(180deg,
           var(--dark) -12.5%,
           rgba(255, 255, 255, 0.5) 87.5%,
-          var(--dark) 187.5%
-        );
-      }
-      50% {
-        background: linear-gradient(
-          180deg,
+          var(--dark) 187.5%);
+    }
+
+    50% {
+      background: linear-gradient(180deg,
           var(--dark) 0,
           rgba(255, 255, 255, 0.5) 100%,
-          var(--dark) 200%
-        );
-      }
-      56.25% {
-        background: linear-gradient(
-          180deg,
+          var(--dark) 200%);
+    }
+
+    56.25% {
+      background: linear-gradient(180deg,
           rgba(255, 255, 255, 0.5) -87.5%,
           var(--dark) 12.5%,
-          rgba(255, 255, 255, 0.5) 112.5%
-        );
-      }
-      62.5% {
-        background: linear-gradient(
-          180deg,
+          rgba(255, 255, 255, 0.5) 112.5%);
+    }
+
+    62.5% {
+      background: linear-gradient(180deg,
           rgba(255, 255, 255, 0.5) -75%,
           var(--dark) 25%,
-          rgba(255, 255, 255, 0.5) 125%
-        );
-      }
-      68.75% {
-        background: linear-gradient(
-          180deg,
+          rgba(255, 255, 255, 0.5) 125%);
+    }
+
+    68.75% {
+      background: linear-gradient(180deg,
           rgba(255, 255, 255, 0.5) -62.5%,
           var(--dark) 37.5%,
-          rgba(255, 255, 255, 0.5) 137.5%
-        );
-      }
-      75% {
-        background: linear-gradient(
-          180deg,
+          rgba(255, 255, 255, 0.5) 137.5%);
+    }
+
+    75% {
+      background: linear-gradient(180deg,
           rgba(255, 255, 255, 0.5) -50%,
           var(--dark) 50%,
-          rgba(255, 255, 255, 0.5) 150%
-        );
-      }
-      81.25% {
-        background: linear-gradient(
-          180deg,
+          rgba(255, 255, 255, 0.5) 150%);
+    }
+
+    81.25% {
+      background: linear-gradient(180deg,
           rgba(255, 255, 255, 0.5) -37.5%,
           var(--dark) 62.5%,
-          rgba(255, 255, 255, 0.5) 162.5%
-        );
-      }
-      87.5% {
-        background: linear-gradient(
-          180deg,
+          rgba(255, 255, 255, 0.5) 162.5%);
+    }
+
+    87.5% {
+      background: linear-gradient(180deg,
           rgba(255, 255, 255, 0.5) -25%,
           var(--dark) 75%,
-          rgba(255, 255, 255, 0.5) 175%
-        );
-      }
-      93.75% {
-        background: linear-gradient(
-          180deg,
+          rgba(255, 255, 255, 0.5) 175%);
+    }
+
+    93.75% {
+      background: linear-gradient(180deg,
           rgba(255, 255, 255, 0.5) -12.5%,
           var(--dark) 87.5%,
-          rgba(255, 255, 255, 0.5) 187.5%
-        );
-      }
-      100% {
-        background: linear-gradient(
-          180deg,
+          rgba(255, 255, 255, 0.5) 187.5%);
+    }
+
+    100% {
+      background: linear-gradient(180deg,
           var(--dark) -100%,
           rgba(255, 255, 255, 0.5) 0,
-          var(--dark) 100%
-        );
-      }
+          var(--dark) 100%);
+    }
+  }
+
+  @keyframes selfRotate1 {
+    0% {
+      transform: rotate(0deg);
+      left: 100vw;
     }
 
-    @keyframes selfRotate1 {
-      0% {
-        transform: rotate(0deg);
-        left: 100vw;
-      }
-      25% {
-        transform: rotate(-360deg);
-      }
-      50% {
-        transform: rotate(0deg);
-        left: 0;
-      }
-      75% {
-        transform: rotate(360deg);
-      }
-      100% {
-        transform: rotate(0deg);
-      }
+    25% {
+      transform: rotate(-360deg);
     }
 
-    @keyframes selfRotate2 {
-      0% {
-        top: -100vh;
-        left: -100vw;
-        transform: rotate(0deg);
-      }
-      25% {
-        top: -25vh;
-        left: 50vw;
-        transform: rotate(-360deg);
-      }
-      50% {
-        top: 25vh;
-        left: -70vw;
-        transform: rotate(0deg);
-      }
-      75% {
-        top: -35vh;
-        left: -25vw;
-        transform: rotate(360deg);
-      }
-      100% {
-        top: -100vh;
-        left: -100vw;
-        transform: rotate(0deg);
-      }
+    50% {
+      transform: rotate(0deg);
+      left: 0;
     }
 
-    @keyframes selfRotate2Mob {
-      0% {
-        top: -75vh;
-        left: -75vw;
-        transform: rotate(0deg);
-      }
-      25% {
-        top: -15vh;
-        left: 25vw;
-        transform: rotate(-360deg);
-      }
-      50% {
-        top: 15vh;
-        left: -35vw;
-        transform: rotate(0deg);
-      }
-      75% {
-        top: -65vh;
-        left: -15vw;
-        transform: rotate(360deg);
-      }
-      100% {
-        top: -100vh;
-        left: -100vw;
-        transform: rotate(0deg);
-      }
-    }
-    @keyframes pulse {
-      0% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-    body {
-      background-color: var(--dark);
-      color: var(--light);
-      font-weight: 500;
-      max-width: 100%;
-    }
-    svg {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      max-width: 90%;
-      /* filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 1)); */
+    75% {
+      transform: rotate(360deg);
     }
 
-    .bg-bubble-1 {
-      width: 672.01px;
-      height: 876.53px;
-      position: fixed;
-      top: 55vh;
-      left: 80vw;
-      z-index: -1;
-      background: radial-gradient(var(--accent), transparent);
-      filter: blur(100px);
-      animation: selfRotate1 100s linear infinite;
-      transform: rotate(132.72deg);
-      transform-origin: center center;
-      transition: all 4s linear;
-      pointer-events: none;
+    100% {
+      transform: rotate(0deg);
     }
+  }
 
-    .bg-bubble-2 {
-      width: 985.93px;
-      height: 1900.15px;
-      position: fixed;
+  @keyframes selfRotate2 {
+    0% {
       top: -100vh;
       left: -100vw;
-      z-index: -1;
-      background: radial-gradient(var(--accent), transparent);
-      filter: blur(150px);
-      transform: rotate(36.21deg);
-      transform-origin: center center;
-      animation: selfRotate2 80s linear infinite;
-      pointer-events: none;
-    }
-    @media only screen and (max-width: 600px) {
-      .bg-bubble-2 {
-        width: 435.93px;
-        height: 770.15px;
-        animation: selfRotate2Mob 80s linear infinite;
-      }
+      transform: rotate(0deg);
     }
 
-    .text-container h1 {
-      font-size: max(7rem, 7.78vw);
-      line-height: max(8.375rem, 9.31vw);
+    25% {
+      top: -25vh;
+      left: 50vw;
+      transform: rotate(-360deg);
     }
-    .pulse {
-      animation: pulse 2s linear infinite;
-    }
-  </style>
-  <body>
-    <div
-      class="bg-bubble-1"
-      style="left: calc(1066px - 25vw); top: calc(30vh)"
-    ></div>
-    <div class="bg-bubble-2"></div>
-    <svg
-      width="910"
-      height="174"
-      viewBox="0 0 910 174"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <defs>
-        <linearGradient id="logo-gradient" x1="50%" y1="0%" x2="50%" y2="100%">
-          <stop offset="0%" stop-color="#000">
-            <animate
-              attributeName="stop-color"
-              values="#000; hsl(173, 93%, 55%); #000"
-              dur="4s"
-              repeatCount="indefinite"
-            ></animate>
-          </stop>
 
-          <stop offset="100%" stop-color="hsl(173, 93%, 55%)">
-            <animate
-              attributeName="stop-color"
-              values="hsl(173, 93%, 55%); #000; hsl(173, 93%, 55%)"
-              dur="4s"
-              repeatCount="indefinite"
-            ></animate>
-          </stop>
-        </linearGradient>
-      </defs>
-      <g id="Indivitual">
-        <path
-          id="^"
-          d="M839.207 145.68L856.277 167.438H846.824L834.402 155.68L822.019 167.438H812.566L829.637 145.68H839.207Z"
-          fill="#BE1100"
-          class="pulse"
-        />
-        <path
-          id="["
-          d="M35.1875 26.5H61.6875V35.4375H46.6875V131.688H61.6875V140.625H35.1875V26.5Z"
-          fill="white"
-        />
-        <path
-          id="T"
-          d="M79.9375 36.6875H151.125V47.3125H121.938V130H109.25V47.3125H79.9375V36.6875Z"
-          fill="white"
-        />
-        <path
-          id="h"
-          d="M215.688 86.625V130H204.125V86.625C204.125 80.3333 203.021 75.7083 200.812 72.75C198.604 69.7917 195.146 68.3125 190.438 68.3125C185.062 68.3125 180.917 70.2292 178 74.0625C175.125 77.8542 173.688 83.3125 173.688 90.4375V130H162.188V32.75H173.688V70.5C175.729 66.5 178.5 63.4792 182 61.4375C185.5 59.3542 189.646 58.3125 194.438 58.3125C201.562 58.3125 206.875 60.6667 210.375 65.375C213.917 70.0417 215.688 77.125 215.688 86.625Z"
-          fill="white"
-        />
-        <path
-          id="e"
-          d="M287 89.25V94.875H237.188V95.25C236.854 104.792 238.667 111.646 242.625 115.812C246.625 119.979 252.25 122.062 259.5 122.062C263.167 122.062 267 121.479 271 120.312C275 119.146 279.271 117.375 283.812 115V126.438C279.438 128.229 275.208 129.562 271.125 130.438C267.083 131.354 263.167 131.812 259.375 131.812C248.5 131.812 240 128.562 233.875 122.062C227.75 115.521 224.688 106.521 224.688 95.0625C224.688 83.8958 227.688 74.9792 233.688 68.3125C239.688 61.6458 247.688 58.3125 257.688 58.3125C266.604 58.3125 273.625 61.3333 278.75 67.375C283.917 73.4167 286.667 80.7083 287 89.25ZM275.5 85.875C275 81.0417 273.229 76.875 270.188 73.375C267.188 69.8333 262.854 68.0625 257.188 68.0625C251.646 68.0625 247.083 69.8958 243.5 73.5625C239.917 77.2292 237.958 81.3542 237.625 85.9375L275.5 85.875Z"
-          fill="white"
-        />
-        <path
-          id="M"
-          d="M302.25 37H319.125L335.25 84.375L351.5 37H368.438V130H356.75V47.8125L340.125 96.8125H330.562L313.875 47.8125V130H302.25V37Z"
-          fill="white"
-        />
-        <path
-          id="i"
-          d="M388.75 60.25H418.188V121.062H441V130H383.875V121.062H406.688V69.1875H388.75V60.25ZM406.688 33.0625H418.188V47.5625H406.688V33.0625Z"
-          fill="white"
-        />
-        <path
-          id="s"
-          d="M503.812 62.4375V73.6875C500.521 71.7708 497.208 70.3333 493.875 69.375C490.542 68.4167 487.146 67.9375 483.688 67.9375C478.479 67.9375 474.583 68.7917 472 70.5C469.458 72.1667 468.188 74.7292 468.188 78.1875C468.188 81.3125 469.146 83.6458 471.062 85.1875C472.979 86.7292 477.75 88.2292 485.375 89.6875L490 90.5625C495.708 91.6458 500.021 93.8125 502.938 97.0625C505.896 100.312 507.375 104.542 507.375 109.75C507.375 116.667 504.917 122.083 500 126C495.083 129.875 488.25 131.812 479.5 131.812C476.042 131.812 472.417 131.438 468.625 130.688C464.833 129.979 460.729 128.896 456.312 127.438V115.562C460.604 117.771 464.708 119.438 468.625 120.562C472.542 121.646 476.25 122.188 479.75 122.188C484.833 122.188 488.771 121.167 491.562 119.125C494.354 117.042 495.75 114.146 495.75 110.438C495.75 105.104 490.646 101.417 480.438 99.375L479.938 99.25L475.625 98.375C469 97.0833 464.167 94.9167 461.125 91.875C458.083 88.7917 456.562 84.6042 456.562 79.3125C456.562 72.6042 458.833 67.4375 463.375 63.8125C467.917 60.1458 474.396 58.3125 482.812 58.3125C486.562 58.3125 490.167 58.6667 493.625 59.375C497.083 60.0417 500.479 61.0625 503.812 62.4375Z"
-          fill="white"
-        />
-        <path
-          id="s_2"
-          d="M542.812 62.4375V73.6875C539.521 71.7708 536.208 70.3333 532.875 69.375C529.542 68.4167 526.146 67.9375 522.688 67.9375C517.479 67.9375 513.583 68.7917 511 70.5C508.458 72.1667 507.188 74.7292 507.188 78.1875C507.188 81.3125 508.146 83.6458 510.062 85.1875C511.979 86.7292 516.75 88.2292 524.375 89.6875L529 90.5625C534.708 91.6458 539.021 93.8125 541.938 97.0625C544.896 100.312 546.375 104.542 546.375 109.75C546.375 116.667 543.917 122.083 539 126C534.083 129.875 527.25 131.812 518.5 131.812C515.042 131.812 511.417 131.438 507.625 130.688C503.833 129.979 499.729 128.896 495.312 127.438V115.562C499.604 117.771 503.708 119.438 507.625 120.562C511.542 121.646 515.25 122.188 518.75 122.188C523.833 122.188 527.771 121.167 530.562 119.125C533.354 117.042 534.75 114.146 534.75 110.438C534.75 105.104 529.646 101.417 519.438 99.375L518.938 99.25L514.625 98.375C508 97.0833 503.167 94.9167 500.125 91.875C497.083 88.7917 495.562 84.6042 495.562 79.3125C495.562 72.6042 497.833 67.4375 502.375 63.8125C506.917 60.1458 513.396 58.3125 521.812 58.3125C525.562 58.3125 529.167 58.6667 532.625 59.375C536.083 60.0417 539.479 61.0625 542.812 62.4375Z"
-          fill="white"
-        />
-        <path
-          id="i_2"
-          d="M566.75 60.25H596.188V121.062H619V130H561.875V121.062H584.688V69.1875H566.75V60.25ZM584.688 33.0625H596.188V47.5625H584.688V33.0625Z"
-          fill="white"
-        />
-        <path
-          id="n"
-          d="M688.688 86.625V130H677.125V86.625C677.125 80.3333 676.021 75.7083 673.812 72.75C671.604 69.7917 668.146 68.3125 663.438 68.3125C658.062 68.3125 653.917 70.2292 651 74.0625C648.125 77.8542 646.688 83.3125 646.688 90.4375V130H635.188V60H646.688V70.5C648.729 66.5 651.5 63.4792 655 61.4375C658.5 59.3542 662.646 58.3125 667.438 58.3125C674.562 58.3125 679.875 60.6667 683.375 65.375C686.917 70.0417 688.688 77.125 688.688 86.625Z"
-          fill="white"
-        />
-        <path
-          id="g"
-          d="M752.625 94.4375C752.625 85.8125 751.208 79.2708 748.375 74.8125C745.583 70.3125 741.5 68.0625 736.125 68.0625C730.5 68.0625 726.208 70.3125 723.25 74.8125C720.292 79.2708 718.812 85.8125 718.812 94.4375C718.812 103.062 720.292 109.646 723.25 114.188C726.25 118.688 730.583 120.938 736.25 120.938C741.542 120.938 745.583 118.667 748.375 114.125C751.208 109.583 752.625 103.021 752.625 94.4375ZM764.125 125.5C764.125 136 761.646 143.958 756.688 149.375C751.729 154.792 744.438 157.5 734.812 157.5C731.646 157.5 728.333 157.208 724.875 156.625C721.417 156.042 717.958 155.188 714.5 154.062V142.688C718.583 144.604 722.292 146.021 725.625 146.938C728.958 147.854 732.021 148.312 734.812 148.312C741.021 148.312 745.542 146.625 748.375 143.25C751.208 139.875 752.625 134.521 752.625 127.188V126.688V118.875C750.792 122.792 748.292 125.708 745.125 127.625C741.958 129.542 738.104 130.5 733.562 130.5C725.396 130.5 718.875 127.229 714 120.688C709.125 114.146 706.688 105.396 706.688 94.4375C706.688 83.4375 709.125 74.6667 714 68.125C718.875 61.5833 725.396 58.3125 733.562 58.3125C738.062 58.3125 741.875 59.2083 745 61C748.125 62.7917 750.667 65.5625 752.625 69.3125V60.25H764.125V125.5Z"
-          fill="white"
-        />
-        <path
-          id=";"
-          d="M792.693 104.912H815.457V123.438L802.059 149.619H787.361L792.693 123.438V104.912ZM792.693 57.334H815.457V82.2852H792.693V57.334Z"
-          fill="url('#logo-gradient')"
-        />
-        <path
-          id="]"
-          d="M887 26.5V140.625H860.5V131.688H875.5V35.4375H860.5V26.5H887Z"
-          fill="white"
-        />
-      </g>
-    </svg>
-  </body>
-  <script></script>
+    50% {
+      top: 25vh;
+      left: -70vw;
+      transform: rotate(0deg);
+    }
+
+    75% {
+      top: -35vh;
+      left: -25vw;
+      transform: rotate(360deg);
+    }
+
+    100% {
+      top: -100vh;
+      left: -100vw;
+      transform: rotate(0deg);
+    }
+  }
+
+  @keyframes selfRotate2Mob {
+    0% {
+      top: -75vh;
+      left: -75vw;
+      transform: rotate(0deg);
+    }
+
+    25% {
+      top: -15vh;
+      left: 25vw;
+      transform: rotate(-360deg);
+    }
+
+    50% {
+      top: 15vh;
+      left: -35vw;
+      transform: rotate(0deg);
+    }
+
+    75% {
+      top: -65vh;
+      left: -15vw;
+      transform: rotate(360deg);
+    }
+
+    100% {
+      top: -100vh;
+      left: -100vw;
+      transform: rotate(0deg);
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  body {
+    background-color: var(--dark);
+    color: var(--light);
+    font-weight: 500;
+    max-width: 100%;
+  }
+
+  svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 90%;
+    /* filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 1)); */
+  }
+
+  .bg-bubble-1 {
+    width: 672.01px;
+    height: 876.53px;
+    position: fixed;
+    top: 55vh;
+    left: 80vw;
+    z-index: -1;
+    background: radial-gradient(var(--accent), transparent);
+    filter: blur(100px);
+    animation: selfRotate1 100s linear infinite;
+    transform: rotate(132.72deg);
+    transform-origin: center center;
+    transition: all 4s linear;
+    pointer-events: none;
+  }
+
+  .bg-bubble-2 {
+    width: 985.93px;
+    height: 1900.15px;
+    position: fixed;
+    top: -100vh;
+    left: -100vw;
+    z-index: -1;
+    background: radial-gradient(var(--accent), transparent);
+    filter: blur(150px);
+    transform: rotate(36.21deg);
+    transform-origin: center center;
+    animation: selfRotate2 80s linear infinite;
+    pointer-events: none;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .bg-bubble-2 {
+      width: 435.93px;
+      height: 770.15px;
+      animation: selfRotate2Mob 80s linear infinite;
+    }
+  }
+
+  .text-container h1 {
+    font-size: max(7rem, 7.78vw);
+    line-height: max(8.375rem, 9.31vw);
+  }
+
+  .pulse {
+    animation: pulse 2s linear infinite;
+  }
+</style>
+
+<body>
+  <div class="bg-bubble-1" style="left: calc(1066px - 25vw); top: calc(30vh)"></div>
+  <div class="bg-bubble-2"></div>
+  <svg width="910" height="174" viewBox="0 0 910 174" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="logo-gradient" x1="50%" y1="0%" x2="50%" y2="100%">
+        <stop offset="0%" stop-color="#000">
+          <animate attributeName="stop-color" values="#000; hsl(173, 93%, 55%); #000" dur="4s" repeatCount="indefinite">
+          </animate>
+        </stop>
+
+        <stop offset="100%" stop-color="hsl(173, 93%, 55%)">
+          <animate attributeName="stop-color" values="hsl(173, 93%, 55%); #000; hsl(173, 93%, 55%)" dur="4s"
+            repeatCount="indefinite"></animate>
+        </stop>
+      </linearGradient>
+    </defs>
+    <g id="Indivitual">
+      <path id="^"
+        d="M839.207 145.68L856.277 167.438H846.824L834.402 155.68L822.019 167.438H812.566L829.637 145.68H839.207Z"
+        fill="#BE1100" class="pulse" />
+      <path id="[" d="M35.1875 26.5H61.6875V35.4375H46.6875V131.688H61.6875V140.625H35.1875V26.5Z" fill="white" />
+      <path id="T" d="M79.9375 36.6875H151.125V47.3125H121.938V130H109.25V47.3125H79.9375V36.6875Z" fill="white" />
+      <path id="h"
+        d="M215.688 86.625V130H204.125V86.625C204.125 80.3333 203.021 75.7083 200.812 72.75C198.604 69.7917 195.146 68.3125 190.438 68.3125C185.062 68.3125 180.917 70.2292 178 74.0625C175.125 77.8542 173.688 83.3125 173.688 90.4375V130H162.188V32.75H173.688V70.5C175.729 66.5 178.5 63.4792 182 61.4375C185.5 59.3542 189.646 58.3125 194.438 58.3125C201.562 58.3125 206.875 60.6667 210.375 65.375C213.917 70.0417 215.688 77.125 215.688 86.625Z"
+        fill="white" />
+      <path id="e"
+        d="M287 89.25V94.875H237.188V95.25C236.854 104.792 238.667 111.646 242.625 115.812C246.625 119.979 252.25 122.062 259.5 122.062C263.167 122.062 267 121.479 271 120.312C275 119.146 279.271 117.375 283.812 115V126.438C279.438 128.229 275.208 129.562 271.125 130.438C267.083 131.354 263.167 131.812 259.375 131.812C248.5 131.812 240 128.562 233.875 122.062C227.75 115.521 224.688 106.521 224.688 95.0625C224.688 83.8958 227.688 74.9792 233.688 68.3125C239.688 61.6458 247.688 58.3125 257.688 58.3125C266.604 58.3125 273.625 61.3333 278.75 67.375C283.917 73.4167 286.667 80.7083 287 89.25ZM275.5 85.875C275 81.0417 273.229 76.875 270.188 73.375C267.188 69.8333 262.854 68.0625 257.188 68.0625C251.646 68.0625 247.083 69.8958 243.5 73.5625C239.917 77.2292 237.958 81.3542 237.625 85.9375L275.5 85.875Z"
+        fill="white" />
+      <path id="M"
+        d="M302.25 37H319.125L335.25 84.375L351.5 37H368.438V130H356.75V47.8125L340.125 96.8125H330.562L313.875 47.8125V130H302.25V37Z"
+        fill="white" />
+      <path id="i"
+        d="M388.75 60.25H418.188V121.062H441V130H383.875V121.062H406.688V69.1875H388.75V60.25ZM406.688 33.0625H418.188V47.5625H406.688V33.0625Z"
+        fill="white" />
+      <path id="s"
+        d="M503.812 62.4375V73.6875C500.521 71.7708 497.208 70.3333 493.875 69.375C490.542 68.4167 487.146 67.9375 483.688 67.9375C478.479 67.9375 474.583 68.7917 472 70.5C469.458 72.1667 468.188 74.7292 468.188 78.1875C468.188 81.3125 469.146 83.6458 471.062 85.1875C472.979 86.7292 477.75 88.2292 485.375 89.6875L490 90.5625C495.708 91.6458 500.021 93.8125 502.938 97.0625C505.896 100.312 507.375 104.542 507.375 109.75C507.375 116.667 504.917 122.083 500 126C495.083 129.875 488.25 131.812 479.5 131.812C476.042 131.812 472.417 131.438 468.625 130.688C464.833 129.979 460.729 128.896 456.312 127.438V115.562C460.604 117.771 464.708 119.438 468.625 120.562C472.542 121.646 476.25 122.188 479.75 122.188C484.833 122.188 488.771 121.167 491.562 119.125C494.354 117.042 495.75 114.146 495.75 110.438C495.75 105.104 490.646 101.417 480.438 99.375L479.938 99.25L475.625 98.375C469 97.0833 464.167 94.9167 461.125 91.875C458.083 88.7917 456.562 84.6042 456.562 79.3125C456.562 72.6042 458.833 67.4375 463.375 63.8125C467.917 60.1458 474.396 58.3125 482.812 58.3125C486.562 58.3125 490.167 58.6667 493.625 59.375C497.083 60.0417 500.479 61.0625 503.812 62.4375Z"
+        fill="white" />
+      <path id="s_2"
+        d="M542.812 62.4375V73.6875C539.521 71.7708 536.208 70.3333 532.875 69.375C529.542 68.4167 526.146 67.9375 522.688 67.9375C517.479 67.9375 513.583 68.7917 511 70.5C508.458 72.1667 507.188 74.7292 507.188 78.1875C507.188 81.3125 508.146 83.6458 510.062 85.1875C511.979 86.7292 516.75 88.2292 524.375 89.6875L529 90.5625C534.708 91.6458 539.021 93.8125 541.938 97.0625C544.896 100.312 546.375 104.542 546.375 109.75C546.375 116.667 543.917 122.083 539 126C534.083 129.875 527.25 131.812 518.5 131.812C515.042 131.812 511.417 131.438 507.625 130.688C503.833 129.979 499.729 128.896 495.312 127.438V115.562C499.604 117.771 503.708 119.438 507.625 120.562C511.542 121.646 515.25 122.188 518.75 122.188C523.833 122.188 527.771 121.167 530.562 119.125C533.354 117.042 534.75 114.146 534.75 110.438C534.75 105.104 529.646 101.417 519.438 99.375L518.938 99.25L514.625 98.375C508 97.0833 503.167 94.9167 500.125 91.875C497.083 88.7917 495.562 84.6042 495.562 79.3125C495.562 72.6042 497.833 67.4375 502.375 63.8125C506.917 60.1458 513.396 58.3125 521.812 58.3125C525.562 58.3125 529.167 58.6667 532.625 59.375C536.083 60.0417 539.479 61.0625 542.812 62.4375Z"
+        fill="white" />
+      <path id="i_2"
+        d="M566.75 60.25H596.188V121.062H619V130H561.875V121.062H584.688V69.1875H566.75V60.25ZM584.688 33.0625H596.188V47.5625H584.688V33.0625Z"
+        fill="white" />
+      <path id="n"
+        d="M688.688 86.625V130H677.125V86.625C677.125 80.3333 676.021 75.7083 673.812 72.75C671.604 69.7917 668.146 68.3125 663.438 68.3125C658.062 68.3125 653.917 70.2292 651 74.0625C648.125 77.8542 646.688 83.3125 646.688 90.4375V130H635.188V60H646.688V70.5C648.729 66.5 651.5 63.4792 655 61.4375C658.5 59.3542 662.646 58.3125 667.438 58.3125C674.562 58.3125 679.875 60.6667 683.375 65.375C686.917 70.0417 688.688 77.125 688.688 86.625Z"
+        fill="white" />
+      <path id="g"
+        d="M752.625 94.4375C752.625 85.8125 751.208 79.2708 748.375 74.8125C745.583 70.3125 741.5 68.0625 736.125 68.0625C730.5 68.0625 726.208 70.3125 723.25 74.8125C720.292 79.2708 718.812 85.8125 718.812 94.4375C718.812 103.062 720.292 109.646 723.25 114.188C726.25 118.688 730.583 120.938 736.25 120.938C741.542 120.938 745.583 118.667 748.375 114.125C751.208 109.583 752.625 103.021 752.625 94.4375ZM764.125 125.5C764.125 136 761.646 143.958 756.688 149.375C751.729 154.792 744.438 157.5 734.812 157.5C731.646 157.5 728.333 157.208 724.875 156.625C721.417 156.042 717.958 155.188 714.5 154.062V142.688C718.583 144.604 722.292 146.021 725.625 146.938C728.958 147.854 732.021 148.312 734.812 148.312C741.021 148.312 745.542 146.625 748.375 143.25C751.208 139.875 752.625 134.521 752.625 127.188V126.688V118.875C750.792 122.792 748.292 125.708 745.125 127.625C741.958 129.542 738.104 130.5 733.562 130.5C725.396 130.5 718.875 127.229 714 120.688C709.125 114.146 706.688 105.396 706.688 94.4375C706.688 83.4375 709.125 74.6667 714 68.125C718.875 61.5833 725.396 58.3125 733.562 58.3125C738.062 58.3125 741.875 59.2083 745 61C748.125 62.7917 750.667 65.5625 752.625 69.3125V60.25H764.125V125.5Z"
+        fill="white" />
+      <path id=";"
+        d="M792.693 104.912H815.457V123.438L802.059 149.619H787.361L792.693 123.438V104.912ZM792.693 57.334H815.457V82.2852H792.693V57.334Z"
+        fill="url('#logo-gradient')" />
+      <path id="]" d="M887 26.5V140.625H860.5V131.688H875.5V35.4375H860.5V26.5H887Z" fill="white" />
+    </g>
+  </svg>
+</body>
+<script></script>
+
 </html>
