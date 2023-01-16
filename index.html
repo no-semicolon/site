@@ -177,21 +177,6 @@
       animation-delay: 2.2s;
       transition-timing-function: cubic-bezier(0.14, 0.77, 0.59, 1.98);
       animation-fill-mode: forwards;
-      /* background: linear-gradient(
-        0,
-        var(--dark) 0%,
-        var(--faccent) 30%,
-        var(--faccent) 50%,
-        var(--faccent) 70%,
-        var(--dark) 100%
-      ); */
-      /* background-size: auto 200%;
-      background-clip: text;
-      text-fill-color: transparent;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-
-      animation: shine 4s alternate infinite; */
     }
     .haccent {
       display: inline-block;
@@ -632,14 +617,31 @@
         transform: scale(1);
       }
     }
-    @keyframes showFromRight2 {
+    /* @keyframes showFromRight2 {
       0% {
         opacity: 0;
         transform: translateX(40px);
       }
-      /* 25%{
+      6% {
         opacity: 1;
-      } */
+        transform: translateX(0);
+      }
+      47% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      53% {
+        opacity: 0;
+      }
+      94% {
+        opacity: 0;
+      }
+    } */
+     @keyframes showFromRight2 {
+     0% {
+        opacity: 0;
+        transform: translateX(40px);
+      }
       100% {
         opacity: 1;
         transform: translateX(0);
@@ -647,14 +649,13 @@
     }
     .showFromRight1 {
       opacity: 0;
-      /* transform: translateX(40px); */
       animation: showFromRight1 1s cubic-bezier(0.14, 0.77, 0.59, 1.98)
         var(--cta-anim-delay) forwards;
     }
     .showFromRight2 {
       opacity: 0;
       transform: translateX(80px);
-      animation: showFromRight2 0.3s cubic-bezier(0.14, 0.77, 0.59, 1.98)
+      animation: showFromRight2 .3s cubic-bezier(0.14, 0.77, 0.59, 1.98)
         calc(var(--cta-anim-delay) + 0.3s) forwards;
     }
 
@@ -795,6 +796,9 @@
     .qr {
       width: 100%;
       max-width: 50vw;
+    }
+    .red {
+      color: red;
     }
 
     @media only screen and (max-width: 600px) {
@@ -983,7 +987,7 @@
         <h1 class="motto opacity0">
           <!-- Expertise in every <span class="accent">semicolon</span> -->
           <!-- Expertise, efficiency, excellence -->
-          Leave the <span class="accent" data-delay="3s">semicolon</span> jokes
+          Leave the <span class="accent">semicolon</span> jokes
           to me!
           <!-- We'll make sure <span class="accent">your code runs</span>, not just <span class="accent">your mouth</span> -->
         </h1>
@@ -994,7 +998,6 @@
           height="40"
           width="200"
           alt="The Missing Semicolon Logo"
-          
         />
         <a
           class="cta-button"
@@ -1106,67 +1109,67 @@
         </a>
       </nav>
       <section class="s2">
-        <h2 class="s-title">Who I am</h2>
+        <h2 class="s-title"><span class="accent">Who</span> I am</h2>
         <div class="box">
           <div class="img-wrapper">
-            <!-- <img
-              src="/images/me.jpg"
-              class="photo-me"
-              alt="Mihai Mijea Photo"
-            /> -->
             <picture>
-              <source media="(max-width: 600px)" 
-                  srcset="/images/me-mobile.webp"
-                  type="image/webp">
-              <source media="(max-width: 600px)"
-                  srcset="/images/me-mobile.webp" 
-                  type="image/webp">
-              <source media="(max-width: 600px)" 
-                  srcset="/images/me-mobile.jpg"
-                  type="image/jpeg">
-              <source media="(max-width: 600px)"
-                  srcset="/images/me-mobile.jpg" 
-                  type="image/jpeg">
-              <img 
-                  srcset="/images/me.jpg 1024w, 
-                  /images/me-mobile.jpg 600w"
-              
-                  sizes="(min-width: 600px) 601px,
+              <source
+                media="(max-width: 600px)"
+                srcset="/images/me-mobile.webp"
+                type="image/webp"
+              />
+              <source
+                media="(max-width: 600px)"
+                srcset="/images/me-mobile.webp"
+                type="image/webp"
+              />
+              <source
+                media="(max-width: 600px)"
+                srcset="/images/me-mobile.jpg"
+                type="image/jpeg"
+              />
+              <source
+                media="(max-width: 600px)"
+                srcset="/images/me-mobile.jpg"
+                type="image/jpeg"
+              />
+              <img
+                srcset="/images/me.jpg 1024w, /images/me-mobile.jpg 600w"
+                sizes="(min-width: 600px) 601px,
                           (max-width: 600px) 600px"
-              
-                  src="/images/me.jpg" 
-              
-                  alt="Mihai Mijea Photo"
-                  class="photo-me">
-              </picture>
+                src="/images/me.jpg"
+                alt="Mihai Mijea Photo"
+                class="photo-me"
+              />
+            </picture>
           </div>
           <div class="description">
             <p>
-              Hello, my name is Mihai and I am a freelance software engineer
-              with a special focus on JavaScript and its frameworks.
+              Hello, my name is <b>Mihai</b> and I am a freelance software engineer
+              with a special focus on <b>JavaScript</b> and its frameworks.
             </p>
             <p>
-              With over 7 years of experience, I have been providing top-notch
-              software and web solutions for different companies.
+              With over <b>7 years</b> of experience, I have been providing top-notch
+              software and <b>web solutions</b> for different companies.
             </p>
             <p>
-              My expertise includes both front-end and back-end development,
+              My expertise includes both <b>front-end</b> and <b>back-end</b> development,
               allowing me to create intuitive and efficient solutions for a wide
               range of digital needs.
             </p>
             <p>
-              Whether you need a custom web application, a responsive website,
-              or a mobile application,
+              Whether you need a <b>custom web application</b>, a <b>responsive</b> website,
+              or a <b>mobile</b> application,
             </p>
             <p>
-              I am dedicated to delivering the best results to help your
-              business succeed.
+              I am <b>dedicated</b> to delivering the best results to help your
+            <b>business succeed</b>.
             </p>
           </div>
         </div>
       </section>
       <section>
-        <h2 class="s-title">What I use</h2>
+        <h2 class="s-title"><span class="accent">What</span> I use</h2>
         <div class="box wrap">
           <a
             target="_blank"
@@ -1176,7 +1179,6 @@
             <img
               src="/images/logos/tools/logo-amazon-aws.svg"
               alt="Cloud Computing Services - Amazon Web Services (AWS)"
-              
             />
           </a>
           <a
@@ -1187,14 +1189,12 @@
             <img
               src="/images/logos/tools/logo-atlassian-jira.svg"
               alt="Jira Software"
-              
             />
           </a>
           <a target="_blank" href="https://babeljs.io/" class="skillLogo hover">
             <img
               src="/images/logos/tools/logo-babel.svg"
               alt="Babel · The compiler for next generation JavaScript"
-              
             />
           </a>
           <a
@@ -1205,7 +1205,6 @@
             <img
               src="/images/logos/tools/logo-browserstack.svg"
               alt="BrowserStack - World's Leading Testing Tool"
-              
             />
           </a>
           <a
@@ -1216,7 +1215,6 @@
             <img
               src="/images/logos/tools/logo-cloudinary.svg"
               alt="Cloudinary Media Experience Platform"
-              
             />
           </a>
           <a
@@ -1227,7 +1225,6 @@
             <img
               src="/images/logos/tools/logo-contentful.svg"
               alt="Contentful: The platform to bring your best ideas to life"
-              
             />
           </a>
 
@@ -1239,7 +1236,6 @@
             <img
               src="/images/logos/tools/logo-css.svg"
               alt="Cascading Style Sheets (CSS)"
-              
             />
           </a>
           <a
@@ -1250,7 +1246,6 @@
             <img
               alt="Docker: Accelerated, Containerized Application Development"
               src="/images/logos/tools/logo-docker.svg"
-              
             />
           </a>
           <a
@@ -1261,7 +1256,6 @@
             <img
               alt="Express - Fast, unopinionated, minimalist web framework for Node.js"
               src="/images/logos/tools/logo-expressjs.svg"
-              
             />
           </a>
           <a
@@ -1272,7 +1266,6 @@
             <img
               alt="Gatsby - The Fastest Frontend for the Headless Web"
               src="/images/logos/tools/logo-gatsby.svg"
-              
             />
           </a>
           <a
@@ -1283,7 +1276,6 @@
             <img
               alt="Postman is an API platform for building and using APIs."
               src="/images/logos/tools/logo-getpostman.svg"
-              
             />
           </a>
           <a
@@ -1294,7 +1286,6 @@
             <img
               alt="Git is a free and open source distributed version control system"
               src="/images/logos/tools/logo-git.svg"
-              
             />
           </a>
           <a
@@ -1305,7 +1296,6 @@
             <img
               alt="Gitlab Is A Single Application For The Entire Software Development Lifecycle"
               src="/images/logos/tools/logo-gitlab.svg"
-              
             />
           </a>
           <a
@@ -1316,7 +1306,6 @@
             <img
               alt="Google Analytics lets you measure your advertising ROI as well as track your Flash, video, and social networking sites and applications."
               src="/images/logos/tools/logo-google-analytics.svg"
-              
             />
           </a>
           <a
@@ -1327,7 +1316,6 @@
             <img
               alt="Dream, build, and transform with Google Cloud"
               src="/images/logos/tools/logo-google-cloud.svg"
-              
             />
           </a>
           <a
@@ -1338,7 +1326,6 @@
             <img
               alt="GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data."
               src="/images/logos/tools/logo-graphql.svg"
-              
             />
           </a>
           <a
@@ -1349,7 +1336,6 @@
             <img
               alt="HTML: HyperText Markup Language"
               src="/images/logos/tools/logo-html.svg"
-              
             />
           </a>
           <a
@@ -1360,21 +1346,18 @@
             <img
               alt="JavaScript"
               src="/images/logos/tools/logo-javascript.svg"
-              
             />
           </a>
           <a target="_blank" href="https://jestjs.io/" class="skillLogo hover">
             <img
               alt="Jest is a delightful JavaScript Testing Framework with a focus on simplicity."
               src="/images/logos/tools/logo-jest.svg"
-              
             />
           </a>
           <a target="_blank" href="https://mui.com/" class="skillLogo hover">
             <img
               alt="Material UI fully-loaded component library"
               src="/images/logos/tools/logo-material-ui.svg"
-              
             />
           </a>
           <a
@@ -1385,7 +1368,6 @@
             <img
               alt="AZURE. INVENT WITH PURPOSE."
               src="/images/logos/tools/logo-microsoft-azure.svg"
-              
             />
           </a>
           <a
@@ -1396,7 +1378,6 @@
             <img
               alt="MongoDB: The Developer Data Platform"
               src="/images/logos/tools/logo-mongodb.svg"
-              
             />
           </a>
           <a
@@ -1407,14 +1388,12 @@
             <img
               alt="Netlify: Develop and deploy websites and apps in record time"
               src="/images/logos/tools/logo-netlify.svg"
-              
             />
           </a>
           <a target="_blank" href="https://nextjs.org/" class="skillLogo hover">
             <img
               alt="Next.js by Vercel - The React Framework"
               src="/images/logos/tools/logo-nextjs.svg"
-              
             />
           </a>
           <a
@@ -1425,7 +1404,6 @@
             <img
               alt="Node.js® is an open-source, cross-platform JavaScript runtime environment."
               src="/images/logos/tools/logo-nodejs.svg"
-              
             />
           </a>
           <a
@@ -1436,7 +1414,6 @@
             <img
               alt="The OpenAPI Specification, previously known as the Swagger Specification"
               src="/images/logos/tools/logo-openapis.svg"
-              
             />
           </a>
           <a
@@ -1447,7 +1424,6 @@
             <img
               alt="React A JavaScript library for building user interfaces"
               src="/images/logos/tools/logo-react.svg"
-              
             />
           </a>
           <a
@@ -1458,7 +1434,6 @@
             <img
               alt="REST is an acronym for REpresentational State Transfer and an architectural style for distributed hypermedia systems."
               src="/images/logos/tools/logo-rest-api.svg"
-              
             />
           </a>
           <a
@@ -1469,7 +1444,6 @@
             <img
               alt="SASS CSS with superpowers"
               src="/images/logos/tools/logo-sass.svg"
-              
             />
           </a>
           <a
@@ -1480,7 +1454,6 @@
             <img
               alt="Storybook is a frontend workshop for building UI components and pages in isolation."
               src="/images/logos/tools/logo-storybook.svg"
-              
             />
           </a>
           <a
@@ -1491,14 +1464,12 @@
             <img
               alt="Styled Components Visual primitives for the component age."
               src="/images/logos/tools/logo-styled-components.svg"
-              
             />
           </a>
           <a target="_blank" href="https://swagger.io/" class="skillLogo hover">
             <img
               alt="Swagger API Development for Everyone"
               src="/images/logos/tools/logo-swagger.svg"
-              
             />
           </a>
           <a
@@ -1509,7 +1480,6 @@
             <img
               alt="TailwindCSS Rapidly build modern websites without ever leaving your HTML."
               src="/images/logos/tools/logo-tailwind.svg"
-              
             />
           </a>
           <a
@@ -1520,7 +1490,6 @@
             <img
               alt="Turbo is an incremental bundler and build system optimized for JavaScript and TypeScript, written in Rust."
               src="/images/logos/tools/logo-turborepo.svg"
-              
             />
           </a>
           <a
@@ -1531,7 +1500,6 @@
             <img
               alt="TypeScript is JavaScript with syntax for types"
               src="/images/logos/tools/logo-typescript.svg"
-              
             />
           </a>
           <a
@@ -1542,53 +1510,39 @@
             <img
               alt="webpack is a static module bundler for modern JavaScript applications"
               src="/images/logos/tools/logo-webpack.svg"
-              
             />
           </a>
           <a target="_blank" href="https://vuejs.org/" class="skillLogo hover">
             <img
               alt="VueJS The Progressive JavaScript Framework"
               src="/images/logos/tools/logo-vuejs.svg"
-              
             />
           </a>
         </div>
       </section>
       <section>
-        <h2 class="s-title">For whom</h2>
+        <h2 class="s-title">For <span class="accent">whom</span></h2>
         <div class="box wrap">
           <a
             target="_blank"
             href="https://www.dpgmediagroup.com/nl-NL"
             class="companyLogo hover"
           >
-            <img
-              src="/images/logos/companies/dpg.svg"
-              
-              alt="DPG media"
-            />
+            <img src="/images/logos/companies/dpg.svg" alt="DPG media" />
           </a>
           <a
             target="_blank"
             href="https://www.icemobile.com/"
             class="companyLogo hover"
           >
-            <img
-              src="/images/logos/companies/icemobile.svg"
-              alt="Icemobile"
-              
-            />
+            <img src="/images/logos/companies/icemobile.svg" alt="Icemobile" />
           </a>
           <a
             target="_blank"
             href="https://www.kpn.com/"
             class="companyLogo hover"
           >
-            <img
-              src="/images/logos/companies/kpn.svg"
-              alt="KPN"
-              
-            />
+            <img src="/images/logos/companies/kpn.svg" alt="KPN" />
           </a>
           <a
             target="_blank"
@@ -1598,7 +1552,6 @@
             <img
               src="/images/logos/companies/passionatepeople.svg"
               alt="Passionate People"
-              
             />
           </a>
           <a
@@ -1606,11 +1559,7 @@
             href="https://www.getrodeo.io/"
             class="companyLogo hover"
           >
-            <img
-              src="/images/logos/companies/rodeo.svg"
-              alt="Rodeo"
-              
-            />
+            <img src="/images/logos/companies/rodeo.svg" alt="Rodeo" />
           </a>
           <a
             target="_blank"
@@ -1620,31 +1569,24 @@
             <img
               src="/images/logos/companies/suitsupply.svg"
               alt="Suitsupply"
-              
             />
           </a>
         </div>
       </section>
       <section>
-        <h2 class="s-title">What I think</h2>
+        <h2 class="s-title"><span class="accent">What</span> I think</h2>
         <figure>
           <blockquote class="quote">
             <p>"The best code is the code you don't write"</p>
           </blockquote>
           <figcaption>— a Smart Guy</figcaption>
         </figure>
-        <!-- <blockquote >The best code is the code you don't write</blockquote> -->
-        <div class="ps">PS: This page has 0 lines of Javascript</div>
+        <div class="ps">PS: This page has <b>0</b> lines of Javascript</div>
       </section>
       <section>
-        <h2 class="s-title">How to find me</h2>
+        <h2 class="s-title"><span class="accent">How</span> to find me</h2>
         <div class="box contact">
-          <img
-            src="/images/qr.svg"
-            alt="Qr code with the details"
-            class="qr"
-            
-          />
+          <img src="/images/qr.svg" alt="Qr code with the details" class="qr" />
           <div class="contact-link-wrapper">
             <a
               class="contact-link"
