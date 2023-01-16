@@ -994,7 +994,7 @@
           height="40"
           width="200"
           alt="The Missing Semicolon Logo"
-          loading="lazy"
+          
         />
         <a
           class="cta-button"
@@ -1109,12 +1109,36 @@
         <h2 class="s-title">Who I am</h2>
         <div class="box">
           <div class="img-wrapper">
-            <img
+            <!-- <img
               src="/images/me.jpg"
               class="photo-me"
               alt="Mihai Mijea Photo"
-              loading="lazy"
-            />
+            /> -->
+            <picture>
+              <source media="(max-width: 600px)" 
+                  srcset="/images/me-mobile.webp"
+                  type="image/webp">
+              <source media="(max-width: 600px)"
+                  srcset="/images/me-mobile.webp" 
+                  type="image/webp">
+              <source media="(max-width: 600px)" 
+                  srcset="/images/me-mobile.jpg"
+                  type="image/jpeg">
+              <source media="(max-width: 600px)"
+                  srcset="/images/me-mobile.jpg" 
+                  type="image/jpeg">
+              <img 
+                  srcset="/images/me.jpg 1024w, 
+                  /images/me-mobile.jpg 600w"
+              
+                  sizes="(min-width: 600px) 601px,
+                          (max-width: 600px) 600px"
+              
+                  src="/images/me.jpg" 
+              
+                  alt="Mihai Mijea Photo"
+                  class="photo-me">
+              </picture>
           </div>
           <div class="description">
             <p>
@@ -1152,7 +1176,7 @@
             <img
               src="/images/logos/tools/logo-amazon-aws.svg"
               alt="Cloud Computing Services - Amazon Web Services (AWS)"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1163,14 +1187,14 @@
             <img
               src="/images/logos/tools/logo-atlassian-jira.svg"
               alt="Jira Software"
-              loading="lazy"
+              
             />
           </a>
           <a target="_blank" href="https://babeljs.io/" class="skillLogo hover">
             <img
               src="/images/logos/tools/logo-babel.svg"
               alt="Babel · The compiler for next generation JavaScript"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1181,7 +1205,7 @@
             <img
               src="/images/logos/tools/logo-browserstack.svg"
               alt="BrowserStack - World's Leading Testing Tool"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1192,7 +1216,7 @@
             <img
               src="/images/logos/tools/logo-cloudinary.svg"
               alt="Cloudinary Media Experience Platform"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1203,7 +1227,7 @@
             <img
               src="/images/logos/tools/logo-contentful.svg"
               alt="Contentful: The platform to bring your best ideas to life"
-              loading="lazy"
+              
             />
           </a>
 
@@ -1215,7 +1239,7 @@
             <img
               src="/images/logos/tools/logo-css.svg"
               alt="Cascading Style Sheets (CSS)"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1226,7 +1250,7 @@
             <img
               alt="Docker: Accelerated, Containerized Application Development"
               src="/images/logos/tools/logo-docker.svg"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1237,7 +1261,7 @@
             <img
               alt="Express - Fast, unopinionated, minimalist web framework for Node.js"
               src="/images/logos/tools/logo-expressjs.svg"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1248,7 +1272,7 @@
             <img
               alt="Gatsby - The Fastest Frontend for the Headless Web"
               src="/images/logos/tools/logo-gatsby.svg"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1259,7 +1283,7 @@
             <img
               alt="Postman is an API platform for building and using APIs."
               src="/images/logos/tools/logo-getpostman.svg"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1270,7 +1294,7 @@
             <img
               alt="Git is a free and open source distributed version control system"
               src="/images/logos/tools/logo-git.svg"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1281,7 +1305,7 @@
             <img
               alt="Gitlab Is A Single Application For The Entire Software Development Lifecycle"
               src="/images/logos/tools/logo-gitlab.svg"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1292,7 +1316,7 @@
             <img
               alt="Google Analytics lets you measure your advertising ROI as well as track your Flash, video, and social networking sites and applications."
               src="/images/logos/tools/logo-google-analytics.svg"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1303,7 +1327,7 @@
             <img
               alt="Dream, build, and transform with Google Cloud"
               src="/images/logos/tools/logo-google-cloud.svg"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1314,7 +1338,7 @@
             <img
               alt="GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data."
               src="/images/logos/tools/logo-graphql.svg"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1325,7 +1349,7 @@
             <img
               alt="HTML: HyperText Markup Language"
               src="/images/logos/tools/logo-html.svg"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1336,21 +1360,21 @@
             <img
               alt="JavaScript"
               src="/images/logos/tools/logo-javascript.svg"
-              loading="lazy"
+              
             />
           </a>
           <a target="_blank" href="https://jestjs.io/" class="skillLogo hover">
             <img
               alt="Jest is a delightful JavaScript Testing Framework with a focus on simplicity."
               src="/images/logos/tools/logo-jest.svg"
-              loading="lazy"
+              
             />
           </a>
           <a target="_blank" href="https://mui.com/" class="skillLogo hover">
             <img
               alt="Material UI fully-loaded component library"
               src="/images/logos/tools/logo-material-ui.svg"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1361,7 +1385,7 @@
             <img
               alt="AZURE. INVENT WITH PURPOSE."
               src="/images/logos/tools/logo-microsoft-azure.svg"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1372,7 +1396,7 @@
             <img
               alt="MongoDB: The Developer Data Platform"
               src="/images/logos/tools/logo-mongodb.svg"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1383,14 +1407,14 @@
             <img
               alt="Netlify: Develop and deploy websites and apps in record time"
               src="/images/logos/tools/logo-netlify.svg"
-              loading="lazy"
+              
             />
           </a>
           <a target="_blank" href="https://nextjs.org/" class="skillLogo hover">
             <img
               alt="Next.js by Vercel - The React Framework"
               src="/images/logos/tools/logo-nextjs.svg"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1401,7 +1425,7 @@
             <img
               alt="Node.js® is an open-source, cross-platform JavaScript runtime environment."
               src="/images/logos/tools/logo-nodejs.svg"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1412,7 +1436,7 @@
             <img
               alt="The OpenAPI Specification, previously known as the Swagger Specification"
               src="/images/logos/tools/logo-openapis.svg"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1423,7 +1447,7 @@
             <img
               alt="React A JavaScript library for building user interfaces"
               src="/images/logos/tools/logo-react.svg"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1434,7 +1458,7 @@
             <img
               alt="REST is an acronym for REpresentational State Transfer and an architectural style for distributed hypermedia systems."
               src="/images/logos/tools/logo-rest-api.svg"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1445,7 +1469,7 @@
             <img
               alt="SASS CSS with superpowers"
               src="/images/logos/tools/logo-sass.svg"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1456,7 +1480,7 @@
             <img
               alt="Storybook is a frontend workshop for building UI components and pages in isolation."
               src="/images/logos/tools/logo-storybook.svg"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1467,14 +1491,14 @@
             <img
               alt="Styled Components Visual primitives for the component age."
               src="/images/logos/tools/logo-styled-components.svg"
-              loading="lazy"
+              
             />
           </a>
           <a target="_blank" href="https://swagger.io/" class="skillLogo hover">
             <img
               alt="Swagger API Development for Everyone"
               src="/images/logos/tools/logo-swagger.svg"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1485,7 +1509,7 @@
             <img
               alt="TailwindCSS Rapidly build modern websites without ever leaving your HTML."
               src="/images/logos/tools/logo-tailwind.svg"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1496,7 +1520,7 @@
             <img
               alt="Turbo is an incremental bundler and build system optimized for JavaScript and TypeScript, written in Rust."
               src="/images/logos/tools/logo-turborepo.svg"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1507,7 +1531,7 @@
             <img
               alt="TypeScript is JavaScript with syntax for types"
               src="/images/logos/tools/logo-typescript.svg"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1518,14 +1542,14 @@
             <img
               alt="webpack is a static module bundler for modern JavaScript applications"
               src="/images/logos/tools/logo-webpack.svg"
-              loading="lazy"
+              
             />
           </a>
           <a target="_blank" href="https://vuejs.org/" class="skillLogo hover">
             <img
               alt="VueJS The Progressive JavaScript Framework"
               src="/images/logos/tools/logo-vuejs.svg"
-              loading="lazy"
+              
             />
           </a>
         </div>
@@ -1540,7 +1564,7 @@
           >
             <img
               src="/images/logos/companies/dpg.svg"
-              loading="lazy"
+              
               alt="DPG media"
             />
           </a>
@@ -1552,7 +1576,7 @@
             <img
               src="/images/logos/companies/icemobile.svg"
               alt="Icemobile"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1563,7 +1587,7 @@
             <img
               src="/images/logos/companies/kpn.svg"
               alt="KPN"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1574,7 +1598,7 @@
             <img
               src="/images/logos/companies/passionatepeople.svg"
               alt="Passionate People"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1585,7 +1609,7 @@
             <img
               src="/images/logos/companies/rodeo.svg"
               alt="Rodeo"
-              loading="lazy"
+              
             />
           </a>
           <a
@@ -1596,7 +1620,7 @@
             <img
               src="/images/logos/companies/suitsupply.svg"
               alt="Suitsupply"
-              loading="lazy"
+              
             />
           </a>
         </div>
@@ -1619,7 +1643,7 @@
             src="/images/qr.svg"
             alt="Qr code with the details"
             class="qr"
-            loading="lazy"
+            
           />
           <div class="contact-link-wrapper">
             <a
