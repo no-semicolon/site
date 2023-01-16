@@ -9,26 +9,59 @@
       name="description"
       content="The Missing Semicolon is a software development company that helps businesses and organizations create and maintain high-quality software solutions. Our team of experienced developers has a strong focus on attention to detail and a commitment to producing clean, well-structured code. Our motto, 'Your software, our semicolons,' reflects our dedication to ensuring that every aspect of our clients' software is as perfect as possible, down to the smallest punctuation marks. Whether you need a custom software application built from scratch, or you need help maintaining and improving an existing system, The Missing Semicolon is here to help."
     />
+
+    <link
+      rel="preconnect"
+      target="_blank"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      target="_blank"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300&display=swap"
+        rel="stylesheet"
+        type="text/css"
+      />
+    </noscript>
+    <!-- <link
+      target="_blank" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap"
+      rel="stylesheet"
+    /> -->
     <link
       rel="apple-touch-icon"
       sizes="180x180"
+      target="_blank"
       href="favicons/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
+      target="_blank"
       href="favicons/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
+      target="_blank"
       href="favicons/favicon-16x16.png"
     />
-    <link rel="manifest" href="favicons/site.webmanifest" />
+    <link rel="manifest" target="_blank" href="favicons/site.webmanifest" />
     <link
       rel="mask-icon"
+      target="_blank"
       href="favicons/safari-pinned-tab.svg"
       color="#5bbad5"
     />
@@ -45,28 +78,253 @@
       font-size: 100%;
       --light: #fff;
       --dark: #000;
-      --accent: hsl(173, 93%, 55%);
-      --faccent: hsla(173, 93%, 55%, 0.8);
-      --gray: hsl(0, 0%, 56%);
+      --accent: #21f7de;
+      --faccent: rgba(34, 247, 222, 0.8);
+      --gray: rgb(143, 143, 143);
+      --red: #be1100;
+      --spacing: 20rm;
+      --max-width: 1440;
+      --cta-anim-delay: 5s;
     }
 
     body {
-      display: -webkit-box;
-      display: flex;
-      -webkit-box-align: center;
-      align-items: center;
-      -webkit-box-pack: center;
-      justify-content: center;
-      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      font-family: "Space Grotesk", sans-serif;
+      background: var(--dark);
+    }
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      scroll-behavior: smooth;
+      overflow: auto;
+      /* scroll-snap-type: y mandatory;
+      scroll-snap-type: mandatory; */
       color: var(--light);
     }
+    section {
+      width: 100%;
+      min-height: 100vh;
+      /* scroll-snap-align: start; */
+      padding: 0 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    section svg {
+      width: 100%;
+    }
 
-    @media (prefers-color-scheme: dark) {
-      body {
-        background: var(--dark);
+    .motto {
+      font-size: 16px;
+      font-size: 3.8vw;
+      text-transform: uppercase;
+      animation: slideDown 0.8s;
+      animation-delay: 2s;
+      transition-timing-function: cubic-bezier(0.14, 0.77, 0.59, 1.98);
+      animation-fill-mode: forwards;
+    }
+
+    h2 {
+      text-transform: uppercase;
+    }
+
+    .border:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      border-bottom: solid 2px #000;
+      animation: border_anim 3s linear forwards;
+    }
+
+    .border:hover {
+      border-bottom: 2px solid transparent;
+      border-image: linear-gradient(
+        0.25turn,
+        var(--dark) 0%,
+        var(--faccent) 20%,
+        var(--faccent) 80%,
+        var(--dark) 100%
+      );
+      border-image-slice: 1;
+      width: 100%;
+    }
+
+    @keyframes border_anim {
+      0% {
+        width: 0%;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+    .accent {
+      position: relative;
+    }
+
+    .accent:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      border-bottom: solid 2px var(--red);
+      animation: border_anim 0.6s;
+      animation-delay: 2.2s;
+      transition-timing-function: cubic-bezier(0.14, 0.77, 0.59, 1.98);
+      animation-fill-mode: forwards;
+    }
+    .haccent {
+      display: inline-block;
+    }
+    .haccent:after {
+      display: block;
+      content: "";
+      border-bottom: solid 3px var(--faccent);
+      transform: scaleX(0);
+      transition: transform 250ms cubic-bezier(0.14, 0.77, 0.59, 1.98);
+    }
+    .haccent:hover:after {
+      transform: scaleX(1);
+    }
+    .haccent.fromRight:after {
+      transform-origin: 100% 50%;
+    }
+    .haccent.fromLeft:after {
+      transform-origin: 0% 50%;
+    }
+    @keyframes shine {
+      to {
+        background-position: center 200%;
       }
     }
 
+    .logo {
+      max-width: 90%;
+    }
+
+    .bg-bubble-1 {
+      width: 672.01px;
+      height: 876.53px;
+      position: fixed;
+      top: 55vh;
+      left: calc(1066px - 25vw);
+      top: calc(30vh);
+      z-index: -1;
+      background: radial-gradient(var(--accent), transparent);
+      filter: blur(100px);
+      animation: selfRotate1 100s linear infinite;
+      transform: rotate(132.72deg);
+      transform-origin: center center;
+      transition: all 4s linear;
+      pointer-events: none;
+    }
+
+    .bg-bubble-2 {
+      width: 985.93px;
+      height: 1900.15px;
+      position: fixed;
+      top: -100vh;
+      left: -100vw;
+      z-index: -1;
+      background: radial-gradient(var(--accent), transparent);
+      filter: blur(150px);
+      transform: rotate(36.21deg);
+      transform-origin: center center;
+      animation: selfRotate2 80s linear infinite;
+      pointer-events: none;
+    }
+
+    .opacity0 {
+      opacity: 0;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .bg-bubble-2 {
+        width: 435.93px;
+        height: 770.15px;
+        animation: selfRotate2Mob 80s alternate infinite;
+      }
+    }
+
+    .pulse {
+      animation: pulse 2s linear infinite;
+      animation-delay: 2s;
+    }
+
+    .toLeft {
+      animation: moveLeft 0.5s;
+      animation-delay: 1s;
+      transform: translate(-20px);
+      transition-timing-function: cubic-bezier(0.14, 0.77, 0.59, 1.98);
+      animation-fill-mode: forwards;
+    }
+
+    .toRight {
+      animation: moveRight 0.5s;
+      animation-delay: 1s;
+      transform: translate(20px);
+      transition-timing-function: cubic-bezier(0.14, 0.77, 0.59, 1.98);
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes moveRight {
+      0% {
+        transform: translate(20px);
+      }
+      95% {
+        transform: translate(-5px);
+      }
+      100% {
+        transform: translate(0px);
+        background: linear-gradient(
+          0,
+          var(--dark) 20%,
+          var(--accent) 40%,
+          var(--faccent) 80%,
+          var(--dark) 100%
+        );
+      }
+    }
+    @keyframes slideDown {
+      0% {
+        transform: translate(0);
+      }
+      100% {
+        transform: translate(0, 1rem);
+        opacity: 1;
+      }
+    }
+
+    @keyframes moveLeft {
+      0% {
+        transform: translate(-20px);
+      }
+      95% {
+        transform: translate(5px);
+      }
+      100% {
+        transform: translate(0px);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
     @keyframes gradientBG {
       0% {
         background: linear-gradient(
@@ -309,245 +567,1055 @@
         transform: rotate(0deg);
       }
     }
-
-    body {
-      background-color: var(--dark);
-      color: var(--light);
-      font-weight: 500;
-      max-width: 100%;
+    @keyframes shake {
+      0% {
+        transform: rotate(0) scale(1);
+        fill: var(--red);
+      }
+      /* 100ms */
+      2% {
+        transform: rotate(-5deg) scale(0.8);
+        fill: var(--red);
+      }
+      /* 200ms */
+      4% {
+        transform: rotate(5deg) scale(0.9);
+        fill: var(--red);
+      }
+      /* 300ms */
+      6% {
+        transform: rotate(-5deg) scale(0);
+        fill: var(--red);
+      }
+      /* 400ms */
+      8% {
+        transform: rotate(5deg) scale(0.9);
+        fill: var(--red);
+      }
+      /* 500ms */
+      10% {
+        transform: rotate(0) scale(1);
+        fill: var(--red);
+      }
+      /* 1000ms */
+      20% {
+        transform: rotate(0) scale(1);
+        fill: var(--light);
+      }
+    }
+    @keyframes showFromRight1 {
+      0% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      55% {
+        opacity: 0.75;
+        transform: scale(1);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    /* @keyframes showFromRight2 {
+      0% {
+        opacity: 0;
+        transform: translateX(40px);
+      }
+      6% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      47% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      53% {
+        opacity: 0;
+      }
+      94% {
+        opacity: 0;
+      }
+    } */
+     @keyframes showFromRight2 {
+     0% {
+        opacity: 0;
+        transform: translateX(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    .showFromRight1 {
+      opacity: 0;
+      animation: showFromRight1 1s cubic-bezier(0.14, 0.77, 0.59, 1.98)
+        var(--cta-anim-delay) forwards;
+    }
+    .showFromRight2 {
+      opacity: 0;
+      transform: translateX(80px);
+      animation: showFromRight2 .3s cubic-bezier(0.14, 0.77, 0.59, 1.98)
+        calc(var(--cta-anim-delay) + 0.3s) forwards;
     }
 
-    svg {
+    .shake {
+      animation: shake 5s infinite cubic-bezier(0.14, 0.77, 0.59, 1.98);
+      transform-origin: 50% 50%;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      /* From https://css.glass */
+      background: rgba(143, 143, 143, 0.3);
+      /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      list-style: none;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      z-index: 5;
+      box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
+    }
+
+    .box {
+      padding: 30px;
+      display: flex;
+      gap: 5%;
+      max-width: max(43.375rem, 49.31vw);
+      background: rgba(143, 143, 143, 0.2);
+      /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border-radius: 30px;
+      /* max-height: 90vh; */
+      box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+    }
+    .photo-me {
+      display: block;
+      max-width: 230px;
+      max-height: 230px;
+      width: auto;
+      height: auto;
+      border-radius: 50%;
+      object-fit: cover;
+      aspect-ratio: 1;
+      align-self: center;
+    }
+    .skillLogo {
+      width: 15%;
+      aspect-ratio: 3/2;
+      object-fit: contain;
       display: flex;
       align-items: center;
+    }
+    .skillLogo > img {
+      max-height: 90px;
+      width: 100%;
+    }
+
+    .companyLogo {
+      width: 30%;
+      aspect-ratio: 3/2;
+      object-fit: contain;
+      display: flex;
+      align-items: center;
+    }
+
+    .companyLogo > img {
+      width: 100%;
+    }
+
+    .hover {
+      transition: transform 0.25s cubic-bezier(0.14, 0.77, 0.59, 1.98);
+    }
+    .hover:hover {
+      transform: scale(1.2);
+    }
+
+    .wrap {
+      flex-wrap: wrap;
       justify-content: center;
-      max-width: 90%;
-      /* filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 1)); */
     }
 
-    .bg-bubble-1 {
-      width: 672.01px;
-      height: 876.53px;
-      position: fixed;
-      top: 55vh;
-      left: 80vw;
-      z-index: -1;
-      background: radial-gradient(var(--accent), transparent);
-      filter: blur(100px);
-      animation: selfRotate1 100s linear infinite;
-      transform: rotate(132.72deg);
-      transform-origin: center center;
-      transition: all 4s linear;
-      pointer-events: none;
+    .cta-wrapper {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      column-gap: 19px;
+    }
+    .cta-button {
+      display: flex;
+      align-items: center;
+      column-gap: 19px;
+    }
+    .s-title {
+      font-size: 2rem;
+    }
+    .description p:first-of-type {
+      margin-top: 0;
+    }
+    .description p {
+      font-size: 1.2rem;
+    }
+    figure {
+      margin: 0;
+      padding: 30px;
+    }
+    figcaption {
+      text-align: end;
+    }
+    .quote {
+      font-size: 3rem;
+      margin: 0;
+      text-align: center;
     }
 
-    .bg-bubble-2 {
-      width: 985.93px;
-      height: 1900.15px;
-      position: fixed;
-      top: -100vh;
-      left: -100vw;
-      z-index: -1;
-      background: radial-gradient(var(--accent), transparent);
-      filter: blur(150px);
-      transform: rotate(36.21deg);
-      transform-origin: center center;
-      animation: selfRotate2 80s linear infinite;
-      pointer-events: none;
+    .ps {
+      padding-top: 20vh;
     }
-
-    .opacity0 {
-      opacity: 0;
+    .contact {
+      display: flex;
+      flex-direction: column;
+      padding: 40px 40px 20px 40px;
+    }
+    .contact-link-wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+    .contact-link img {
+      width: 40px;
+      aspect-ratio: 3/2;
+      object-fit: contain;
+    }
+    .contact-link {
+      padding-top: 20px;
+    }
+    .qr {
+      width: 100%;
+      max-width: 50vw;
+    }
+    .red {
+      color: red;
     }
 
     @media only screen and (max-width: 600px) {
-      .bg-bubble-2 {
-        width: 435.93px;
-        height: 770.15px;
-        animation: selfRotate2Mob 80s linear infinite;
+      .motto {
+        font-size: 4.8vw;
       }
-    }
-
-    .pulse {
-      animation: pulse 2s linear infinite;
-      animation-delay: 2s;
-    }
-
-    .toLeft {
-      animation: moveLeft 0.5s;
-      animation-delay: 1s;
-      transform: translate(-20px);
-      transition-timing-function: cubic-bezier(0.14, 0.77, 0.59, 1.98);
-      animation-fill-mode: forwards;
-    }
-
-    .toRight {
-      animation: moveRight 0.5s;
-      animation-delay: 1s;
-      transform: translate(20px);
-      transition-timing-function: cubic-bezier(0.14, 0.77, 0.59, 1.98);
-      animation-fill-mode: forwards;
-    }
-
-    @keyframes moveRight {
-      0% {
-        transform: translate(20px);
-      }
-      95% {
-        transform: translate(-5px);
-      }
-      100% {
-        transform: translate(0px);
-      }
-    }
-    
-    @keyframes moveLeft {
-      0% {
-        transform: translate(-20px);
-      }
-      95% {
-        transform: translate(5px);
-      }
-      100% {
-        transform: translate(0px);
-      }
-    }
-
-    @keyframes pulse {
-      0% {
-        opacity: 0;
+      .skillLogo {
+        width: 30%;
+        padding: 5px 0px;
       }
 
-      50% {
-        opacity: 1;
+      .companyLogo {
+        width: 45%;
       }
-
-      100% {
-        opacity: 0;
+      .s-title {
+        font-size: 1.4rem;
+        padding: 0 30px;
+        align-self: start;
+      }
+      .cta-button {
+        column-gap: 8px;
+      }
+      .cta-text {
+        width: 79px;
+      }
+      nav {
+        padding: 10px;
+      }
+      section {
+        padding: 0 10px;
+      }
+      section:not(:first-child) {
+        padding-top: 20vh;
+      }
+      section:last-child {
+        padding-bottom: 20vh;
+      }
+      .s2 > .box {
+        flex-direction: column;
+      }
+      .s2 .img-wrapper {
+        display: flex;
+        justify-content: center;
+      }
+      .s2 img {
+        align-self: center;
+        height: 150px;
+      }
+      .description p:first-of-type {
+        margin-top: 1em;
+      }
+      .contact {
+        width: 100%;
+        align-items: center;
+      }
+      .qr {
+        max-width: 70vw;
       }
     }
   </style>
 
   <body>
-    <div
-      class="bg-bubble-1"
-      style="left: calc(1066px - 25vw); top: calc(30vh)"
-    ></div>
-    <div class="bg-bubble-2"></div>
-    <svg
-      width="910"
-      height="174"
-      viewBox="0 0 910 174"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <defs>
-        <linearGradient id="logo-gradient" x1="50%" y1="0%" x2="50%" y2="100%">
-          <stop offset="0%" stop-color="#000">
-            <animate
-              attributeName="stop-color"
-              values="#000; hsl(173, 93%, 55%); #000"
-              dur="4s"
-              repeatCount="indefinite"
-            ></animate>
-          </stop>
+    <div class="container">
+      <section>
+        <svg
+          width="910"
+          height="174"
+          viewBox="0 0 910 174"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient
+              id="logo-gradient"
+              x1="50%"
+              y1="0%"
+              x2="50%"
+              y2="100%"
+            >
+              <stop offset="0%" stop-color="#000">
+                <animate
+                  attributeName="stop-color"
+                  values="#000; hsl(173, 93%, 55%); #000"
+                  dur="4s"
+                  repeatCount="indefinite"
+                ></animate>
+              </stop>
 
-          <stop offset="100%" stop-color="hsl(173, 93%, 55%)">
-            <animate
-              attributeName="stop-color"
-              values="hsl(173, 93%, 55%); #000; hsl(173, 93%, 55%)"
-              dur="4s"
-              repeatCount="indefinite"
-            ></animate>
-          </stop>
-        </linearGradient>
-      </defs>
-      <g id="Indivitual">
-        <path
-          id="caret"
-          d="M839.207 145.68L856.277 167.438H846.824L834.402 155.68L822.019 167.438H812.566L829.637 145.68H839.207Z"
-          fill="#BE1100"
-          class="opacity0 pulse"
+              <stop offset="100%" stop-color="hsl(173, 93%, 55%)">
+                <animate
+                  attributeName="stop-color"
+                  values="hsl(173, 93%, 55%); #000; hsl(173, 93%, 55%)"
+                  dur="4s"
+                  repeatCount="indefinite"
+                ></animate>
+              </stop>
+            </linearGradient>
+          </defs>
+          <g id="Indivitual">
+            <path
+              id="caret"
+              d="M839.207 145.68L856.277 167.438H846.824L834.402 155.68L822.019 167.438H812.566L829.637 145.68H839.207Z"
+              fill="#BE1100"
+              class="opacity0 pulse"
+            />
+            <path
+              id="lBracket"
+              d="M35.1875 26.5 H61.6875 V35.4375 H46.6875V131.688 H61.6875 V140.625 H35.1875 V 26.5 Z"
+              fill="white"
+              class="toRight"
+            ></path>
+            <path
+              id="T"
+              d="M79.9375 36.6875H151.125V47.3125H121.938V130H109.25V47.3125H79.9375V36.6875Z"
+              fill="white"
+              class="toRight"
+            ></path>
+            <path
+              id="h"
+              d="M215.688 86.625V130H204.125V86.625C204.125 80.3333 203.021 75.7083 200.812 72.75C198.604 69.7917 195.146 68.3125 190.438 68.3125C185.062 68.3125 180.917 70.2292 178 74.0625C175.125 77.8542 173.688 83.3125 173.688 90.4375V130H162.188V32.75H173.688V70.5C175.729 66.5 178.5 63.4792 182 61.4375C185.5 59.3542 189.646 58.3125 194.438 58.3125C201.562 58.3125 206.875 60.6667 210.375 65.375C213.917 70.0417 215.688 77.125 215.688 86.625Z"
+              fill="white"
+              class="toRight"
+            ></path>
+            <path
+              id="e"
+              d="M287 89.25V94.875H237.188V95.25C236.854 104.792 238.667 111.646 242.625 115.812C246.625 119.979 252.25 122.062 259.5 122.062C263.167 122.062 267 121.479 271 120.312C275 119.146 279.271 117.375 283.812 115V126.438C279.438 128.229 275.208 129.562 271.125 130.438C267.083 131.354 263.167 131.812 259.375 131.812C248.5 131.812 240 128.562 233.875 122.062C227.75 115.521 224.688 106.521 224.688 95.0625C224.688 83.8958 227.688 74.9792 233.688 68.3125C239.688 61.6458 247.688 58.3125 257.688 58.3125C266.604 58.3125 273.625 61.3333 278.75 67.375C283.917 73.4167 286.667 80.7083 287 89.25ZM275.5 85.875C275 81.0417 273.229 76.875 270.188 73.375C267.188 69.8333 262.854 68.0625 257.188 68.0625C251.646 68.0625 247.083 69.8958 243.5 73.5625C239.917 77.2292 237.958 81.3542 237.625 85.9375L275.5 85.875Z"
+              fill="white"
+              class="toRight"
+            ></path>
+            <path
+              id="M"
+              d="M302.25 37H319.125L335.25 84.375L351.5 37H368.438V130H356.75V47.8125L340.125 96.8125H330.562L313.875 47.8125V130H302.25V37Z"
+              fill="white"
+              class="toRight"
+            ></path>
+            <path
+              id="i"
+              d="M388.75 60.25H418.188V121.062H441V130H383.875V121.062H406.688V69.1875H388.75V60.25ZM406.688 33.0625H418.188V47.5625H406.688V33.0625Z"
+              fill="white"
+              class="toRight"
+            ></path>
+            <path
+              id="s"
+              d="M503.812 62.4375V73.6875C500.521 71.7708 497.208 70.3333 493.875 69.375C490.542 68.4167 487.146 67.9375 483.688 67.9375C478.479 67.9375 474.583 68.7917 472 70.5C469.458 72.1667 468.188 74.7292 468.188 78.1875C468.188 81.3125 469.146 83.6458 471.062 85.1875C472.979 86.7292 477.75 88.2292 485.375 89.6875L490 90.5625C495.708 91.6458 500.021 93.8125 502.938 97.0625C505.896 100.312 507.375 104.542 507.375 109.75C507.375 116.667 504.917 122.083 500 126C495.083 129.875 488.25 131.812 479.5 131.812C476.042 131.812 472.417 131.438 468.625 130.688C464.833 129.979 460.729 128.896 456.312 127.438V115.562C460.604 117.771 464.708 119.438 468.625 120.562C472.542 121.646 476.25 122.188 479.75 122.188C484.833 122.188 488.771 121.167 491.562 119.125C494.354 117.042 495.75 114.146 495.75 110.438C495.75 105.104 490.646 101.417 480.438 99.375L479.938 99.25L475.625 98.375C469 97.0833 464.167 94.9167 461.125 91.875C458.083 88.7917 456.562 84.6042 456.562 79.3125C456.562 72.6042 458.833 67.4375 463.375 63.8125C467.917 60.1458 474.396 58.3125 482.812 58.3125C486.562 58.3125 490.167 58.6667 493.625 59.375C497.083 60.0417 500.479 61.0625 503.812 62.4375Z"
+              fill="white"
+              class="toRight"
+            ></path>
+            <path
+              id="s_2"
+              d="M542.812 62.4375V73.6875C539.521 71.7708 536.208 70.3333 532.875 69.375C529.542 68.4167 526.146 67.9375 522.688 67.9375C517.479 67.9375 513.583 68.7917 511 70.5C508.458 72.1667 507.188 74.7292 507.188 78.1875C507.188 81.3125 508.146 83.6458 510.062 85.1875C511.979 86.7292 516.75 88.2292 524.375 89.6875L529 90.5625C534.708 91.6458 539.021 93.8125 541.938 97.0625C544.896 100.312 546.375 104.542 546.375 109.75C546.375 116.667 543.917 122.083 539 126C534.083 129.875 527.25 131.812 518.5 131.812C515.042 131.812 511.417 131.438 507.625 130.688C503.833 129.979 499.729 128.896 495.312 127.438V115.562C499.604 117.771 503.708 119.438 507.625 120.562C511.542 121.646 515.25 122.188 518.75 122.188C523.833 122.188 527.771 121.167 530.562 119.125C533.354 117.042 534.75 114.146 534.75 110.438C534.75 105.104 529.646 101.417 519.438 99.375L518.938 99.25L514.625 98.375C508 97.0833 503.167 94.9167 500.125 91.875C497.083 88.7917 495.562 84.6042 495.562 79.3125C495.562 72.6042 497.833 67.4375 502.375 63.8125C506.917 60.1458 513.396 58.3125 521.812 58.3125C525.562 58.3125 529.167 58.6667 532.625 59.375C536.083 60.0417 539.479 61.0625 542.812 62.4375Z"
+              fill="white"
+              class="toLeft"
+            ></path>
+            <path
+              id="i_2"
+              d="M566.75 60.25H596.188V121.062H619V130H561.875V121.062H584.688V69.1875H566.75V60.25ZM584.688 33.0625H596.188V47.5625H584.688V33.0625Z"
+              fill="white"
+              class="toLeft"
+            ></path>
+            <path
+              id="n"
+              d="M688.688 86.625V130H677.125V86.625C677.125 80.3333 676.021 75.7083 673.812 72.75C671.604 69.7917 668.146 68.3125 663.438 68.3125C658.062 68.3125 653.917 70.2292 651 74.0625C648.125 77.8542 646.688 83.3125 646.688 90.4375V130H635.188V60H646.688V70.5C648.729 66.5 651.5 63.4792 655 61.4375C658.5 59.3542 662.646 58.3125 667.438 58.3125C674.562 58.3125 679.875 60.6667 683.375 65.375C686.917 70.0417 688.688 77.125 688.688 86.625Z"
+              fill="white"
+              class="toLeft"
+            ></path>
+            <path
+              id="g"
+              d="M752.625 94.4375C752.625 85.8125 751.208 79.2708 748.375 74.8125C745.583 70.3125 741.5 68.0625 736.125 68.0625C730.5 68.0625 726.208 70.3125 723.25 74.8125C720.292 79.2708 718.812 85.8125 718.812 94.4375C718.812 103.062 720.292 109.646 723.25 114.188C726.25 118.688 730.583 120.938 736.25 120.938C741.542 120.938 745.583 118.667 748.375 114.125C751.208 109.583 752.625 103.021 752.625 94.4375ZM764.125 125.5C764.125 136 761.646 143.958 756.688 149.375C751.729 154.792 744.438 157.5 734.812 157.5C731.646 157.5 728.333 157.208 724.875 156.625C721.417 156.042 717.958 155.188 714.5 154.062V142.688C718.583 144.604 722.292 146.021 725.625 146.938C728.958 147.854 732.021 148.312 734.812 148.312C741.021 148.312 745.542 146.625 748.375 143.25C751.208 139.875 752.625 134.521 752.625 127.188V126.688V118.875C750.792 122.792 748.292 125.708 745.125 127.625C741.958 129.542 738.104 130.5 733.562 130.5C725.396 130.5 718.875 127.229 714 120.688C709.125 114.146 706.688 105.396 706.688 94.4375C706.688 83.4375 709.125 74.6667 714 68.125C718.875 61.5833 725.396 58.3125 733.562 58.3125C738.062 58.3125 741.875 59.2083 745 61C748.125 62.7917 750.667 65.5625 752.625 69.3125V60.25H764.125V125.5Z"
+              fill="white"
+              class="toLeft"
+            ></path>
+            <path
+              id=";"
+              d="M792.693 104.912H815.457V123.438L802.059 149.619H787.361L792.693 123.438V104.912ZM792.693 57.334H815.457V82.2852H792.693V57.334Z"
+              fill="url('#logo-gradient')"
+              class="toLeft"
+            ></path>
+            <path
+              id="rBracket"
+              d="M887 26.5V140.625H860.5V131.688H875.5V35.4375H860.5V26.5H887Z"
+              fill="white"
+              class="toLeft"
+            ></path>
+          </g>
+        </svg>
+        <h1 class="motto opacity0">
+          <!-- Expertise in every <span class="accent">semicolon</span> -->
+          <!-- Expertise, efficiency, excellence -->
+          Leave the <span class="accent">semicolon</span> jokes
+          to me!
+          <!-- We'll make sure <span class="accent">your code runs</span>, not just <span class="accent">your mouth</span> -->
+        </h1>
+      </section>
+      <nav>
+        <img
+          src="/images/logo.svg"
+          height="40"
+          width="200"
+          alt="The Missing Semicolon Logo"
         />
-        <path
-          id="lBracket"
-          d="M35.1875 26.5 H61.6875 V35.4375 H46.6875V131.688 H61.6875 V140.625 H35.1875 V 26.5 Z"
-          fill="white"
-          class="toRight"
-        ></path>
-        <path
-          id="T"
-          d="M79.9375 36.6875H151.125V47.3125H121.938V130H109.25V47.3125H79.9375V36.6875Z"
-          fill="white"
-          class="toRight"
-        ></path>
-        <path
-          id="h"
-          d="M215.688 86.625V130H204.125V86.625C204.125 80.3333 203.021 75.7083 200.812 72.75C198.604 69.7917 195.146 68.3125 190.438 68.3125C185.062 68.3125 180.917 70.2292 178 74.0625C175.125 77.8542 173.688 83.3125 173.688 90.4375V130H162.188V32.75H173.688V70.5C175.729 66.5 178.5 63.4792 182 61.4375C185.5 59.3542 189.646 58.3125 194.438 58.3125C201.562 58.3125 206.875 60.6667 210.375 65.375C213.917 70.0417 215.688 77.125 215.688 86.625Z"
-          fill="white"
-          class="toRight"
-        ></path>
-        <path
-          id="e"
-          d="M287 89.25V94.875H237.188V95.25C236.854 104.792 238.667 111.646 242.625 115.812C246.625 119.979 252.25 122.062 259.5 122.062C263.167 122.062 267 121.479 271 120.312C275 119.146 279.271 117.375 283.812 115V126.438C279.438 128.229 275.208 129.562 271.125 130.438C267.083 131.354 263.167 131.812 259.375 131.812C248.5 131.812 240 128.562 233.875 122.062C227.75 115.521 224.688 106.521 224.688 95.0625C224.688 83.8958 227.688 74.9792 233.688 68.3125C239.688 61.6458 247.688 58.3125 257.688 58.3125C266.604 58.3125 273.625 61.3333 278.75 67.375C283.917 73.4167 286.667 80.7083 287 89.25ZM275.5 85.875C275 81.0417 273.229 76.875 270.188 73.375C267.188 69.8333 262.854 68.0625 257.188 68.0625C251.646 68.0625 247.083 69.8958 243.5 73.5625C239.917 77.2292 237.958 81.3542 237.625 85.9375L275.5 85.875Z"
-          fill="white"
-          class="toRight"
-        ></path>
-        <path
-          id="M"
-          d="M302.25 37H319.125L335.25 84.375L351.5 37H368.438V130H356.75V47.8125L340.125 96.8125H330.562L313.875 47.8125V130H302.25V37Z"
-          fill="white"
-          class="toRight"
-        ></path>
-        <path
-          id="i"
-          d="M388.75 60.25H418.188V121.062H441V130H383.875V121.062H406.688V69.1875H388.75V60.25ZM406.688 33.0625H418.188V47.5625H406.688V33.0625Z"
-          fill="white"
-          class="toRight"
-        ></path>
-        <path
-          id="s"
-          d="M503.812 62.4375V73.6875C500.521 71.7708 497.208 70.3333 493.875 69.375C490.542 68.4167 487.146 67.9375 483.688 67.9375C478.479 67.9375 474.583 68.7917 472 70.5C469.458 72.1667 468.188 74.7292 468.188 78.1875C468.188 81.3125 469.146 83.6458 471.062 85.1875C472.979 86.7292 477.75 88.2292 485.375 89.6875L490 90.5625C495.708 91.6458 500.021 93.8125 502.938 97.0625C505.896 100.312 507.375 104.542 507.375 109.75C507.375 116.667 504.917 122.083 500 126C495.083 129.875 488.25 131.812 479.5 131.812C476.042 131.812 472.417 131.438 468.625 130.688C464.833 129.979 460.729 128.896 456.312 127.438V115.562C460.604 117.771 464.708 119.438 468.625 120.562C472.542 121.646 476.25 122.188 479.75 122.188C484.833 122.188 488.771 121.167 491.562 119.125C494.354 117.042 495.75 114.146 495.75 110.438C495.75 105.104 490.646 101.417 480.438 99.375L479.938 99.25L475.625 98.375C469 97.0833 464.167 94.9167 461.125 91.875C458.083 88.7917 456.562 84.6042 456.562 79.3125C456.562 72.6042 458.833 67.4375 463.375 63.8125C467.917 60.1458 474.396 58.3125 482.812 58.3125C486.562 58.3125 490.167 58.6667 493.625 59.375C497.083 60.0417 500.479 61.0625 503.812 62.4375Z"
-          fill="white"
-          class="toRight"
-        ></path>
-        <path
-          id="s_2"
-          d="M542.812 62.4375V73.6875C539.521 71.7708 536.208 70.3333 532.875 69.375C529.542 68.4167 526.146 67.9375 522.688 67.9375C517.479 67.9375 513.583 68.7917 511 70.5C508.458 72.1667 507.188 74.7292 507.188 78.1875C507.188 81.3125 508.146 83.6458 510.062 85.1875C511.979 86.7292 516.75 88.2292 524.375 89.6875L529 90.5625C534.708 91.6458 539.021 93.8125 541.938 97.0625C544.896 100.312 546.375 104.542 546.375 109.75C546.375 116.667 543.917 122.083 539 126C534.083 129.875 527.25 131.812 518.5 131.812C515.042 131.812 511.417 131.438 507.625 130.688C503.833 129.979 499.729 128.896 495.312 127.438V115.562C499.604 117.771 503.708 119.438 507.625 120.562C511.542 121.646 515.25 122.188 518.75 122.188C523.833 122.188 527.771 121.167 530.562 119.125C533.354 117.042 534.75 114.146 534.75 110.438C534.75 105.104 529.646 101.417 519.438 99.375L518.938 99.25L514.625 98.375C508 97.0833 503.167 94.9167 500.125 91.875C497.083 88.7917 495.562 84.6042 495.562 79.3125C495.562 72.6042 497.833 67.4375 502.375 63.8125C506.917 60.1458 513.396 58.3125 521.812 58.3125C525.562 58.3125 529.167 58.6667 532.625 59.375C536.083 60.0417 539.479 61.0625 542.812 62.4375Z"
-          fill="white"
-          class="toLeft"
-        ></path>
-        <path
-          id="i_2"
-          d="M566.75 60.25H596.188V121.062H619V130H561.875V121.062H584.688V69.1875H566.75V60.25ZM584.688 33.0625H596.188V47.5625H584.688V33.0625Z"
-          fill="white"
-          class="toLeft"
-        ></path>
-        <path
-          id="n"
-          d="M688.688 86.625V130H677.125V86.625C677.125 80.3333 676.021 75.7083 673.812 72.75C671.604 69.7917 668.146 68.3125 663.438 68.3125C658.062 68.3125 653.917 70.2292 651 74.0625C648.125 77.8542 646.688 83.3125 646.688 90.4375V130H635.188V60H646.688V70.5C648.729 66.5 651.5 63.4792 655 61.4375C658.5 59.3542 662.646 58.3125 667.438 58.3125C674.562 58.3125 679.875 60.6667 683.375 65.375C686.917 70.0417 688.688 77.125 688.688 86.625Z"
-          fill="white"
-          class="toLeft"
-        ></path>
-        <path
-          id="g"
-          d="M752.625 94.4375C752.625 85.8125 751.208 79.2708 748.375 74.8125C745.583 70.3125 741.5 68.0625 736.125 68.0625C730.5 68.0625 726.208 70.3125 723.25 74.8125C720.292 79.2708 718.812 85.8125 718.812 94.4375C718.812 103.062 720.292 109.646 723.25 114.188C726.25 118.688 730.583 120.938 736.25 120.938C741.542 120.938 745.583 118.667 748.375 114.125C751.208 109.583 752.625 103.021 752.625 94.4375ZM764.125 125.5C764.125 136 761.646 143.958 756.688 149.375C751.729 154.792 744.438 157.5 734.812 157.5C731.646 157.5 728.333 157.208 724.875 156.625C721.417 156.042 717.958 155.188 714.5 154.062V142.688C718.583 144.604 722.292 146.021 725.625 146.938C728.958 147.854 732.021 148.312 734.812 148.312C741.021 148.312 745.542 146.625 748.375 143.25C751.208 139.875 752.625 134.521 752.625 127.188V126.688V118.875C750.792 122.792 748.292 125.708 745.125 127.625C741.958 129.542 738.104 130.5 733.562 130.5C725.396 130.5 718.875 127.229 714 120.688C709.125 114.146 706.688 105.396 706.688 94.4375C706.688 83.4375 709.125 74.6667 714 68.125C718.875 61.5833 725.396 58.3125 733.562 58.3125C738.062 58.3125 741.875 59.2083 745 61C748.125 62.7917 750.667 65.5625 752.625 69.3125V60.25H764.125V125.5Z"
-          fill="white"
-          class="toLeft"
-        ></path>
-        <path
-          id=";"
-          d="M792.693 104.912H815.457V123.438L802.059 149.619H787.361L792.693 123.438V104.912ZM792.693 57.334H815.457V82.2852H792.693V57.334Z"
-          fill="url('#logo-gradient')"
-          class="toLeft"
-        ></path>
-        <path
-          id="rBracket"
-          d="M887 26.5V140.625H860.5V131.688H875.5V35.4375H860.5V26.5H887Z"
-          fill="white"
-          class="toLeft"
-        ></path>
-      </g>
-    </svg>
+        <a
+          class="cta-button"
+          target="_blank"
+          href="https://wa.me/31644147968"
+          target="_blank"
+          aria-label="let's talk"
+        >
+          <svg
+            width="120"
+            height="25"
+            viewBox="0 0 120 25"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="cta-text showFromRight2"
+          >
+            <g clip-path="url(#clip0_0_1)">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M9.043 14.844H0V0.264038H2.881V12.305H9.043V14.844Z"
+                fill="white"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M20.566 12.305V14.844H11.484V0.264038H20.566V2.80304H14.365V5.94704H19.98V8.48604H14.365V12.305H20.566Z"
+                fill="white"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M29.346 2.78304V14.844H26.465V2.78304H22.764V0.264038H33.047V2.78304H29.346Z"
+                fill="white"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M38.682 0.264038H41.182V5.68404H38.682V0.264038Z"
+                fill="#BE1100"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M52.363 8.984L50.947 8.447C50.5891 8.31157 50.2365 8.16246 49.89 8C49.0067 7.58333 48.376 7.15133 47.998 6.704C47.6969 6.34152 47.4819 5.91552 47.369 5.458C47.289 5.15 47.2427 4.81467 47.23 4.452C47.2278 4.38402 47.2268 4.31601 47.227 4.248C47.227 2.92667 47.65 1.88833 48.496 1.133C49.2727 0.439667 50.3157 0.0646667 51.625 0.008C51.7439 0.00275297 51.863 8.56717e-05 51.982 0C52.6527 0 53.3233 0.0763333 53.994 0.229C54.6647 0.382333 55.3287 0.608667 55.986 0.908V3.721C55.5996 3.44636 55.1904 3.20515 54.763 3C54.5474 2.89727 54.3268 2.80549 54.102 2.725C53.464 2.497 52.8323 2.383 52.207 2.383C51.7497 2.383 51.3627 2.44333 51.046 2.564C50.8884 2.62237 50.7399 2.70284 50.605 2.803C50.449 2.91932 50.3196 3.06765 50.2256 3.23805C50.1316 3.40845 50.0752 3.59698 50.06 3.791C50.0525 3.86175 50.0489 3.93285 50.049 4.004C50.0471 4.17621 50.0752 4.34743 50.132 4.51C50.2 4.69748 50.3102 4.86684 50.454 5.005C50.5336 5.08045 50.62 5.1484 50.712 5.208C51.0107 5.40667 51.4603 5.61933 52.061 5.846C52.09 5.85708 52.119 5.86808 52.148 5.879L53.389 6.348C53.7671 6.48433 54.1345 6.64879 54.488 6.84C54.8713 7.05067 55.2053 7.28333 55.49 7.538C55.6675 7.69617 55.8304 7.86986 55.977 8.057C56.3511 8.54341 56.6035 9.11223 56.713 9.716C56.7771 10.0542 56.8086 10.3978 56.807 10.742C56.8101 11.1687 56.7672 11.5945 56.679 12.012C56.561 12.5513 56.3607 13.0197 56.078 13.417C55.9139 13.6479 55.7206 13.8566 55.503 14.038C54.6337 14.764 53.3203 15.127 51.563 15.127C50.8403 15.127 50.116 15.0407 49.39 14.868C48.664 14.6953 47.9623 14.44 47.285 14.102V11.123C47.6378 11.3757 48.0048 11.608 48.384 11.819C48.7481 12.022 49.1268 12.1975 49.517 12.344C50.2363 12.6107 50.9473 12.744 51.65 12.744C52.36 12.744 52.9103 12.583 53.301 12.261C53.6173 12.0009 53.8199 11.6279 53.866 11.221C53.8802 11.1173 53.8872 11.0127 53.887 10.908C53.887 10.472 53.7567 10.0897 53.496 9.761C53.3459 9.57403 53.1662 9.4129 52.964 9.284C52.804 9.18067 52.6247 9.089 52.426 9.009C52.4051 9.00048 52.3841 8.99215 52.363 8.984Z"
+                fill="white"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M77.51 2.78304V14.844H74.629V2.78304H70.928V0.264038H81.211V2.78304H77.51Z"
+                fill="white"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M82.412 14.844L86.348 0.264038H89.873L93.809 14.844H90.928L90.029 11.24H86.172L85.293 14.844H82.412ZM89.473 8.86704L88.105 2.90004L86.748 8.86704H89.473Z"
+                fill="white"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M105.371 14.844H96.328V0.264038H99.209V12.305H105.371V14.844Z"
+                fill="white"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M107.314 14.844V0.264038H110.195V6.02504L114.707 0.264038H117.969L113.369 6.00604L118.135 14.844H114.932L111.475 8.28104L110.195 9.90204V14.844H107.314Z"
+                fill="white"
+              />
+            </g>
+            <path
+              d="M76.4824 21.2705C76.4824 20.5739 76.3717 20.0482 76.1504 19.6934C75.929 19.3385 75.6019 19.1611 75.1689 19.1611C74.7327 19.1611 74.4023 19.3402 74.1777 19.6982C73.9531 20.0531 73.8408 20.5771 73.8408 21.2705C73.8408 21.9606 73.9531 22.4847 74.1777 22.8428C74.4023 23.2008 74.7327 23.3799 75.1689 23.3799C75.6019 23.3799 75.929 23.2025 76.1504 22.8477C76.3717 22.4928 76.4824 21.9671 76.4824 21.2705ZM73.8408 19.2295C73.984 18.9626 74.181 18.7575 74.4316 18.6143C74.6855 18.471 74.9785 18.3994 75.3105 18.3994C75.9681 18.3994 76.4857 18.6533 76.8633 19.1611C77.2409 19.6657 77.4297 20.3623 77.4297 21.251C77.4297 22.1527 77.2393 22.8607 76.8584 23.375C76.4808 23.8861 75.9616 24.1416 75.3008 24.1416C74.9753 24.1416 74.6872 24.0716 74.4365 23.9316C74.1891 23.7884 73.9906 23.5817 73.8408 23.3115V24H72.9424V16.4023H73.8408V19.2295ZM78.9775 21.9297V18.541H79.876V21.9297C79.876 22.4212 79.9622 22.7826 80.1348 23.0137C80.3105 23.2448 80.5807 23.3604 80.9453 23.3604C81.3685 23.3604 81.6924 23.2122 81.917 22.916C82.1416 22.6165 82.2539 22.1885 82.2539 21.6318V18.541H83.1572V24H82.2539V23.1797C82.0944 23.4954 81.8763 23.7347 81.5996 23.8975C81.3262 24.0602 81.0055 24.1416 80.6377 24.1416C80.0778 24.1416 79.6611 23.9593 79.3877 23.5947C79.1143 23.2269 78.9775 22.6719 78.9775 21.9297ZM88.8018 18.7217V19.6006C88.5446 19.4508 88.2858 19.3385 88.0254 19.2637C87.765 19.1888 87.4997 19.1514 87.2295 19.1514C86.8226 19.1514 86.5182 19.2181 86.3164 19.3516C86.1178 19.4818 86.0186 19.682 86.0186 19.9521C86.0186 20.1963 86.0934 20.3786 86.2432 20.499C86.3929 20.6195 86.7656 20.7367 87.3613 20.8506L87.7227 20.9189C88.1686 21.0036 88.5055 21.1729 88.7334 21.4268C88.9645 21.6807 89.0801 22.0111 89.0801 22.418C89.0801 22.9583 88.888 23.3815 88.5039 23.6875C88.1198 23.9902 87.5859 24.1416 86.9023 24.1416C86.6322 24.1416 86.349 24.1123 86.0527 24.0537C85.7565 23.9984 85.4359 23.9137 85.0908 23.7998V22.8721C85.4261 23.0446 85.7467 23.1748 86.0527 23.2627C86.3587 23.3473 86.6484 23.3896 86.9219 23.3896C87.319 23.3896 87.6266 23.3099 87.8447 23.1504C88.0628 22.9876 88.1719 22.7614 88.1719 22.4717C88.1719 22.055 87.7731 21.7669 86.9756 21.6074L86.9365 21.5977L86.5996 21.5293C86.082 21.4284 85.7044 21.2591 85.4668 21.0215C85.2292 20.7806 85.1104 20.4535 85.1104 20.04C85.1104 19.516 85.2878 19.1123 85.6426 18.8291C85.9974 18.5426 86.5036 18.3994 87.1611 18.3994C87.4541 18.3994 87.7357 18.4271 88.0059 18.4824C88.276 18.5345 88.5413 18.6143 88.8018 18.7217ZM91.6191 18.5508H93.9189V23.3018H95.7012V24H91.2383V23.3018H93.0205V19.249H91.6191V18.5508ZM93.0205 16.4268H93.9189V17.5596H93.0205V16.4268ZM101.233 20.6113V24H100.33V20.6113C100.33 20.1198 100.244 19.7585 100.071 19.5273C99.8988 19.2962 99.6286 19.1807 99.2607 19.1807C98.8408 19.1807 98.5169 19.3304 98.2891 19.6299C98.0645 19.9261 97.9521 20.3525 97.9521 20.9092V24H97.0537V18.5312H97.9521V19.3516C98.1117 19.0391 98.3281 18.8031 98.6016 18.6436C98.875 18.4808 99.1989 18.3994 99.5732 18.3994C100.13 18.3994 100.545 18.5833 100.818 18.9512C101.095 19.3158 101.233 19.8691 101.233 20.6113ZM107.596 20.8164V21.2559H103.704V21.2852C103.678 22.0306 103.82 22.5661 104.129 22.8916C104.441 23.2171 104.881 23.3799 105.447 23.3799C105.734 23.3799 106.033 23.3343 106.346 23.2432C106.658 23.152 106.992 23.0137 107.347 22.8281V23.7217C107.005 23.8617 106.674 23.9658 106.355 24.0342C106.04 24.1058 105.734 24.1416 105.438 24.1416C104.588 24.1416 103.924 23.8877 103.445 23.3799C102.967 22.8688 102.728 22.1657 102.728 21.2705C102.728 20.3981 102.962 19.7015 103.431 19.1807C103.899 18.6598 104.524 18.3994 105.306 18.3994C106.002 18.3994 106.551 18.6354 106.951 19.1074C107.355 19.5794 107.57 20.1491 107.596 20.8164ZM106.697 20.5527C106.658 20.1751 106.52 19.8496 106.282 19.5762C106.048 19.2995 105.709 19.1611 105.267 19.1611C104.834 19.1611 104.477 19.3044 104.197 19.5908C103.917 19.8773 103.764 20.1995 103.738 20.5576L106.697 20.5527ZM112.903 18.7217V19.6006C112.646 19.4508 112.387 19.3385 112.127 19.2637C111.867 19.1888 111.601 19.1514 111.331 19.1514C110.924 19.1514 110.62 19.2181 110.418 19.3516C110.219 19.4818 110.12 19.682 110.12 19.9521C110.12 20.1963 110.195 20.3786 110.345 20.499C110.494 20.6195 110.867 20.7367 111.463 20.8506L111.824 20.9189C112.27 21.0036 112.607 21.1729 112.835 21.4268C113.066 21.6807 113.182 22.0111 113.182 22.418C113.182 22.9583 112.99 23.3815 112.605 23.6875C112.221 23.9902 111.688 24.1416 111.004 24.1416C110.734 24.1416 110.451 24.1123 110.154 24.0537C109.858 23.9984 109.537 23.9137 109.192 23.7998V22.8721C109.528 23.0446 109.848 23.1748 110.154 23.2627C110.46 23.3473 110.75 23.3896 111.023 23.3896C111.421 23.3896 111.728 23.3099 111.946 23.1504C112.164 22.9876 112.273 22.7614 112.273 22.4717C112.273 22.055 111.875 21.7669 111.077 21.6074L111.038 21.5977L110.701 21.5293C110.184 21.4284 109.806 21.2591 109.568 21.0215C109.331 20.7806 109.212 20.4535 109.212 20.04C109.212 19.516 109.389 19.1123 109.744 18.8291C110.099 18.5426 110.605 18.3994 111.263 18.3994C111.556 18.3994 111.837 18.4271 112.107 18.4824C112.378 18.5345 112.643 18.6143 112.903 18.7217ZM118.929 18.7217V19.6006C118.672 19.4508 118.413 19.3385 118.152 19.2637C117.892 19.1888 117.627 19.1514 117.356 19.1514C116.95 19.1514 116.645 19.2181 116.443 19.3516C116.245 19.4818 116.146 19.682 116.146 19.9521C116.146 20.1963 116.22 20.3786 116.37 20.499C116.52 20.6195 116.893 20.7367 117.488 20.8506L117.85 20.9189C118.296 21.0036 118.632 21.1729 118.86 21.4268C119.091 21.6807 119.207 22.0111 119.207 22.418C119.207 22.9583 119.015 23.3815 118.631 23.6875C118.247 23.9902 117.713 24.1416 117.029 24.1416C116.759 24.1416 116.476 24.1123 116.18 24.0537C115.883 23.9984 115.563 23.9137 115.218 23.7998V22.8721C115.553 23.0446 115.874 23.1748 116.18 23.2627C116.486 23.3473 116.775 23.3896 117.049 23.3896C117.446 23.3896 117.754 23.3099 117.972 23.1504C118.19 22.9876 118.299 22.7614 118.299 22.4717C118.299 22.055 117.9 21.7669 117.103 21.6074L117.063 21.5977L116.727 21.5293C116.209 21.4284 115.831 21.2591 115.594 21.0215C115.356 20.7806 115.237 20.4535 115.237 20.04C115.237 19.516 115.415 19.1123 115.77 18.8291C116.124 18.5426 116.631 18.3994 117.288 18.3994C117.581 18.3994 117.863 18.4271 118.133 18.4824C118.403 18.5345 118.668 18.6143 118.929 18.7217Z"
+              fill="white"
+            >
+              <animate
+                attributeName="fill"
+                values="white;red;white"
+                dur="5s"
+                begin="10s"
+                repeatCount="indefinite"
+              />
+            </path>
+            <defs>
+              <clipPath id="clip0_0_1">
+                <rect width="118.135" height="15.127" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+          <svg
+            width="40"
+            height="40"
+            viewBox="0 0 40 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="shake"
+              d="M29.5979 22.9845C29.52 22.9471 26.6039 21.5111 26.0857 21.3247C25.8741 21.2487 25.6475 21.1745 25.4065 21.1745C25.0127 21.1745 24.6819 21.3708 24.4243 21.7562C24.133 22.1892 23.2512 23.22 22.9787 23.5279C22.9431 23.5685 22.8945 23.6171 22.8654 23.6171C22.8393 23.6171 22.388 23.4313 22.2514 23.3719C19.1232 22.0131 16.7488 18.7454 16.4232 18.1944C16.3767 18.1152 16.3748 18.0792 16.3744 18.0792C16.3858 18.0372 16.491 17.9318 16.5453 17.8774C16.7041 17.7202 16.8762 17.5131 17.0427 17.3127C17.1216 17.2178 17.2005 17.1227 17.278 17.0331C17.5196 16.7521 17.6271 16.5339 17.7518 16.2811L17.8171 16.1498C18.1216 15.545 17.8616 15.0347 17.7775 14.8698C17.7086 14.7319 16.4773 11.7602 16.3464 11.448C16.0316 10.6947 15.6156 10.3439 15.0375 10.3439C14.9839 10.3439 15.0375 10.3439 14.8126 10.3534C14.5387 10.3649 13.0471 10.5613 12.3877 10.977C11.6883 11.4179 10.5052 12.8234 10.5052 15.295C10.5052 17.5196 11.9169 19.62 12.523 20.4188C12.538 20.4389 12.5657 20.4798 12.6058 20.5385C14.927 23.9284 17.8206 26.4406 20.754 27.6124C23.578 28.7405 24.9153 28.8709 25.6756 28.8709H25.6757C25.9952 28.8709 26.2509 28.8458 26.4765 28.8236L26.6196 28.81C27.5952 28.7235 29.7391 27.6126 30.2267 26.2574C30.6109 25.19 30.7122 24.0237 30.4566 23.6005C30.2816 23.3127 29.9799 23.1679 29.5979 22.9845Z"
+              fill="white"
+            />
+            <path
+              d="M4.58574 29.7612L4.77009 29.2174L4.47767 28.7233C2.82915 25.9375 1.95828 22.7534 1.95828 19.4991C1.95828 9.4465 10.2032 1.25 20.355 1.25C30.5058 1.25 38.75 9.44639 38.75 19.4991C38.75 29.5505 30.5059 37.7461 20.3552 37.746C17.3102 37.746 14.3026 36.9948 11.645 35.5749L11.1799 35.3264L10.6774 35.4861L1.67522 38.3467L4.58574 29.7612Z"
+              stroke="white"
+              stroke-width="2.5"
+            />
+          </svg>
+        </a>
+      </nav>
+      <section class="s2">
+        <h2 class="s-title"><span class="accent">Who</span> I am</h2>
+        <div class="box">
+          <div class="img-wrapper">
+            <picture>
+              <source
+                media="(max-width: 600px)"
+                srcset="/images/me-mobile.webp"
+                type="image/webp"
+              />
+              <source
+                media="(max-width: 600px)"
+                srcset="/images/me-mobile.webp"
+                type="image/webp"
+              />
+              <source
+                media="(max-width: 600px)"
+                srcset="/images/me-mobile.jpg"
+                type="image/jpeg"
+              />
+              <source
+                media="(max-width: 600px)"
+                srcset="/images/me-mobile.jpg"
+                type="image/jpeg"
+              />
+              <img
+                srcset="/images/me.jpg 1024w, /images/me-mobile.jpg 600w"
+                sizes="(min-width: 600px) 601px,
+                          (max-width: 600px) 600px"
+                src="/images/me.jpg"
+                alt="Mihai Mijea Photo"
+                class="photo-me"
+              />
+            </picture>
+          </div>
+          <div class="description">
+            <p>
+              Hello, my name is <b>Mihai</b> and I am a freelance software engineer
+              with a special focus on <b>JavaScript</b> and its frameworks.
+            </p>
+            <p>
+              With over <b>7 years</b> of experience, I have been providing top-notch
+              software and <b>web solutions</b> for different companies.
+            </p>
+            <p>
+              My expertise includes both <b>front-end</b> and <b>back-end</b> development,
+              allowing me to create intuitive and efficient solutions for a wide
+              range of digital needs.
+            </p>
+            <p>
+              Whether you need a <b>custom web application</b>, a <b>responsive</b> website,
+              or a <b>mobile</b> application,
+            </p>
+            <p>
+              I am <b>dedicated</b> to delivering the best results to help your
+            <b>business succeed</b>.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 class="s-title"><span class="accent">What</span> I use</h2>
+        <div class="box wrap">
+          <a
+            target="_blank"
+            href="https://aws.amazon.com/"
+            class="skillLogo hover"
+          >
+            <img
+              src="/images/logos/tools/logo-amazon-aws.svg"
+              alt="Cloud Computing Services - Amazon Web Services (AWS)"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://www.atlassian.com/software/jira"
+            class="skillLogo hover"
+          >
+            <img
+              src="/images/logos/tools/logo-atlassian-jira.svg"
+              alt="Jira Software"
+            />
+          </a>
+          <a target="_blank" href="https://babeljs.io/" class="skillLogo hover">
+            <img
+              src="/images/logos/tools/logo-babel.svg"
+              alt="Babel · The compiler for next generation JavaScript"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://www.browserstack.com/"
+            class="skillLogo hover"
+          >
+            <img
+              src="/images/logos/tools/logo-browserstack.svg"
+              alt="BrowserStack - World's Leading Testing Tool"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://cloudinary.com/"
+            class="skillLogo hover"
+          >
+            <img
+              src="/images/logos/tools/logo-cloudinary.svg"
+              alt="Cloudinary Media Experience Platform"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://www.contentful.com/"
+            class="skillLogo hover"
+          >
+            <img
+              src="/images/logos/tools/logo-contentful.svg"
+              alt="Contentful: The platform to bring your best ideas to life"
+            />
+          </a>
+
+          <a
+            target="_blank"
+            href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+            class="skillLogo hover"
+          >
+            <img
+              src="/images/logos/tools/logo-css.svg"
+              alt="Cascading Style Sheets (CSS)"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://www.docker.com/"
+            class="skillLogo hover"
+          >
+            <img
+              alt="Docker: Accelerated, Containerized Application Development"
+              src="/images/logos/tools/logo-docker.svg"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://expressjs.com/"
+            class="skillLogo hover"
+          >
+            <img
+              alt="Express - Fast, unopinionated, minimalist web framework for Node.js"
+              src="/images/logos/tools/logo-expressjs.svg"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://www.gatsbyjs.com/"
+            class="skillLogo hover"
+          >
+            <img
+              alt="Gatsby - The Fastest Frontend for the Headless Web"
+              src="/images/logos/tools/logo-gatsby.svg"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://www.postman.com/"
+            class="skillLogo hover"
+          >
+            <img
+              alt="Postman is an API platform for building and using APIs."
+              src="/images/logos/tools/logo-getpostman.svg"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://git-scm.com/"
+            class="skillLogo hover"
+          >
+            <img
+              alt="Git is a free and open source distributed version control system"
+              src="/images/logos/tools/logo-git.svg"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://about.gitlab.com/"
+            class="skillLogo hover"
+          >
+            <img
+              alt="Gitlab Is A Single Application For The Entire Software Development Lifecycle"
+              src="/images/logos/tools/logo-gitlab.svg"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://analytics.google.com/analytics/web/"
+            class="skillLogo hover"
+          >
+            <img
+              alt="Google Analytics lets you measure your advertising ROI as well as track your Flash, video, and social networking sites and applications."
+              src="/images/logos/tools/logo-google-analytics.svg"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://cloud.google.com/"
+            class="skillLogo hover"
+          >
+            <img
+              alt="Dream, build, and transform with Google Cloud"
+              src="/images/logos/tools/logo-google-cloud.svg"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://graphql.org/"
+            class="skillLogo hover"
+          >
+            <img
+              alt="GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data."
+              src="/images/logos/tools/logo-graphql.svg"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+            class="skillLogo hover"
+          >
+            <img
+              alt="HTML: HyperText Markup Language"
+              src="/images/logos/tools/logo-html.svg"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+            class="skillLogo hover"
+          >
+            <img
+              alt="JavaScript"
+              src="/images/logos/tools/logo-javascript.svg"
+            />
+          </a>
+          <a target="_blank" href="https://jestjs.io/" class="skillLogo hover">
+            <img
+              alt="Jest is a delightful JavaScript Testing Framework with a focus on simplicity."
+              src="/images/logos/tools/logo-jest.svg"
+            />
+          </a>
+          <a target="_blank" href="https://mui.com/" class="skillLogo hover">
+            <img
+              alt="Material UI fully-loaded component library"
+              src="/images/logos/tools/logo-material-ui.svg"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://azure.microsoft.com/en-us"
+            class="skillLogo hover"
+          >
+            <img
+              alt="AZURE. INVENT WITH PURPOSE."
+              src="/images/logos/tools/logo-microsoft-azure.svg"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://www.mongodb.com/"
+            class="skillLogo hover"
+          >
+            <img
+              alt="MongoDB: The Developer Data Platform"
+              src="/images/logos/tools/logo-mongodb.svg"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://www.netlify.com/"
+            class="skillLogo hover"
+          >
+            <img
+              alt="Netlify: Develop and deploy websites and apps in record time"
+              src="/images/logos/tools/logo-netlify.svg"
+            />
+          </a>
+          <a target="_blank" href="https://nextjs.org/" class="skillLogo hover">
+            <img
+              alt="Next.js by Vercel - The React Framework"
+              src="/images/logos/tools/logo-nextjs.svg"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://nodejs.org/en/"
+            class="skillLogo hover"
+          >
+            <img
+              alt="Node.js® is an open-source, cross-platform JavaScript runtime environment."
+              src="/images/logos/tools/logo-nodejs.svg"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://www.openapis.org/"
+            class="skillLogo hover"
+          >
+            <img
+              alt="The OpenAPI Specification, previously known as the Swagger Specification"
+              src="/images/logos/tools/logo-openapis.svg"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://reactjs.org/"
+            class="skillLogo hover"
+          >
+            <img
+              alt="React A JavaScript library for building user interfaces"
+              src="/images/logos/tools/logo-react.svg"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://restfulapi.net/"
+            class="skillLogo hover"
+          >
+            <img
+              alt="REST is an acronym for REpresentational State Transfer and an architectural style for distributed hypermedia systems."
+              src="/images/logos/tools/logo-rest-api.svg"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://sass-lang.com/"
+            class="skillLogo hover"
+          >
+            <img
+              alt="SASS CSS with superpowers"
+              src="/images/logos/tools/logo-sass.svg"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://storybook.js.org/"
+            class="skillLogo hover"
+          >
+            <img
+              alt="Storybook is a frontend workshop for building UI components and pages in isolation."
+              src="/images/logos/tools/logo-storybook.svg"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://styled-components.com/"
+            class="skillLogo hover"
+          >
+            <img
+              alt="Styled Components Visual primitives for the component age."
+              src="/images/logos/tools/logo-styled-components.svg"
+            />
+          </a>
+          <a target="_blank" href="https://swagger.io/" class="skillLogo hover">
+            <img
+              alt="Swagger API Development for Everyone"
+              src="/images/logos/tools/logo-swagger.svg"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://tailwindcss.com/"
+            class="skillLogo hover"
+          >
+            <img
+              alt="TailwindCSS Rapidly build modern websites without ever leaving your HTML."
+              src="/images/logos/tools/logo-tailwind.svg"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://turbo.build/"
+            class="skillLogo hover"
+          >
+            <img
+              alt="Turbo is an incremental bundler and build system optimized for JavaScript and TypeScript, written in Rust."
+              src="/images/logos/tools/logo-turborepo.svg"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://www.typescriptlang.org/"
+            class="skillLogo hover"
+          >
+            <img
+              alt="TypeScript is JavaScript with syntax for types"
+              src="/images/logos/tools/logo-typescript.svg"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://webpack.js.org/"
+            class="skillLogo hover"
+          >
+            <img
+              alt="webpack is a static module bundler for modern JavaScript applications"
+              src="/images/logos/tools/logo-webpack.svg"
+            />
+          </a>
+          <a target="_blank" href="https://vuejs.org/" class="skillLogo hover">
+            <img
+              alt="VueJS The Progressive JavaScript Framework"
+              src="/images/logos/tools/logo-vuejs.svg"
+            />
+          </a>
+        </div>
+      </section>
+      <section>
+        <h2 class="s-title">For <span class="accent">whom</span></h2>
+        <div class="box wrap">
+          <a
+            target="_blank"
+            href="https://www.dpgmediagroup.com/nl-NL"
+            class="companyLogo hover"
+          >
+            <img src="/images/logos/companies/dpg.svg" alt="DPG media" />
+          </a>
+          <a
+            target="_blank"
+            href="https://www.icemobile.com/"
+            class="companyLogo hover"
+          >
+            <img src="/images/logos/companies/icemobile.svg" alt="Icemobile" />
+          </a>
+          <a
+            target="_blank"
+            href="https://www.kpn.com/"
+            class="companyLogo hover"
+          >
+            <img src="/images/logos/companies/kpn.svg" alt="KPN" />
+          </a>
+          <a
+            target="_blank"
+            href="https://passionatepeople.io/"
+            class="companyLogo hover"
+          >
+            <img
+              src="/images/logos/companies/passionatepeople.svg"
+              alt="Passionate People"
+            />
+          </a>
+          <a
+            target="_blank"
+            href="https://www.getrodeo.io/"
+            class="companyLogo hover"
+          >
+            <img src="/images/logos/companies/rodeo.svg" alt="Rodeo" />
+          </a>
+          <a
+            target="_blank"
+            href="https://suitsupply.com/en-nl/"
+            class="companyLogo hover"
+          >
+            <img
+              src="/images/logos/companies/suitsupply.svg"
+              alt="Suitsupply"
+            />
+          </a>
+        </div>
+      </section>
+      <section>
+        <h2 class="s-title"><span class="accent">What</span> I think</h2>
+        <figure>
+          <blockquote class="quote">
+            <p>"The best code is the code you don't write"</p>
+          </blockquote>
+          <figcaption>— a Smart Guy</figcaption>
+        </figure>
+        <div class="ps">PS: This page has <b>0</b> lines of Javascript</div>
+      </section>
+      <section>
+        <h2 class="s-title"><span class="accent">How</span> to find me</h2>
+        <div class="box contact">
+          <img src="/images/qr.svg" alt="Qr code with the details" class="qr" />
+          <div class="contact-link-wrapper">
+            <a
+              class="contact-link"
+              href="mailto:mihai.mijea.dev@gmail.com?subject=Let's colaborate"
+            >
+              <img src="/images/icons/email.svg" alt="email icon" />
+            </a>
+            <a
+              class="contact-link"
+              target="_blank"
+              href="https://www.linkedin.com/in/mihaimijea/"
+            >
+              <img src="/images/icons/linkedin.svg" alt="Linkedin icon" />
+            </a>
+            <a class="contact-link" href="tel:+31644147968">
+              <img src="/images/icons/phone.svg" alt="phone icon" />
+            </a>
+            <a
+              class="contact-link"
+              target="_blank"
+              href="https://wa.me/31644147968"
+            >
+              <img src="/images/icons/whatsapp.svg" alt="whatsapp icon" />
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="bg-bubble-1"></div>
+    <div class="bg-bubble-2"></div>
   </body>
 </html>
