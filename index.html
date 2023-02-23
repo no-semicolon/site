@@ -100,7 +100,7 @@
       scroll-behavior: smooth;
       overflow: auto;
       /* scroll-snap-type: y mandatory;
-      scroll-snap-type: mandatory; */
+          scroll-snap-type: mandatory; */
       color: var(--light);
     }
     section {
@@ -118,14 +118,34 @@
     }
 
     .motto {
-      font-size: 16px;
+      /* display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center; */
       font-size: 3.8vw;
       text-transform: uppercase;
       animation: slideDown 0.8s;
       animation-delay: 2s;
       transition-timing-function: cubic-bezier(0.14, 0.77, 0.59, 1.98);
       animation-fill-mode: forwards;
+      /* position: relative; */
     }
+    @keyframes word {
+      0%,
+      5%,
+      100% {
+        filter: blur(0px);
+        opacity: 1;
+      }
+      20%,
+      80% {
+        filter: blur(1em);
+        opacity: 0;
+      }
+    }
+    /* .motto > div {
+      position: absolute;
+    } */
 
     h2 {
       text-transform: uppercase;
@@ -323,6 +343,16 @@
 
       100% {
         opacity: 0;
+      }
+    }
+    @keyframes MoveUpDown {
+      0%,
+      100% {
+        opacity: 1;
+        bottom: 2rem;
+      }
+      50% {
+        bottom: 3rem;
       }
     }
     @keyframes gradientBG {
@@ -618,27 +648,27 @@
       }
     }
     /* @keyframes showFromRight2 {
+          0% {
+            opacity: 0;
+            transform: translateX(40px);
+          }
+          6% {
+            opacity: 1;
+            transform: translateX(0);
+          }
+          47% {
+            opacity: 1;
+            transform: translateX(0);
+          }
+          53% {
+            opacity: 0;
+          }
+          94% {
+            opacity: 0;
+          }
+        } */
+    @keyframes showFromRight2 {
       0% {
-        opacity: 0;
-        transform: translateX(40px);
-      }
-      6% {
-        opacity: 1;
-        transform: translateX(0);
-      }
-      47% {
-        opacity: 1;
-        transform: translateX(0);
-      }
-      53% {
-        opacity: 0;
-      }
-      94% {
-        opacity: 0;
-      }
-    } */
-     @keyframes showFromRight2 {
-     0% {
         opacity: 0;
         transform: translateX(40px);
       }
@@ -655,7 +685,7 @@
     .showFromRight2 {
       opacity: 0;
       transform: translateX(80px);
-      animation: showFromRight2 .3s cubic-bezier(0.14, 0.77, 0.59, 1.98)
+      animation: showFromRight2 0.3s cubic-bezier(0.14, 0.77, 0.59, 1.98)
         calc(var(--cta-anim-delay) + 0.3s) forwards;
     }
 
@@ -682,16 +712,16 @@
 
     .box {
       padding: 30px;
-      display: flex;
       gap: 5%;
       max-width: max(43.375rem, 49.31vw);
       background: rgba(143, 143, 143, 0.2);
-      /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
       backdrop-filter: blur(5px);
       -webkit-backdrop-filter: blur(5px);
       border-radius: 30px;
-      /* max-height: 90vh; */
       box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-gap: 1rem;
     }
     .photo-me {
       display: block;
@@ -705,7 +735,6 @@
       align-self: center;
     }
     .skillLogo {
-      width: 15%;
       aspect-ratio: 3/2;
       object-fit: contain;
       display: flex;
@@ -717,7 +746,6 @@
     }
 
     .companyLogo {
-      width: 30%;
       aspect-ratio: 3/2;
       object-fit: contain;
       display: flex;
@@ -858,6 +886,136 @@
         max-width: 70vw;
       }
     }
+    .scroll-indicator {
+      rotate: 180deg;
+      font-weight: 100;
+      /* color: var(--red); */
+      font-size: 3rem;
+      animation: MoveUpDown 2s linear infinite;
+      animation-delay: 3s;
+      position: absolute;
+      bottom: 2rem;
+      opacity: 0;
+    }
+    .logo-lBracket {
+      animation: moveToPlace 1s;
+      animation-delay: 1s;
+      transform: translate(335px);
+      animation-timing-function: cubic-bezier(0.11, 1.05, 0.92, 1.07);
+      animation-fill-mode: forwards;
+    }
+    .logo-caret {
+      animation: moveToPlace 1s;
+      animation-delay: 1s;
+      opacity: 1;
+      transform: translate(-366px);
+      animation-timing-function: cubic-bezier(0.11, 1.05, 0.92, 1.07);
+      animation-fill-mode: forwards;
+    }
+    .logo-T {
+      animation: moveToPlace 1s;
+      animation-delay: 1.02s;
+      opacity: 0;
+      transform: translate(330px);
+      animation-timing-function: cubic-bezier(0.11, 1.05, 0.92, 1.07);
+      animation-fill-mode: forwards;
+    }
+    .logo-h {
+      animation: moveToPlace 1s;
+      animation-delay: 1.04s;
+      opacity: 0;
+      transform: translate(255px);
+      animation-timing-function: cubic-bezier(0.11, 1.05, 0.92, 1.07);
+      animation-fill-mode: forwards;
+    }
+    .logo-e {
+      animation: moveToPlace 1s;
+      animation-delay: 1.06s;
+      opacity: 0;
+      transform: translate(186px);
+      animation-timing-function: cubic-bezier(0.11, 1.05, 0.92, 1.07);
+      animation-fill-mode: forwards;
+    }
+    .logo-M {
+      animation: moveToPlace 1s;
+      animation-delay: 1.08s;
+      opacity: 0;
+      transform: translate(109px);
+      animation-timing-function: cubic-bezier(0.11, 1.05, 0.92, 1.07);
+      animation-fill-mode: forwards;
+    }
+    .logo-i-1 {
+      animation: moveToPlace 1s;
+      animation-delay: 1.1s;
+      opacity: 0;
+      transform: translate(33px);
+      animation-timing-function: cubic-bezier(0.11, 1.05, 0.92, 1.07);
+      animation-fill-mode: forwards;
+    }
+    .logo-s-1 {
+      animation: moveToPlace 1s;
+      animation-delay: 1.1s;
+      opacity: 0;
+      transform: translate(-36px);
+      animation-timing-function: cubic-bezier(0.11, 1.05, 0.92, 1.07);
+      animation-fill-mode: forwards;
+    }
+    .logo-s-2 {
+      animation: moveToPlace 1s;
+      animation-delay: 1.1s;
+      opacity: 0;
+      transform: translate(-76px);
+      animation-timing-function: cubic-bezier(0.11, 1.05, 0.92, 1.07);
+      animation-fill-mode: forwards;
+    }
+    .logo-i-2 {
+      animation: moveToPlace 1s;
+      animation-delay: 1.04s;
+      opacity: 0;
+      transform: translate(-145px);
+      animation-timing-function: cubic-bezier(0.11, 1.05, 0.92, 1.07);
+      animation-fill-mode: forwards;
+    }
+    .logo-n {
+      animation: moveToPlace 1s;
+      animation-delay: 1.04s;
+      opacity: 0;
+      transform: translate(-218px);
+      animation-timing-function: cubic-bezier(0.11, 1.05, 0.92, 1.07);
+      animation-fill-mode: forwards;
+    }
+    .logo-g {
+      animation: moveToPlace 1s;
+      animation-delay: 1.02s;
+      opacity: 0;
+      transform: translate(-292px);
+      animation-timing-function: cubic-bezier(0.11, 1.05, 0.92, 1.07);
+      animation-fill-mode: forwards;
+    }
+    .logo-semicolon {
+      animation: moveToPlace 1s;
+      animation-delay: 1s;
+      transform: translate(-360px);
+      animation-timing-function: cubic-bezier(0.11, 1.05, 0.92, 1.07);
+      animation-fill-mode: forwards;
+    }
+    .logo-rBracket {
+      animation: moveToPlace 1s;
+      animation-delay: 1s;
+      transform: translate(-370px);
+      animation-timing-function: cubic-bezier(0.11, 1.05, 0.92, 1.07);
+      animation-fill-mode: forwards;
+    }
+    @keyframes moveToPlace {
+      30% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+        animation-timing-function: cubic-bezier(0.11, 1.05, 0.92, 1.07);
+      }
+    }
   </style>
 
   <body>
@@ -902,95 +1060,107 @@
               id="caret"
               d="M839.207 145.68L856.277 167.438H846.824L834.402 155.68L822.019 167.438H812.566L829.637 145.68H839.207Z"
               fill="#BE1100"
-              class="opacity0 pulse"
+              class="opacity0 pulse logo-caret"
             />
             <path
               id="lBracket"
               d="M35.1875 26.5 H61.6875 V35.4375 H46.6875V131.688 H61.6875 V140.625 H35.1875 V 26.5 Z"
               fill="white"
-              class="toRight"
+              class="logo-lBracket"
             ></path>
             <path
               id="T"
               d="M79.9375 36.6875H151.125V47.3125H121.938V130H109.25V47.3125H79.9375V36.6875Z"
               fill="white"
-              class="toRight"
+              class="logo-T"
             ></path>
             <path
               id="h"
               d="M215.688 86.625V130H204.125V86.625C204.125 80.3333 203.021 75.7083 200.812 72.75C198.604 69.7917 195.146 68.3125 190.438 68.3125C185.062 68.3125 180.917 70.2292 178 74.0625C175.125 77.8542 173.688 83.3125 173.688 90.4375V130H162.188V32.75H173.688V70.5C175.729 66.5 178.5 63.4792 182 61.4375C185.5 59.3542 189.646 58.3125 194.438 58.3125C201.562 58.3125 206.875 60.6667 210.375 65.375C213.917 70.0417 215.688 77.125 215.688 86.625Z"
               fill="white"
-              class="toRight"
+              class="logo-h"
             ></path>
             <path
               id="e"
               d="M287 89.25V94.875H237.188V95.25C236.854 104.792 238.667 111.646 242.625 115.812C246.625 119.979 252.25 122.062 259.5 122.062C263.167 122.062 267 121.479 271 120.312C275 119.146 279.271 117.375 283.812 115V126.438C279.438 128.229 275.208 129.562 271.125 130.438C267.083 131.354 263.167 131.812 259.375 131.812C248.5 131.812 240 128.562 233.875 122.062C227.75 115.521 224.688 106.521 224.688 95.0625C224.688 83.8958 227.688 74.9792 233.688 68.3125C239.688 61.6458 247.688 58.3125 257.688 58.3125C266.604 58.3125 273.625 61.3333 278.75 67.375C283.917 73.4167 286.667 80.7083 287 89.25ZM275.5 85.875C275 81.0417 273.229 76.875 270.188 73.375C267.188 69.8333 262.854 68.0625 257.188 68.0625C251.646 68.0625 247.083 69.8958 243.5 73.5625C239.917 77.2292 237.958 81.3542 237.625 85.9375L275.5 85.875Z"
               fill="white"
-              class="toRight"
+              class="logo-e"
             ></path>
             <path
               id="M"
               d="M302.25 37H319.125L335.25 84.375L351.5 37H368.438V130H356.75V47.8125L340.125 96.8125H330.562L313.875 47.8125V130H302.25V37Z"
               fill="white"
-              class="toRight"
+              class="logo-M"
             ></path>
             <path
               id="i"
               d="M388.75 60.25H418.188V121.062H441V130H383.875V121.062H406.688V69.1875H388.75V60.25ZM406.688 33.0625H418.188V47.5625H406.688V33.0625Z"
               fill="white"
-              class="toRight"
+              class="logo-i-1"
             ></path>
             <path
               id="s"
               d="M503.812 62.4375V73.6875C500.521 71.7708 497.208 70.3333 493.875 69.375C490.542 68.4167 487.146 67.9375 483.688 67.9375C478.479 67.9375 474.583 68.7917 472 70.5C469.458 72.1667 468.188 74.7292 468.188 78.1875C468.188 81.3125 469.146 83.6458 471.062 85.1875C472.979 86.7292 477.75 88.2292 485.375 89.6875L490 90.5625C495.708 91.6458 500.021 93.8125 502.938 97.0625C505.896 100.312 507.375 104.542 507.375 109.75C507.375 116.667 504.917 122.083 500 126C495.083 129.875 488.25 131.812 479.5 131.812C476.042 131.812 472.417 131.438 468.625 130.688C464.833 129.979 460.729 128.896 456.312 127.438V115.562C460.604 117.771 464.708 119.438 468.625 120.562C472.542 121.646 476.25 122.188 479.75 122.188C484.833 122.188 488.771 121.167 491.562 119.125C494.354 117.042 495.75 114.146 495.75 110.438C495.75 105.104 490.646 101.417 480.438 99.375L479.938 99.25L475.625 98.375C469 97.0833 464.167 94.9167 461.125 91.875C458.083 88.7917 456.562 84.6042 456.562 79.3125C456.562 72.6042 458.833 67.4375 463.375 63.8125C467.917 60.1458 474.396 58.3125 482.812 58.3125C486.562 58.3125 490.167 58.6667 493.625 59.375C497.083 60.0417 500.479 61.0625 503.812 62.4375Z"
               fill="white"
-              class="toRight"
+              class="logo-s-1"
             ></path>
             <path
               id="s_2"
               d="M542.812 62.4375V73.6875C539.521 71.7708 536.208 70.3333 532.875 69.375C529.542 68.4167 526.146 67.9375 522.688 67.9375C517.479 67.9375 513.583 68.7917 511 70.5C508.458 72.1667 507.188 74.7292 507.188 78.1875C507.188 81.3125 508.146 83.6458 510.062 85.1875C511.979 86.7292 516.75 88.2292 524.375 89.6875L529 90.5625C534.708 91.6458 539.021 93.8125 541.938 97.0625C544.896 100.312 546.375 104.542 546.375 109.75C546.375 116.667 543.917 122.083 539 126C534.083 129.875 527.25 131.812 518.5 131.812C515.042 131.812 511.417 131.438 507.625 130.688C503.833 129.979 499.729 128.896 495.312 127.438V115.562C499.604 117.771 503.708 119.438 507.625 120.562C511.542 121.646 515.25 122.188 518.75 122.188C523.833 122.188 527.771 121.167 530.562 119.125C533.354 117.042 534.75 114.146 534.75 110.438C534.75 105.104 529.646 101.417 519.438 99.375L518.938 99.25L514.625 98.375C508 97.0833 503.167 94.9167 500.125 91.875C497.083 88.7917 495.562 84.6042 495.562 79.3125C495.562 72.6042 497.833 67.4375 502.375 63.8125C506.917 60.1458 513.396 58.3125 521.812 58.3125C525.562 58.3125 529.167 58.6667 532.625 59.375C536.083 60.0417 539.479 61.0625 542.812 62.4375Z"
               fill="white"
-              class="toLeft"
+              class="logo-s-2"
             ></path>
             <path
               id="i_2"
               d="M566.75 60.25H596.188V121.062H619V130H561.875V121.062H584.688V69.1875H566.75V60.25ZM584.688 33.0625H596.188V47.5625H584.688V33.0625Z"
               fill="white"
-              class="toLeft"
+              class="logo-i-2"
             ></path>
             <path
               id="n"
               d="M688.688 86.625V130H677.125V86.625C677.125 80.3333 676.021 75.7083 673.812 72.75C671.604 69.7917 668.146 68.3125 663.438 68.3125C658.062 68.3125 653.917 70.2292 651 74.0625C648.125 77.8542 646.688 83.3125 646.688 90.4375V130H635.188V60H646.688V70.5C648.729 66.5 651.5 63.4792 655 61.4375C658.5 59.3542 662.646 58.3125 667.438 58.3125C674.562 58.3125 679.875 60.6667 683.375 65.375C686.917 70.0417 688.688 77.125 688.688 86.625Z"
               fill="white"
-              class="toLeft"
+              class="logo-n"
             ></path>
             <path
               id="g"
               d="M752.625 94.4375C752.625 85.8125 751.208 79.2708 748.375 74.8125C745.583 70.3125 741.5 68.0625 736.125 68.0625C730.5 68.0625 726.208 70.3125 723.25 74.8125C720.292 79.2708 718.812 85.8125 718.812 94.4375C718.812 103.062 720.292 109.646 723.25 114.188C726.25 118.688 730.583 120.938 736.25 120.938C741.542 120.938 745.583 118.667 748.375 114.125C751.208 109.583 752.625 103.021 752.625 94.4375ZM764.125 125.5C764.125 136 761.646 143.958 756.688 149.375C751.729 154.792 744.438 157.5 734.812 157.5C731.646 157.5 728.333 157.208 724.875 156.625C721.417 156.042 717.958 155.188 714.5 154.062V142.688C718.583 144.604 722.292 146.021 725.625 146.938C728.958 147.854 732.021 148.312 734.812 148.312C741.021 148.312 745.542 146.625 748.375 143.25C751.208 139.875 752.625 134.521 752.625 127.188V126.688V118.875C750.792 122.792 748.292 125.708 745.125 127.625C741.958 129.542 738.104 130.5 733.562 130.5C725.396 130.5 718.875 127.229 714 120.688C709.125 114.146 706.688 105.396 706.688 94.4375C706.688 83.4375 709.125 74.6667 714 68.125C718.875 61.5833 725.396 58.3125 733.562 58.3125C738.062 58.3125 741.875 59.2083 745 61C748.125 62.7917 750.667 65.5625 752.625 69.3125V60.25H764.125V125.5Z"
               fill="white"
-              class="toLeft"
+              class="logo-g"
             ></path>
             <path
               id=";"
               d="M792.693 104.912H815.457V123.438L802.059 149.619H787.361L792.693 123.438V104.912ZM792.693 57.334H815.457V82.2852H792.693V57.334Z"
               fill="url('#logo-gradient')"
-              class="toLeft"
+              class="logo-semicolon"
             ></path>
             <path
               id="rBracket"
               d="M887 26.5V140.625H860.5V131.688H875.5V35.4375H860.5V26.5H887Z"
               fill="white"
-              class="toLeft"
+              class="logo-rBracket"
             ></path>
           </g>
         </svg>
-        <h1 class="motto opacity0">
-          <!-- Expertise in every <span class="accent">semicolon</span> -->
-          <!-- Expertise, efficiency, excellence -->
-          Leave the <span class="accent">semicolon</span> jokes
-          to me!
-          <!-- We'll make sure <span class="accent">your code runs</span>, not just <span class="accent">your mouth</span> -->
+        <h1 class="motto opacity0 morphing">
+          <!-- https://codepen.io/amit_sheen/pen/xxqYzvm -->
+          <!-- <div>Expertise in every <span class="accent">semicolon</span></div>
+          <div>Expertise, efficiency, excellence</div> -->
+          <div>
+            Leave the <span class="accent">semicolon</span> jokes to me!
+          </div>
+          <!-- <div>
+            Clean, efficient code for all <br /><span class="accent"
+              >your software needs</span
+            >
+          </div>
+          <div>
+            We'll make sure <span class="accent">your code runs</span><br />
+            not just <span class="accent">your mouth</span>
+          </div> -->
         </h1>
+
+        <span class="scroll-indicator">^</span>
       </section>
       <nav>
         <img
@@ -1115,29 +1285,29 @@
             <picture>
               <source
                 media="(max-width: 600px)"
-                srcset="/images/me-mobile.webp"
+                srcset="/images/profile.webp"
                 type="image/webp"
               />
               <source
                 media="(max-width: 600px)"
-                srcset="/images/me-mobile.webp"
+                srcset="/images/profile.webp"
                 type="image/webp"
               />
               <source
                 media="(max-width: 600px)"
-                srcset="/images/me-mobile.jpg"
+                srcset="/images/profile.jpg"
                 type="image/jpeg"
               />
               <source
                 media="(max-width: 600px)"
-                srcset="/images/me-mobile.jpg"
+                srcset="/images/profile.jpg"
                 type="image/jpeg"
               />
               <img
-                srcset="/images/me.jpg 1024w, /images/me-mobile.jpg 600w"
+                srcset="/images/profile.png 1024w, /images/profile.png 600w"
                 sizes="(min-width: 600px) 601px,
                           (max-width: 600px) 600px"
-                src="/images/me.jpg"
+                src="/images/profile.png"
                 alt="Mihai Mijea Photo"
                 class="photo-me"
               />
@@ -1145,25 +1315,27 @@
           </div>
           <div class="description">
             <p>
-              Hello, my name is <b>Mihai</b> and I am a freelance software engineer
-              with a special focus on <b>JavaScript</b> and its frameworks.
+              Hello, my name is <b>Mihai</b> and I am a freelance software
+              engineer with a special focus on <b>JavaScript</b> and its
+              frameworks.
             </p>
             <p>
-              With over <b>7 years</b> of experience, I have been providing top-notch
-              software and <b>web solutions</b> for different companies.
+              With over <b>7 years</b> of experience, I have been providing
+              top-notch software and <b>web solutions</b> for different
+              companies.
             </p>
             <p>
-              My expertise includes both <b>front-end</b> and <b>back-end</b> development,
-              allowing me to create intuitive and efficient solutions for a wide
-              range of digital needs.
+              My expertise includes both <b>front-end</b> and
+              <b>back-end</b> development, allowing me to create intuitive and
+              efficient solutions for a wide range of digital needs.
             </p>
             <p>
-              Whether you need a <b>custom web application</b>, a <b>responsive</b> website,
-              or a <b>mobile</b> application,
+              Whether you need a <b>custom web application</b>, a
+              <b>responsive</b> website, or a <b>mobile</b> application,
             </p>
             <p>
               I am <b>dedicated</b> to delivering the best results to help your
-            <b>business succeed</b>.
+              <b>business succeed</b>.
             </p>
           </div>
         </div>
