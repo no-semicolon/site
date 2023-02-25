@@ -9,12 +9,6 @@
       name="description"
       content="The Missing Semicolon is a software development company that helps businesses and organizations create and maintain high-quality software solutions. Our team of experienced developers has a strong focus on attention to detail and a commitment to producing clean, well-structured code. Our motto, 'Your software, our semicolons,' reflects our dedication to ensuring that every aspect of our clients' software is as perfect as possible, down to the smallest punctuation marks. Whether you need a custom software application built from scratch, or you need help maintaining and improving an existing system, The Missing Semicolon is here to help."
     />
-
-    <link
-      rel="preconnect"
-      target="_blank"
-      href="https://fonts.googleapis.com"
-    />
     <link
       rel="preconnect"
       target="_blank"
@@ -117,36 +111,6 @@
       width: 100%;
     }
 
-    .motto {
-      /* display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center; */
-      font-size: 3.8vw;
-      text-transform: uppercase;
-      animation: slideDown 0.8s;
-      animation-delay: 2s;
-      transition-timing-function: cubic-bezier(0.14, 0.77, 0.59, 1.98);
-      animation-fill-mode: forwards;
-      /* position: relative; */
-    }
-    @keyframes word {
-      0%,
-      5%,
-      100% {
-        filter: blur(0px);
-        opacity: 1;
-      }
-      20%,
-      80% {
-        filter: blur(1em);
-        opacity: 0;
-      }
-    }
-    /* .motto > div {
-      position: absolute;
-    } */
-
     h2 {
       text-transform: uppercase;
     }
@@ -184,29 +148,18 @@
     }
     .accent {
       position: relative;
+      border-bottom: solid 2px var(--red);
     }
 
-    .accent:before {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      border-bottom: solid 2px var(--red);
-      animation: border_anim 0.6s;
-      animation-delay: 2.2s;
-      transition-timing-function: cubic-bezier(0.14, 0.77, 0.59, 1.98);
-      animation-fill-mode: forwards;
-    }
     .haccent {
       display: inline-block;
     }
     .haccent:after {
       display: block;
       content: "";
-      border-bottom: solid 3px var(--faccent);
+      border-bottom: solid 3px var(--red);
       transform: scaleX(0);
-      transition: transform 250ms cubic-bezier(0.14, 0.77, 0.59, 1.98);
+      transition: transform 250ms cubic-bezier(0.14, 0.77, 0.59, 1.28);
     }
     .haccent:hover:after {
       transform: scaleX(1);
@@ -712,7 +665,6 @@
 
     .box {
       padding: 30px;
-      gap: 5%;
       max-width: max(43.375rem, 49.31vw);
       background: rgba(143, 143, 143, 0.2);
       backdrop-filter: blur(5px);
@@ -720,8 +672,7 @@
       border-radius: 30px;
       box-shadow: 0 3px 10px rgba(255, 255, 255, 0.2);
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-      grid-gap: 1rem;
+      grid-gap: 2rem;
     }
     .photo-me {
       display: block;
@@ -735,7 +686,6 @@
       align-self: center;
     }
     .skillLogo {
-      aspect-ratio: 3/2;
       object-fit: contain;
       display: flex;
       align-items: center;
@@ -805,13 +755,14 @@
       padding-top: 20vh;
     }
     .contact {
-      display: flex;
-      flex-direction: column;
-      padding: 40px 40px 20px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 40px;
     }
     .contact-link-wrapper {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      justify-content: center;
     }
     .contact-link img {
       width: 40px;
@@ -820,27 +771,19 @@
     }
     .contact-link {
       padding-top: 20px;
+      display: flex;
+      align-items: center;
+      color: var(--light);
+      text-decoration: none;
+      font-weight: bold;
     }
     .qr {
       width: 100%;
-      max-width: 50vw;
-    }
-    .red {
-      color: red;
+      aspect-ratio: 1;
+      background-color: var(--light);
     }
 
     @media only screen and (max-width: 600px) {
-      .motto {
-        font-size: 4.8vw;
-      }
-      .skillLogo {
-        width: 30%;
-        padding: 5px 0px;
-      }
-
-      .companyLogo {
-        width: 45%;
-      }
       .s-title {
         font-size: 1.4rem;
         padding: 0 30px;
@@ -882,9 +825,6 @@
         width: 100%;
         align-items: center;
       }
-      .qr {
-        max-width: 70vw;
-      }
     }
     .scroll-indicator {
       rotate: 180deg;
@@ -905,7 +845,7 @@
       animation-fill-mode: forwards;
     }
     .logo-caret {
-      animation: moveToPlace 1s;
+      animation: moveToPlace 1s, pulse 2s linear infinite;
       animation-delay: 1s;
       opacity: 1;
       transform: translate(-366px);
@@ -1016,6 +956,202 @@
         animation-timing-function: cubic-bezier(0.11, 1.05, 0.92, 1.07);
       }
     }
+    .motto {
+      font-size: 2.8vw;
+      text-transform: uppercase;
+      animation: slideDown 0.8s;
+      animation-delay: 2s;
+      transition-timing-function: cubic-bezier(0.14, 0.77, 0.59, 1.98);
+      animation-fill-mode: forwards;
+      position: relative;
+      opacity: 0;
+      filter: contrast(10);
+      width: 90%;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+    }
+    .slogan {
+      position: absolute;
+      text-align: center;
+      -webkit-animation: slogan 21s infinite ease-in-out;
+      animation: slogan 21s infinite ease-in-out;
+    }
+    .slogan:nth-child(1) {
+      -webkit-animation-delay: -21s;
+      animation-delay: -21s;
+    }
+    .slogan:nth-child(2) {
+      -webkit-animation-delay: -18s;
+      animation-delay: -18s;
+    }
+    .slogan:nth-child(3) {
+      -webkit-animation-delay: -15s;
+      animation-delay: -15s;
+    }
+    .slogan:nth-child(4) {
+      -webkit-animation-delay: -12s;
+      animation-delay: -12s;
+    }
+    .slogan:nth-child(5) {
+      -webkit-animation-delay: -9s;
+      animation-delay: -9s;
+    }
+    .slogan:nth-child(6) {
+      -webkit-animation-delay: -6s;
+      animation-delay: -6s;
+    }
+    .slogan:nth-child(7) {
+      -webkit-animation-delay: -3s;
+      animation-delay: -3s;
+    }
+    @media only screen and (max-width: 600px) {
+      .motto {
+        font-size: 5vw;
+        width: 95%;
+        line-height: 2rem;
+        font-weight: bold;
+      }
+    }
+    @-webkit-keyframes slogan {
+      0%,
+      5%,
+      100% {
+        filter: blur(0px);
+        opacity: 1;
+      }
+      20%,
+      80% {
+        filter: blur(1.3em);
+        opacity: 0;
+      }
+    }
+    @keyframes slogan {
+      0%,
+      5%,
+      100% {
+        filter: blur(0px);
+        opacity: 1;
+      }
+      20%,
+      80% {
+        filter: blur(1.3em);
+        opacity: 0;
+      }
+    }
+    .box1 {
+      grid-template-columns: 1fr 2fr;
+    }
+    .box2 {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      align-items: center;
+    }
+    .box3 {
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      grid-gap: 4rem;
+      padding: 2rem 4rem;
+    }
+    @media only screen and (max-width: 600px) {
+    .box1 {
+      grid-template-columns: 1fr;
+    }
+    .box2 {
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+    }
+    .box3 {
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 2rem;
+      grid-gap: 1rem 2rem;
+    }
+    .box4 {
+      padding: 40px 20px;
+      justify-items: center;
+      grid-template-columns: 1fr;
+    }
+  }
+/* barcode container */
+.anim-box {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  padding: 25px 30px;
+  transition: transform 0.6s ease-out;
+}
+
+/* adds the 4 corners */
+.anim-box:before,
+.anim-box:after,
+.anim-box > :first-child:before,
+.anim-box > :first-child:after {
+  position: absolute;
+  width: 10%;
+  height: 15%;
+  border-color: white;
+  border-style: solid;
+  content: " ";
+}
+
+/* top left corner */
+.anim-box:before {
+  top: 0;
+  left: 0;
+  border-width: 2px 0 0 2px;
+}
+
+/* top right corner */
+.anim-box:after {
+  top: 0;
+  right: 0;
+  border-width: 2px 2px 0 0;
+}
+
+/* bottom right corner */
+.anim-box > :first-child:before {
+  bottom: 0;
+  right: 0;
+  border-width: 0 2px 2px 0;
+}
+
+/* bottom left corner */
+.anim-box > :first-child:after {
+  bottom: 0;
+  left: 0;
+  border-width: 0 0 2px 2px;
+}
+
+
+/* animated laser beam */
+.scanner {
+  width: 100%;
+  height: 3px;
+  background-color: red;
+  opacity: 0.7;
+  position: relative;
+  box-shadow: 0px 0px 8px 10px rgba(170, 11, 23, 0.49);
+  top: 50%;
+  animation-name: scan;
+  animation-duration: 6s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes scan {
+  0% {
+    box-shadow: 0px 0px 8px 10px rgba(170, 11, 23, 0.49);
+    top: 50%;
+  }
+  25% {
+    box-shadow: 0px 6px 8px 10px rgba(170, 11, 23, 0.49);
+    top: 5px;
+  }
+  75% {
+    box-shadow: 0px -6px 8px 10px rgba(170, 11, 23, 0.49);
+    top: 98%;
+  }
+}
   </style>
 
   <body>
@@ -1060,7 +1196,7 @@
               id="caret"
               d="M839.207 145.68L856.277 167.438H846.824L834.402 155.68L822.019 167.438H812.566L829.637 145.68H839.207Z"
               fill="#BE1100"
-              class="opacity0 pulse logo-caret"
+              class="logo-caret"
             />
             <path
               id="lBracket"
@@ -1142,23 +1278,33 @@
             ></path>
           </g>
         </svg>
-        <h1 class="motto opacity0 morphing">
-          <!-- https://codepen.io/amit_sheen/pen/xxqYzvm -->
-          <!-- <div>Expertise in every <span class="accent">semicolon</span></div>
-          <div>Expertise, efficiency, excellence</div> -->
-          <div>
+        <div class="motto morphing">
+          <div class="slogan">
+            Your software, my <span class="accent">expertise</span>
+          </div>
+          <div class="slogan">
             Leave the <span class="accent">semicolon</span> jokes to me!
           </div>
-          <!-- <div>
-            Clean, efficient code for all <br /><span class="accent"
-              >your software needs</span
-            >
+          <div class="slogan">
+            Expertise in every <span class="accent">semicolon</span>
           </div>
-          <div>
-            We'll make sure <span class="accent">your code runs</span><br />
-            not just <span class="accent">your mouth</span>
-          </div> -->
-        </h1>
+          <div class="slogan">
+            Where <span class="accent">quality</span> is not an option, it's a
+            <span class="accent">promise</span>
+          </div>
+          <div class="slogan">
+            I'll make sure <span class="accent">your code</span> runs not just
+            <span class="accent">your mouth</span>
+          </div>
+          <div class="slogan">
+            Clean, <span class="accent">efficient</span> code for all your
+            <span class="accent">software</span> needs
+          </div>
+          <div class="slogan">
+            Transforming your <span class="accent">vision</span> into
+            <span class="accent">reality</span>
+          </div>
+        </div>
 
         <span class="scroll-indicator">^</span>
       </section>
@@ -1280,34 +1426,34 @@
       </nav>
       <section class="s2">
         <h2 class="s-title"><span class="accent">Who</span> I am</h2>
-        <div class="box">
+        <div class="box box1">
           <div class="img-wrapper">
             <picture>
               <source
                 media="(max-width: 600px)"
-                srcset="/images/profile.webp"
+                srcset="/images/mihai.webp"
                 type="image/webp"
               />
               <source
                 media="(max-width: 600px)"
-                srcset="/images/profile.webp"
+                srcset="/images/mihai.webp"
                 type="image/webp"
               />
               <source
                 media="(max-width: 600px)"
-                srcset="/images/profile.jpg"
-                type="image/jpeg"
+                srcset="/images/mihai.png"
+                type="image/png"
               />
               <source
                 media="(max-width: 600px)"
-                srcset="/images/profile.jpg"
-                type="image/jpeg"
+                srcset="/images/mihai.png"
+                type="image/png"
               />
               <img
-                srcset="/images/profile.png 1024w, /images/profile.png 600w"
+                srcset="/images/mihai.png 1024w, /images/mihai.png 600w"
                 sizes="(min-width: 600px) 601px,
                           (max-width: 600px) 600px"
-                src="/images/profile.png"
+                src="/images/mihai.png"
                 alt="Mihai Mijea Photo"
                 class="photo-me"
               />
@@ -1342,7 +1488,7 @@
       </section>
       <section>
         <h2 class="s-title"><span class="accent">What</span> I use</h2>
-        <div class="box wrap">
+        <div class="box wrap box2">
           <a
             target="_blank"
             href="https://aws.amazon.com/"
@@ -1350,7 +1496,8 @@
           >
             <img
               src="/images/logos/tools/logo-amazon-aws.svg"
-              alt="Cloud Computing Services - Amazon Web Services (AWS)"
+              alt="Cloud Computing Services - Amazon Web Services (AWS)"i
+              width="135" height="68"
             />
           </a>
           <a
@@ -1361,12 +1508,14 @@
             <img
               src="/images/logos/tools/logo-atlassian-jira.svg"
               alt="Jira Software"
+              width="135" height="39"
             />
           </a>
           <a target="_blank" href="https://babeljs.io/" class="skillLogo hover">
             <img
               src="/images/logos/tools/logo-babel.svg"
               alt="Babel · The compiler for next generation JavaScript"
+              width="135" height="53"
             />
           </a>
           <a
@@ -1377,6 +1526,7 @@
             <img
               src="/images/logos/tools/logo-browserstack.svg"
               alt="BrowserStack - World's Leading Testing Tool"
+              width="135" height="39"
             />
           </a>
           <a
@@ -1387,6 +1537,7 @@
             <img
               src="/images/logos/tools/logo-cloudinary.svg"
               alt="Cloudinary Media Experience Platform"
+              width="135" height="30"
             />
           </a>
           <a
@@ -1397,6 +1548,7 @@
             <img
               src="/images/logos/tools/logo-contentful.svg"
               alt="Contentful: The platform to bring your best ideas to life"
+              width="135" height="28"
             />
           </a>
 
@@ -1408,6 +1560,7 @@
             <img
               src="/images/logos/tools/logo-css.svg"
               alt="Cascading Style Sheets (CSS)"
+              width="135" height="90"
             />
           </a>
           <a
@@ -1418,6 +1571,7 @@
             <img
               alt="Docker: Accelerated, Containerized Application Development"
               src="/images/logos/tools/logo-docker.svg"
+              width="135" height="68"
             />
           </a>
           <a
@@ -1428,6 +1582,7 @@
             <img
               alt="Express - Fast, unopinionated, minimalist web framework for Node.js"
               src="/images/logos/tools/logo-expressjs.svg"
+              width="135" height="69"
             />
           </a>
           <a
@@ -1438,6 +1593,7 @@
             <img
               alt="Gatsby - The Fastest Frontend for the Headless Web"
               src="/images/logos/tools/logo-gatsby.svg"
+              width="135" height="36"
             />
           </a>
           <a
@@ -1448,6 +1604,7 @@
             <img
               alt="Postman is an API platform for building and using APIs."
               src="/images/logos/tools/logo-getpostman.svg"
+              width="135" height="39"
             />
           </a>
           <a
@@ -1458,6 +1615,7 @@
             <img
               alt="Git is a free and open source distributed version control system"
               src="/images/logos/tools/logo-git.svg"
+              width="135" height="68"
             />
           </a>
           <a
@@ -1468,6 +1626,7 @@
             <img
               alt="Gitlab Is A Single Application For The Entire Software Development Lifecycle"
               src="/images/logos/tools/logo-gitlab.svg"
+              width="135" height="68"
             />
           </a>
           <a
@@ -1478,6 +1637,7 @@
             <img
               alt="Google Analytics lets you measure your advertising ROI as well as track your Flash, video, and social networking sites and applications."
               src="/images/logos/tools/logo-google-analytics.svg"
+              width="135" height="68"
             />
           </a>
           <a
@@ -1488,6 +1648,7 @@
             <img
               alt="Dream, build, and transform with Google Cloud"
               src="/images/logos/tools/logo-google-cloud.svg"
+              width="135" height="68"
             />
           </a>
           <a
@@ -1498,6 +1659,7 @@
             <img
               alt="GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data."
               src="/images/logos/tools/logo-graphql.svg"
+              width="135" height="68"
             />
           </a>
           <a
@@ -1508,6 +1670,7 @@
             <img
               alt="HTML: HyperText Markup Language"
               src="/images/logos/tools/logo-html.svg"
+              width="135" height="90"
             />
           </a>
           <a
@@ -1518,18 +1681,21 @@
             <img
               alt="JavaScript"
               src="/images/logos/tools/logo-javascript.svg"
+              width="135" height="90"
             />
           </a>
           <a target="_blank" href="https://jestjs.io/" class="skillLogo hover">
             <img
               alt="Jest is a delightful JavaScript Testing Framework with a focus on simplicity."
               src="/images/logos/tools/logo-jest.svg"
+              width="135" height="65"
             />
           </a>
           <a target="_blank" href="https://mui.com/" class="skillLogo hover">
             <img
               alt="Material UI fully-loaded component library"
               src="/images/logos/tools/logo-material-ui.svg"
+              width="135" height="90"
             />
           </a>
           <a
@@ -1540,6 +1706,7 @@
             <img
               alt="AZURE. INVENT WITH PURPOSE."
               src="/images/logos/tools/logo-microsoft-azure.svg"
+              width="135" height="68"
             />
           </a>
           <a
@@ -1550,6 +1717,7 @@
             <img
               alt="MongoDB: The Developer Data Platform"
               src="/images/logos/tools/logo-mongodb.svg"
+              width="135" height="68"
             />
           </a>
           <a
@@ -1560,12 +1728,14 @@
             <img
               alt="Netlify: Develop and deploy websites and apps in record time"
               src="/images/logos/tools/logo-netlify.svg"
+              width="135" height="68"
             />
           </a>
           <a target="_blank" href="https://nextjs.org/" class="skillLogo hover">
             <img
               alt="Next.js by Vercel - The React Framework"
               src="/images/logos/tools/logo-nextjs.svg"
+              width="135" height="28"
             />
           </a>
           <a
@@ -1576,6 +1746,7 @@
             <img
               alt="Node.js® is an open-source, cross-platform JavaScript runtime environment."
               src="/images/logos/tools/logo-nodejs.svg"
+              width="135" height="68"
             />
           </a>
           <a
@@ -1586,16 +1757,19 @@
             <img
               alt="The OpenAPI Specification, previously known as the Swagger Specification"
               src="/images/logos/tools/logo-openapis.svg"
+              width="135" height="68"
             />
           </a>
           <a
             target="_blank"
             href="https://reactjs.org/"
             class="skillLogo hover"
+            
           >
             <img
               alt="React A JavaScript library for building user interfaces"
               src="/images/logos/tools/logo-react.svg"
+              width="135" height="40"
             />
           </a>
           <a
@@ -1606,6 +1780,7 @@
             <img
               alt="REST is an acronym for REpresentational State Transfer and an architectural style for distributed hypermedia systems."
               src="/images/logos/tools/logo-rest-api.svg"
+              width="135" height="90"
             />
           </a>
           <a
@@ -1616,6 +1791,7 @@
             <img
               alt="SASS CSS with superpowers"
               src="/images/logos/tools/logo-sass.svg"
+              width="135" height="90"
             />
           </a>
           <a
@@ -1626,6 +1802,7 @@
             <img
               alt="Storybook is a frontend workshop for building UI components and pages in isolation."
               src="/images/logos/tools/logo-storybook.svg"
+              width="135" height="27"
             />
           </a>
           <a
@@ -1636,12 +1813,14 @@
             <img
               alt="Styled Components Visual primitives for the component age."
               src="/images/logos/tools/logo-styled-components.svg"
+              width="135" height="90"
             />
           </a>
           <a target="_blank" href="https://swagger.io/" class="skillLogo hover">
             <img
               alt="Swagger API Development for Everyone"
               src="/images/logos/tools/logo-swagger.svg"
+              width="135" height="39"
             />
           </a>
           <a
@@ -1652,6 +1831,7 @@
             <img
               alt="TailwindCSS Rapidly build modern websites without ever leaving your HTML."
               src="/images/logos/tools/logo-tailwind.svg"
+              width="135" height="17"
             />
           </a>
           <a
@@ -1662,6 +1842,7 @@
             <img
               alt="Turbo is an incremental bundler and build system optimized for JavaScript and TypeScript, written in Rust."
               src="/images/logos/tools/logo-turborepo.svg"
+              width="135" height="36"
             />
           </a>
           <a
@@ -1672,6 +1853,7 @@
             <img
               alt="TypeScript is JavaScript with syntax for types"
               src="/images/logos/tools/logo-typescript.svg"
+              width="135" height="25"
             />
           </a>
           <a
@@ -1682,39 +1864,41 @@
             <img
               alt="webpack is a static module bundler for modern JavaScript applications"
               src="/images/logos/tools/logo-webpack.svg"
+              width="135" height="68"
             />
           </a>
           <a target="_blank" href="https://vuejs.org/" class="skillLogo hover">
             <img
               alt="VueJS The Progressive JavaScript Framework"
               src="/images/logos/tools/logo-vuejs.svg"
+              width="135" height="68"
             />
           </a>
         </div>
       </section>
       <section>
         <h2 class="s-title">For <span class="accent">whom</span></h2>
-        <div class="box wrap">
+        <div class="box wrap box3">
           <a
             target="_blank"
             href="https://www.dpgmediagroup.com/nl-NL"
             class="companyLogo hover"
           >
-            <img src="/images/logos/companies/dpg.svg" alt="DPG media" />
+            <img src="/images/logos/companies/dpg.svg" alt="DPG media" width="203" height="107"/>
           </a>
           <a
             target="_blank"
             href="https://www.icemobile.com/"
             class="companyLogo hover"
           >
-            <img src="/images/logos/companies/icemobile.svg" alt="Icemobile" />
+            <img src="/images/logos/companies/icemobile.svg" alt="Icemobile" width="203" height="27"/>
           </a>
           <a
             target="_blank"
             href="https://www.kpn.com/"
             class="companyLogo hover"
           >
-            <img src="/images/logos/companies/kpn.svg" alt="KPN" />
+            <img src="/images/logos/companies/kpn.svg" alt="KPN"  width="203" height="92" />
           </a>
           <a
             target="_blank"
@@ -1724,6 +1908,7 @@
             <img
               src="/images/logos/companies/passionatepeople.svg"
               alt="Passionate People"
+              width="203" height="74"
             />
           </a>
           <a
@@ -1731,7 +1916,7 @@
             href="https://www.getrodeo.io/"
             class="companyLogo hover"
           >
-            <img src="/images/logos/companies/rodeo.svg" alt="Rodeo" />
+            <img src="/images/logos/companies/rodeo.svg" alt="Rodeo"  width="203" height="60"/>
           </a>
           <a
             target="_blank"
@@ -1741,6 +1926,7 @@
             <img
               src="/images/logos/companies/suitsupply.svg"
               alt="Suitsupply"
+              width="203" height="22"
             />
           </a>
         </div>
@@ -1753,28 +1939,36 @@
           </blockquote>
           <figcaption>— a Smart Guy</figcaption>
         </figure>
-        <div class="ps">PS: This page has <b>0</b> lines of Javascript</div>
+        <div class="ps">PS: This page has <b class="accent">0</b> lines of Javascript</div>
       </section>
       <section>
-        <h2 class="s-title"><span class="accent">How</span> to find me</h2>
-        <div class="box contact">
-          <img src="/images/qr.svg" alt="Qr code with the details" class="qr" />
+        <h2 class="s-title"><span class="accent">How</span> to contact me</h2>
+        <div class="box contact box4">
+          <div class='anim-box'>
+            <!-- empty first child used for corners -->
+            <div></div>
+            <div class='scanner'></div>
+            <img src="/images/contact.svg" alt="Qr code with the details" class="qr" width="220" height="220" />
+          </div>
           <div class="contact-link-wrapper">
             <a
               class="contact-link"
-              href="mailto:mihai.mijea.dev@gmail.com?subject=Let's colaborate"
+              href="mailto:contact@themissingsemicolon.com?subject=Let's colaborate"
             >
               <img src="/images/icons/email.svg" alt="email icon" />
+              <span class="haccent">contact@themissingsemicolon.com</span>
             </a>
             <a
               class="contact-link"
               target="_blank"
-              href="https://www.linkedin.com/in/mihaimijea/"
+              href="https://www.linkedin.com/in/mihaimijea"
             >
               <img src="/images/icons/linkedin.svg" alt="Linkedin icon" />
+              <span class="haccent">linkedin.com/in/mihaimijea</span>
             </a>
             <a class="contact-link" href="tel:+31644147968">
               <img src="/images/icons/phone.svg" alt="phone icon" />
+              <spam class="haccent">+31 644 147 869</spam>
             </a>
             <a
               class="contact-link"
@@ -1782,6 +1976,7 @@
               href="https://wa.me/31644147968"
             >
               <img src="/images/icons/whatsapp.svg" alt="whatsapp icon" />
+              <span class="haccent">WhatsApp</span>
             </a>
           </div>
         </div>
