@@ -1053,105 +1053,104 @@
       padding: 2rem 4rem;
     }
     @media only screen and (max-width: 600px) {
-    .box1 {
-      grid-template-columns: 1fr;
+      .box1 {
+        grid-template-columns: 1fr;
+      }
+      .box2 {
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+      }
+      .box3 {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        padding: 2rem;
+        grid-gap: 1rem 2rem;
+      }
+      .box4 {
+        padding: 40px 20px;
+        justify-items: center;
+        grid-template-columns: 1fr;
+      }
     }
-    .box2 {
-      grid-template-columns: 1fr 1fr 1fr;
-      align-items: center;
+    /* barcode container */
+    .anim-box {
+      position: relative;
+      width: 280px;
+      height: 280px;
+      padding: 25px 30px;
+      transition: transform 0.6s ease-out;
     }
-    .box3 {
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      padding: 2rem;
-      grid-gap: 1rem 2rem;
+
+    /* adds the 4 corners */
+    .anim-box:before,
+    .anim-box:after,
+    .anim-box > :first-child:before,
+    .anim-box > :first-child:after {
+      position: absolute;
+      width: 10%;
+      height: 15%;
+      border-color: white;
+      border-style: solid;
+      content: " ";
     }
-    .box4 {
-      padding: 40px 20px;
-      justify-items: center;
-      grid-template-columns: 1fr;
+
+    /* top left corner */
+    .anim-box:before {
+      top: 0;
+      left: 0;
+      border-width: 2px 0 0 2px;
     }
-  }
-/* barcode container */
-.anim-box {
-  position: relative;
-  width: 280px;
-  height: 280px;
-  padding: 25px 30px;
-  transition: transform 0.6s ease-out;
-}
 
-/* adds the 4 corners */
-.anim-box:before,
-.anim-box:after,
-.anim-box > :first-child:before,
-.anim-box > :first-child:after {
-  position: absolute;
-  width: 10%;
-  height: 15%;
-  border-color: white;
-  border-style: solid;
-  content: " ";
-}
+    /* top right corner */
+    .anim-box:after {
+      top: 0;
+      right: 0;
+      border-width: 2px 2px 0 0;
+    }
 
-/* top left corner */
-.anim-box:before {
-  top: 0;
-  left: 0;
-  border-width: 2px 0 0 2px;
-}
+    /* bottom right corner */
+    .anim-box > :first-child:before {
+      bottom: 0;
+      right: 0;
+      border-width: 0 2px 2px 0;
+    }
 
-/* top right corner */
-.anim-box:after {
-  top: 0;
-  right: 0;
-  border-width: 2px 2px 0 0;
-}
+    /* bottom left corner */
+    .anim-box > :first-child:after {
+      bottom: 0;
+      left: 0;
+      border-width: 0 0 2px 2px;
+    }
 
-/* bottom right corner */
-.anim-box > :first-child:before {
-  bottom: 0;
-  right: 0;
-  border-width: 0 2px 2px 0;
-}
+    /* animated laser beam */
+    .scanner {
+      width: 100%;
+      height: 3px;
+      background-color: red;
+      opacity: 0.7;
+      position: relative;
+      box-shadow: 0px 0px 8px 10px rgba(170, 11, 23, 0.49);
+      top: 50%;
+      animation-name: scan;
+      animation-duration: 6s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
 
-/* bottom left corner */
-.anim-box > :first-child:after {
-  bottom: 0;
-  left: 0;
-  border-width: 0 0 2px 2px;
-}
-
-
-/* animated laser beam */
-.scanner {
-  width: 100%;
-  height: 3px;
-  background-color: red;
-  opacity: 0.7;
-  position: relative;
-  box-shadow: 0px 0px 8px 10px rgba(170, 11, 23, 0.49);
-  top: 50%;
-  animation-name: scan;
-  animation-duration: 6s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-@keyframes scan {
-  0% {
-    box-shadow: 0px 0px 8px 10px rgba(170, 11, 23, 0.49);
-    top: 50%;
-  }
-  25% {
-    box-shadow: 0px 6px 8px 10px rgba(170, 11, 23, 0.49);
-    top: 5px;
-  }
-  75% {
-    box-shadow: 0px -6px 8px 10px rgba(170, 11, 23, 0.49);
-    top: 98%;
-  }
-}
+    @keyframes scan {
+      0% {
+        box-shadow: 0px 0px 8px 10px rgba(170, 11, 23, 0.49);
+        top: 50%;
+      }
+      25% {
+        box-shadow: 0px 6px 8px 10px rgba(170, 11, 23, 0.49);
+        top: 5px;
+      }
+      75% {
+        box-shadow: 0px -6px 8px 10px rgba(170, 11, 23, 0.49);
+        top: 98%;
+      }
+    }
   </style>
 
   <body>
@@ -1496,8 +1495,10 @@
           >
             <img
               src="/images/logos/tools/logo-amazon-aws.svg"
-              alt="Cloud Computing Services - Amazon Web Services (AWS)"i
-              width="135" height="68"
+              alt="Cloud Computing Services - Amazon Web Services (AWS)"
+              i
+              width="135"
+              height="68"
             />
           </a>
           <a
@@ -1508,14 +1509,16 @@
             <img
               src="/images/logos/tools/logo-atlassian-jira.svg"
               alt="Jira Software"
-              width="135" height="39"
+              width="135"
+              height="39"
             />
           </a>
           <a target="_blank" href="https://babeljs.io/" class="skillLogo hover">
             <img
               src="/images/logos/tools/logo-babel.svg"
               alt="Babel · The compiler for next generation JavaScript"
-              width="135" height="53"
+              width="135"
+              height="53"
             />
           </a>
           <a
@@ -1526,7 +1529,8 @@
             <img
               src="/images/logos/tools/logo-browserstack.svg"
               alt="BrowserStack - World's Leading Testing Tool"
-              width="135" height="39"
+              width="135"
+              height="39"
             />
           </a>
           <a
@@ -1537,7 +1541,8 @@
             <img
               src="/images/logos/tools/logo-cloudinary.svg"
               alt="Cloudinary Media Experience Platform"
-              width="135" height="30"
+              width="135"
+              height="30"
             />
           </a>
           <a
@@ -1548,7 +1553,8 @@
             <img
               src="/images/logos/tools/logo-contentful.svg"
               alt="Contentful: The platform to bring your best ideas to life"
-              width="135" height="28"
+              width="135"
+              height="28"
             />
           </a>
 
@@ -1560,7 +1566,8 @@
             <img
               src="/images/logos/tools/logo-css.svg"
               alt="Cascading Style Sheets (CSS)"
-              width="135" height="90"
+              width="135"
+              height="90"
             />
           </a>
           <a
@@ -1571,7 +1578,8 @@
             <img
               alt="Docker: Accelerated, Containerized Application Development"
               src="/images/logos/tools/logo-docker.svg"
-              width="135" height="68"
+              width="135"
+              height="68"
             />
           </a>
           <a
@@ -1582,7 +1590,8 @@
             <img
               alt="Express - Fast, unopinionated, minimalist web framework for Node.js"
               src="/images/logos/tools/logo-expressjs.svg"
-              width="135" height="69"
+              width="135"
+              height="69"
             />
           </a>
           <a
@@ -1593,7 +1602,8 @@
             <img
               alt="Gatsby - The Fastest Frontend for the Headless Web"
               src="/images/logos/tools/logo-gatsby.svg"
-              width="135" height="36"
+              width="135"
+              height="36"
             />
           </a>
           <a
@@ -1604,7 +1614,8 @@
             <img
               alt="Postman is an API platform for building and using APIs."
               src="/images/logos/tools/logo-getpostman.svg"
-              width="135" height="39"
+              width="135"
+              height="39"
             />
           </a>
           <a
@@ -1615,7 +1626,8 @@
             <img
               alt="Git is a free and open source distributed version control system"
               src="/images/logos/tools/logo-git.svg"
-              width="135" height="68"
+              width="135"
+              height="68"
             />
           </a>
           <a
@@ -1626,7 +1638,8 @@
             <img
               alt="Gitlab Is A Single Application For The Entire Software Development Lifecycle"
               src="/images/logos/tools/logo-gitlab.svg"
-              width="135" height="68"
+              width="135"
+              height="68"
             />
           </a>
           <a
@@ -1637,7 +1650,8 @@
             <img
               alt="Google Analytics lets you measure your advertising ROI as well as track your Flash, video, and social networking sites and applications."
               src="/images/logos/tools/logo-google-analytics.svg"
-              width="135" height="68"
+              width="135"
+              height="68"
             />
           </a>
           <a
@@ -1648,7 +1662,8 @@
             <img
               alt="Dream, build, and transform with Google Cloud"
               src="/images/logos/tools/logo-google-cloud.svg"
-              width="135" height="68"
+              width="135"
+              height="68"
             />
           </a>
           <a
@@ -1659,7 +1674,8 @@
             <img
               alt="GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data."
               src="/images/logos/tools/logo-graphql.svg"
-              width="135" height="68"
+              width="135"
+              height="68"
             />
           </a>
           <a
@@ -1670,7 +1686,8 @@
             <img
               alt="HTML: HyperText Markup Language"
               src="/images/logos/tools/logo-html.svg"
-              width="135" height="90"
+              width="135"
+              height="90"
             />
           </a>
           <a
@@ -1681,21 +1698,24 @@
             <img
               alt="JavaScript"
               src="/images/logos/tools/logo-javascript.svg"
-              width="135" height="90"
+              width="135"
+              height="90"
             />
           </a>
           <a target="_blank" href="https://jestjs.io/" class="skillLogo hover">
             <img
               alt="Jest is a delightful JavaScript Testing Framework with a focus on simplicity."
               src="/images/logos/tools/logo-jest.svg"
-              width="135" height="65"
+              width="135"
+              height="65"
             />
           </a>
           <a target="_blank" href="https://mui.com/" class="skillLogo hover">
             <img
               alt="Material UI fully-loaded component library"
               src="/images/logos/tools/logo-material-ui.svg"
-              width="135" height="90"
+              width="135"
+              height="90"
             />
           </a>
           <a
@@ -1706,7 +1726,8 @@
             <img
               alt="AZURE. INVENT WITH PURPOSE."
               src="/images/logos/tools/logo-microsoft-azure.svg"
-              width="135" height="68"
+              width="135"
+              height="68"
             />
           </a>
           <a
@@ -1717,7 +1738,8 @@
             <img
               alt="MongoDB: The Developer Data Platform"
               src="/images/logos/tools/logo-mongodb.svg"
-              width="135" height="68"
+              width="135"
+              height="68"
             />
           </a>
           <a
@@ -1728,14 +1750,16 @@
             <img
               alt="Netlify: Develop and deploy websites and apps in record time"
               src="/images/logos/tools/logo-netlify.svg"
-              width="135" height="68"
+              width="135"
+              height="68"
             />
           </a>
           <a target="_blank" href="https://nextjs.org/" class="skillLogo hover">
             <img
               alt="Next.js by Vercel - The React Framework"
               src="/images/logos/tools/logo-nextjs.svg"
-              width="135" height="28"
+              width="135"
+              height="28"
             />
           </a>
           <a
@@ -1746,7 +1770,8 @@
             <img
               alt="Node.js® is an open-source, cross-platform JavaScript runtime environment."
               src="/images/logos/tools/logo-nodejs.svg"
-              width="135" height="68"
+              width="135"
+              height="68"
             />
           </a>
           <a
@@ -1757,19 +1782,20 @@
             <img
               alt="The OpenAPI Specification, previously known as the Swagger Specification"
               src="/images/logos/tools/logo-openapis.svg"
-              width="135" height="68"
+              width="135"
+              height="68"
             />
           </a>
           <a
             target="_blank"
             href="https://reactjs.org/"
             class="skillLogo hover"
-            
           >
             <img
               alt="React A JavaScript library for building user interfaces"
               src="/images/logos/tools/logo-react.svg"
-              width="135" height="40"
+              width="135"
+              height="40"
             />
           </a>
           <a
@@ -1780,7 +1806,8 @@
             <img
               alt="REST is an acronym for REpresentational State Transfer and an architectural style for distributed hypermedia systems."
               src="/images/logos/tools/logo-rest-api.svg"
-              width="135" height="90"
+              width="135"
+              height="90"
             />
           </a>
           <a
@@ -1791,7 +1818,8 @@
             <img
               alt="SASS CSS with superpowers"
               src="/images/logos/tools/logo-sass.svg"
-              width="135" height="90"
+              width="135"
+              height="90"
             />
           </a>
           <a
@@ -1802,7 +1830,8 @@
             <img
               alt="Storybook is a frontend workshop for building UI components and pages in isolation."
               src="/images/logos/tools/logo-storybook.svg"
-              width="135" height="27"
+              width="135"
+              height="27"
             />
           </a>
           <a
@@ -1813,14 +1842,16 @@
             <img
               alt="Styled Components Visual primitives for the component age."
               src="/images/logos/tools/logo-styled-components.svg"
-              width="135" height="90"
+              width="135"
+              height="90"
             />
           </a>
           <a target="_blank" href="https://swagger.io/" class="skillLogo hover">
             <img
               alt="Swagger API Development for Everyone"
               src="/images/logos/tools/logo-swagger.svg"
-              width="135" height="39"
+              width="135"
+              height="39"
             />
           </a>
           <a
@@ -1831,7 +1862,8 @@
             <img
               alt="TailwindCSS Rapidly build modern websites without ever leaving your HTML."
               src="/images/logos/tools/logo-tailwind.svg"
-              width="135" height="17"
+              width="135"
+              height="17"
             />
           </a>
           <a
@@ -1842,7 +1874,8 @@
             <img
               alt="Turbo is an incremental bundler and build system optimized for JavaScript and TypeScript, written in Rust."
               src="/images/logos/tools/logo-turborepo.svg"
-              width="135" height="36"
+              width="135"
+              height="36"
             />
           </a>
           <a
@@ -1853,7 +1886,8 @@
             <img
               alt="TypeScript is JavaScript with syntax for types"
               src="/images/logos/tools/logo-typescript.svg"
-              width="135" height="25"
+              width="135"
+              height="25"
             />
           </a>
           <a
@@ -1864,14 +1898,16 @@
             <img
               alt="webpack is a static module bundler for modern JavaScript applications"
               src="/images/logos/tools/logo-webpack.svg"
-              width="135" height="68"
+              width="135"
+              height="68"
             />
           </a>
           <a target="_blank" href="https://vuejs.org/" class="skillLogo hover">
             <img
               alt="VueJS The Progressive JavaScript Framework"
               src="/images/logos/tools/logo-vuejs.svg"
-              width="135" height="68"
+              width="135"
+              height="68"
             />
           </a>
         </div>
@@ -1884,21 +1920,36 @@
             href="https://www.dpgmediagroup.com/nl-NL"
             class="companyLogo hover"
           >
-            <img src="/images/logos/companies/dpg.svg" alt="DPG media" width="203" height="107"/>
+            <img
+              src="/images/logos/companies/dpg.svg"
+              alt="DPG media"
+              width="203"
+              height="107"
+            />
           </a>
           <a
             target="_blank"
             href="https://www.icemobile.com/"
             class="companyLogo hover"
           >
-            <img src="/images/logos/companies/icemobile.svg" alt="Icemobile" width="203" height="27"/>
+            <img
+              src="/images/logos/companies/icemobile.svg"
+              alt="Icemobile"
+              width="203"
+              height="27"
+            />
           </a>
           <a
             target="_blank"
             href="https://www.kpn.com/"
             class="companyLogo hover"
           >
-            <img src="/images/logos/companies/kpn.svg" alt="KPN"  width="203" height="92" />
+            <img
+              src="/images/logos/companies/kpn.svg"
+              alt="KPN"
+              width="203"
+              height="92"
+            />
           </a>
           <a
             target="_blank"
@@ -1908,7 +1959,8 @@
             <img
               src="/images/logos/companies/passionatepeople.svg"
               alt="Passionate People"
-              width="203" height="74"
+              width="203"
+              height="74"
             />
           </a>
           <a
@@ -1916,7 +1968,12 @@
             href="https://www.getrodeo.io/"
             class="companyLogo hover"
           >
-            <img src="/images/logos/companies/rodeo.svg" alt="Rodeo"  width="203" height="60"/>
+            <img
+              src="/images/logos/companies/rodeo.svg"
+              alt="Rodeo"
+              width="203"
+              height="60"
+            />
           </a>
           <a
             target="_blank"
@@ -1926,7 +1983,8 @@
             <img
               src="/images/logos/companies/suitsupply.svg"
               alt="Suitsupply"
-              width="203" height="22"
+              width="203"
+              height="22"
             />
           </a>
         </div>
@@ -1939,16 +1997,24 @@
           </blockquote>
           <figcaption>— a Smart Guy</figcaption>
         </figure>
-        <div class="ps">PS: This page has <b class="accent">0</b> lines of Javascript</div>
+        <div class="ps">
+          PS: This page has <b class="accent">0</b> lines of Javascript
+        </div>
       </section>
       <section>
         <h2 class="s-title"><span class="accent">How</span> to contact me</h2>
         <div class="box contact box4">
-          <div class='anim-box'>
+          <div class="anim-box">
             <!-- empty first child used for corners -->
             <div></div>
-            <div class='scanner'></div>
-            <img src="/images/contact.svg" alt="Qr code with the details" class="qr" width="220" height="220" />
+            <div class="scanner"></div>
+            <img
+              src="/images/contact.svg"
+              alt="Qr code with the details"
+              class="qr"
+              width="220"
+              height="220"
+            />
           </div>
           <div class="contact-link-wrapper">
             <a
