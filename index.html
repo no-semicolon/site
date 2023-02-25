@@ -756,7 +756,7 @@
     }
     .contact {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 280px 1fr;
       padding: 40px;
     }
     .contact-link-wrapper {
@@ -1078,7 +1078,6 @@
       width: 280px;
       height: 280px;
       padding: 25px 30px;
-      transition: transform 0.6s ease-out;
     }
 
     /* adds the 4 corners */
@@ -1089,7 +1088,7 @@
       position: absolute;
       width: 10%;
       height: 15%;
-      border-color: white;
+      border-color: var(--light);
       border-style: solid;
       content: " ";
     }
@@ -1149,6 +1148,20 @@
       75% {
         box-shadow: 0px -6px 8px 10px rgba(170, 11, 23, 0.49);
         top: 98%;
+      }
+    }
+    .box4 > a {
+      text-decoration: none;
+    }
+    .download-v-card {
+      padding-top: 10px;
+      color: var(--light);
+      text-align: center;
+      display: none;
+    }
+    @media only screen and (max-width: 600px) {
+      .download-v-card {
+        display: block;
       }
     }
   </style>
@@ -2004,18 +2017,21 @@
       <section>
         <h2 class="s-title"><span class="accent">How</span> to contact me</h2>
         <div class="box contact box4">
-          <div class="anim-box">
-            <!-- empty first child used for corners -->
-            <div></div>
-            <div class="scanner"></div>
-            <img
-              src="/images/contact.svg"
-              alt="Qr code with the details"
-              class="qr"
-              width="220"
-              height="220"
-            />
-          </div>
+          <a href="/images/TheMissingSemicolon.vcf" download>
+            <div class="anim-box">
+              <!-- empty first child used for corners -->
+              <div></div>
+              <div class="scanner"></div>
+              <img
+                src="/images/contact.svg"
+                alt="Qr code with the details"
+                class="qr"
+                width="220"
+                height="220"
+              />
+            </div>
+            <div class="download-v-card">Tap ME!</div>
+          </a>
           <div class="contact-link-wrapper">
             <a
               class="contact-link"
