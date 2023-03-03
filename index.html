@@ -79,7 +79,8 @@
       content="The Missing Semicolon is a software development company that helps businesses and organizations create and maintain high-quality software solutions. Our team of experienced developers has a strong focus on attention to detail and a commitment to producing clean, well-structured code. Our motto, 'Your software, our semicolons,' reflects our dedication to ensuring that every aspect of our clients' software is as perfect as possible, down to the smallest punctuation marks. Whether you need a custom software application built from scratch, or you need help maintaining and improving an existing system, The Missing Semicolon is here to help."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image:alt" content="The Missing Semicolon - Mihai Mijea | Software Engineer | Contractor | Freelance"
+    <meta property="og:image:alt" content="The Missing Semicolon - Mihai Mijea |
+    Software Engineer | Contractor | Freelance"
   </head>
   <style>
     * {
@@ -1065,6 +1066,9 @@
     .box4 > a {
       text-decoration: none;
     }
+    .download-link {
+      position: relative;
+    }
     .download-v-card-1,
     .download-v-card-2 {
       padding-top: 10px;
@@ -1073,6 +1077,11 @@
     }
     .download-v-card-1 {
       display: none;
+    }
+    .download-v-card-2 {
+      position: absolute;
+      width: 100%;
+      bottom: -8px;
     }
     @media only screen and (max-width: 600px) {
       .download-v-card-1 {
@@ -1962,7 +1971,7 @@
       <section>
         <h2 class="s-title"><span class="accent">How</span> to contact me</h2>
         <div class="box contact box4">
-          <a href="/images/TheMissingSemicolon.vcf" download>
+          <a href="/images/TheMissingSemicolon.vcf" download class="download-link">
             <div class="anim-box">
               <!-- empty first child used for corners -->
               <div></div>
