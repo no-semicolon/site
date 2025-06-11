@@ -1267,7 +1267,32 @@
           width="200"
           alt="The Missing Semicolon Logo"
         />
-        <a
+        <span>
+          <!-- Google Calendar Appointment Scheduling begin -->
+          <link
+            href="https://calendar.google.com/calendar/scheduling-button-script.css"
+            rel="stylesheet"
+          />
+          <script
+            src="https://calendar.google.com/calendar/scheduling-button-script.js"
+            async
+          ></script>
+          <script>
+            (function () {
+              var target = document.currentScript;
+              window.addEventListener("load", function () {
+                calendar.schedulingButton.load({
+                  url: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2zRrbeSgLslIcH5GEClxx2DTb1cThmJhRxADdA1l0skR2VpuRMVE7SiJAeKW0mQYhmF0Avvl2t?gv=true",
+                  color: "#21f7de",
+                  label: "Book an appointment",
+                  target,
+                });
+              });
+            })();
+          </script>
+          <!-- end Google Calendar Appointment Scheduling -->
+        </span>
+        <!-- <a
           class="cta-button"
           target="_blank"
           href="https://wa.me/31644147968"
@@ -1374,7 +1399,7 @@
               stroke-width="2.5"
             />
           </svg>
-        </a>
+        </a>-->
       </nav>
       <section class="s2">
         <h2 class="s-title"><span class="accent">Who</span> I am</h2>
@@ -2088,6 +2113,7 @@ and integrate systems more effectively."
             <div class="download-v-card-1">Tap ME!</div>
             <div class="download-v-card-2">Scan ME!</div>
           </a>
+
           <div class="contact-link-wrapper">
             <a
               class="contact-link"
